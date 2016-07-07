@@ -1,0 +1,21 @@
+<h2>Novo Objetivo</h2>
+<form action="<?php echo $html->url('/objetivos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Objetivo/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Objetivo/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Objetivo/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Objetivo/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Objetivo/ds_objetivo', 'Descrição');?>
+ 	<?php echo $html->input('Objetivo/ds_objetivo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Objetivo/ds_objetivo', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Objetivos', '/objetivos/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="requisitos">
+<h2>Requisitos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Estudo de viabilidade</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($requisitos as $requisito): ?>
+<tr>
+	<td><?php echo $requisito['Requisito']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($requisito['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$requisito['Estudosviabilidade']['id'])?></td>
+	<td><?php echo $requisito['Requisito']['ds_requisito']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/requisitos/view/' . $requisito['Requisito']['id'])?>
+		<?php echo $html->link('Editar','/requisitos/edit/' . $requisito['Requisito']['id'])?>
+		<?php echo $html->link('Excluir','/requisitos/delete/' . $requisito['Requisito']['id'], null, 'Deseja realmente excluir : id ' . $requisito['Requisito']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Requisito', '/requisitos/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,48 @@
+<div class="cronograma">
+<h2>Cronograma</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $cronograma['Cronograma']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($cronograma['Projeto']['ds_titulo'], '/projetos/view/' .$cronograma['Projeto']['id'])?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Cronograma',   '/cronogramas/edit/' . $cronograma['Cronograma']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Cronograma', '/cronogramas/delete/' . $cronograma['Cronograma']['id'], null, 'Deseja realmente excluir : id ' . $cronograma['Cronograma']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Cronogramas',   '/cronogramas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Cronograma',	'/cronogramas/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atividades relacionadas</h3>
+<?php if(!empty($cronograma['Atividade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($cronograma['Atividade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($cronograma['Atividade'] as $atividade):?>
+<tr>
+	<?php foreach($atividade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades/view/' . $atividade['id']);?>
+		<?php echo $html->link('Editar', '/atividades/edit/' . $atividade['id']);?>
+		<?php echo $html->link('Excluir', '/atividades/delete/' . $atividade['id'], null, 'Deseja realmente excluir : id ' . $atividade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/');?> </li>
+</ul>
+</div>

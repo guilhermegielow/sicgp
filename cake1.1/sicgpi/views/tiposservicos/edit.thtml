@@ -1,0 +1,16 @@
+<h2>Editar Tipo de serviço</h2>
+<form action="<?php echo $html->url('/tiposservicos/edit/'.$html->tagValue('Tiposservico/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposservico/ds_tipo_servico', 'Descrição');?>
+ 	<?php echo $html->input('Tiposservico/ds_tipo_servico', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposservico/ds_tipo_servico', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposservico/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposservicos/delete/' . $html->tagValue('Tiposservico/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposservico/id'));?>
+<li><?php echo $html->link('Listar Tipos de serviços', '/tiposservicos/index')?></li>
+</ul>

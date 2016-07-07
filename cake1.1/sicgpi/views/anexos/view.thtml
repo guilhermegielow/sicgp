@@ -1,0 +1,23 @@
+<div class="anexo">
+<h2>Anexo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $anexo['Anexo']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($anexo['Projeto']['ds_titulo'], '/projetos/view/' .$anexo['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $anexo['Anexo']['ds_anexo']?></dd>
+	<dt>Nome do arquivo</dt>
+	<dd>&nbsp;<?php echo $anexo['Anexo']['arq_anexo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Anexo',   '/anexos/edit/' . $anexo['Anexo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Anexo', '/anexos/delete/' . $anexo['Anexo']['id'], null, 'Deseja realmente excluir : id ' . $anexo['Anexo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Anexos',   '/anexos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Anexo',	'/anexos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>

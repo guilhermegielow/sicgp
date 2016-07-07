@@ -1,0 +1,46 @@
+<div class="unidade">
+<h2>Unidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $unidade['Unidade']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $unidade['Unidade']['ds_unidade']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Unidade',   '/unidades/edit/' . $unidade['Unidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Unidade', '/unidades/delete/' . $unidade['Unidade']['id'], null, 'Deseja realmente excluir : id ' . $unidade['Unidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Unidades',   '/unidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Unidade',	'/unidades/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Recursos relacionados</h3>
+<?php if(!empty($unidade['Recurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($unidade['Recurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($unidade['Recurso'] as $recurso):?>
+<tr>
+	<?php foreach($recurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/recursos/view/' . $recurso['id']);?>
+		<?php echo $html->link('Editar', '/recursos/edit/' . $recurso['id']);?>
+		<?php echo $html->link('Excluir', '/recursos/delete/' . $recurso['id'], null, 'Deseja realmente excluir : id ' . $recurso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recurso', '/recursos/add/');?> </li>
+</ul>
+</div>

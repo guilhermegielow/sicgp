@@ -1,0 +1,21 @@
+<h2>Novo Produto</h2>
+<form action="<?php echo $html->url('/produtos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Produto/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Produto/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Produto/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Produto/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Produto/ds_produto', 'Descrição');?>
+ 	<?php echo $html->input('Produto/ds_produto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Produto/ds_produto', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Produtos', '/produtos/index')?></li>
+<li><?php echo $html->link('Listar Estudo de viabilidade', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

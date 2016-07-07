@@ -1,0 +1,46 @@
+<div class="tiposreuniao">
+<h2>Tipo de reunião</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposreuniao['Tiposreuniao']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposreuniao['Tiposreuniao']['ds_tipo_reuniao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de reunião',   '/tiposreunioes/edit/' . $tiposreuniao['Tiposreuniao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de reunião', '/tiposreunioes/delete/' . $tiposreuniao['Tiposreuniao']['id'], null, 'Deseja realmente excluir : id ' . $tiposreuniao['Tiposreuniao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de reuniões',   '/tiposreunioes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de reunião',	'/tiposreunioes/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atas de reuniões relacionadas</h3>
+<?php if(!empty($tiposreuniao['Atasreuniao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposreuniao['Atasreuniao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposreuniao['Atasreuniao'] as $atasreuniao):?>
+<tr>
+	<?php foreach($atasreuniao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atasreunioes/view/' . $atasreuniao['id']);?>
+		<?php echo $html->link('Editar', '/atasreunioes/edit/' . $atasreuniao['id']);?>
+		<?php echo $html->link('Excluir', '/atasreunioes/delete/' . $atasreuniao['id'], null, 'Deseja realmente excluir : id ' . $atasreuniao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ata de reunião', '/atasreunioes/add/');?> </li>
+</ul>
+</div>

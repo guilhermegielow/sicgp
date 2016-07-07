@@ -1,0 +1,30 @@
+<div class="mensagens">
+<h2>Mensagens</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Envolvidos</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($mensagens as $mensagem): ?>
+<tr>
+	<td><?php echo $mensagem['Mensagem']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($mensagem['Projeto']['ds_titulo'], '/projetos/view/' .$mensagem['Projeto']['id'])?></td>
+	<td><?php echo $mensagem['Mensagem']['ds_mensagem']; ?></td>
+	<td><?php echo $mensagem['Mensagem']['nm_envolvidos']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/mensagens/view/' . $mensagem['Mensagem']['id'])?>
+		<?php echo $html->link('Editar','/mensagens/edit/' . $mensagem['Mensagem']['id'])?>
+		<?php echo $html->link('Excluir','/mensagens/delete/' . $mensagem['Mensagem']['id'], null, 'Deseja realmente excluir : id ' . $mensagem['Mensagem']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Mensagem', '/mensagens/add'); ?></li>
+</ul>
+</div>

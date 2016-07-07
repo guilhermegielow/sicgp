@@ -1,0 +1,28 @@
+<div class="servicosescopos">
+<h2>Serviços de escopos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($servicosescopos as $servicosescopo): ?>
+<tr>
+	<td><?php echo $servicosescopo['Servicosescopo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($servicosescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$servicosescopo['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $servicosescopo['Servicosescopo']['ds_servico_escopo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/servicosescopos/view/' . $servicosescopo['Servicosescopo']['id'])?>
+		<?php echo $html->link('Editar','/servicosescopos/edit/' . $servicosescopo['Servicosescopo']['id'])?>
+		<?php echo $html->link('Excluir','/servicosescopos/delete/' . $servicosescopo['Servicosescopo']['id'], null, 'Deseja realmente excluir : id ' . $servicosescopo['Servicosescopo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Serviço de escopo', '/servicosescopos/add'); ?></li>
+</ul>
+</div>

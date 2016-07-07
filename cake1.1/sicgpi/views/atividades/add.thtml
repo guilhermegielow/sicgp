@@ -1,0 +1,51 @@
+<h2>Nova Atividade</h2>
+<form action="<?php echo $html->url('/atividades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Atividade/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Atividade/projeto_id', $projetos, $html->tagValue('Atividade/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Atividade/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Atividade/cd_atividade_pai', 'Atividade Pai');?>
+ 	<?php echo $html->input('Atividade/cd_atividade_pai', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atividade/cd_atividade_pai', 'Por favor informe a Atividade Pai.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Atividade/ds_atividade', 'Descrição');?>
+ 	<?php echo $html->input('Atividade/ds_atividade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atividade/ds_atividade', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Atividade/vl_custo', 'Valor de custo');?>
+ 	<?php echo $html->input('Atividade/vl_custo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atividade/vl_custo', 'Por favor informe o Valor de custo.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Atividade/dias_prazo', 'Dias de prazo');?>
+ 	<?php echo $html->input('Atividade/dias_prazo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atividade/dias_prazo', 'Por favor informe os Dias de prazo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Atividade/vl_realizado', 'Valor realizado');?>
+ 	<?php echo $html->input('Atividade/vl_realizado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atividade/vl_realizado', 'Por favor informe o Valor realizado.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Cronograma/Cronograma', 'Cronogramas relacionados');?>
+ 	<?php echo $html->selectTag('Cronograma/Cronograma', $cronogramas, $selectedCronogramas, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Cronograma/Cronograma', 'Por favor selecione os Cronogramas relacionados.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Orcamento/Orcamento', 'Orçamentos relacionados');?>
+ 	<?php echo $html->selectTag('Orcamento/Orcamento', $orcamentos, $selectedOrcamentos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Orcamento/Orcamento', 'Por favor selecione os Orçamentos relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Atividades', '/atividades/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

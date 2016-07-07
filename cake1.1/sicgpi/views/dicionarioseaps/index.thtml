@@ -1,0 +1,32 @@
+<div class="dicionarioseaps">
+<h2>Dicionários da EAP</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Atividade</th>
+	<th>Projeto</th>
+	<th>Tipo de especificação</th>
+	<th>Descrição EAP</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($dicionarioseaps as $dicionarioseap): ?>
+<tr>
+	<td><?php echo $dicionarioseap['Dicionarioseap']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($dicionarioseap['Atividade']['ds_atividade'], '/atividades/view/' .$dicionarioseap['Atividade']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($dicionarioseap['Projeto']['ds_titulo'], '/projetos/view/' .$dicionarioseap['Projeto']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($dicionarioseap['Tiposespecificacao']['ds_tipo_especificacao'], '/tiposespecificacoes/view/' .$dicionarioseap['Tiposespecificacao']['id'])?></td>
+	<td><?php echo $dicionarioseap['Dicionarioseap']['ds_descricao_eap']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/dicionarioseaps/view/' . $dicionarioseap['Dicionarioseap']['id'])?>
+		<?php echo $html->link('Editar','/dicionarioseaps/edit/' . $dicionarioseap['Dicionarioseap']['id'])?>
+		<?php echo $html->link('Excluir','/dicionarioseaps/delete/' . $dicionarioseap['Dicionarioseap']['id'], null, 'Deseja realmente excluir : id ' . $dicionarioseap['Dicionarioseap']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Dicionário da EAP', '/dicionarioseaps/add'); ?></li>
+</ul>
+</div>

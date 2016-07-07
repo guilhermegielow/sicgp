@@ -1,0 +1,21 @@
+<h2>Nova Alteração</h2>
+<form action="<?php echo $html->url('/alteracoes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Alteracao/planosprojeto_id', 'Plano de projeto');?>
+ 	<?php echo $html->selectTag('Alteracao/planosprojeto_id', $planosprojetos, $html->tagValue('Alteracao/planosprojeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Alteracao/planosprojeto_id', 'Por favor selecione o Plano de projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Alteracao/ds_alteracao', 'Descrição');?>
+ 	<?php echo $html->input('Alteracao/ds_alteracao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Alteracao/ds_alteracao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Alterações', '/alteracoes/index')?></li>
+<li><?php echo $html->link('Listar Planos de projetos', '/planosprojetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Plano de projeto', '/planosprojetos/add/');?></li>
+</ul>

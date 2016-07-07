@@ -1,0 +1,311 @@
+<div class="declaracoesescopo">
+<h2>Declaração de Escopo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $declaracoesescopo['Declaracoesescopo']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($declaracoesescopo['Projeto']['ds_titulo'], '/projetos/view/' .$declaracoesescopo['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $declaracoesescopo['Declaracoesescopo']['ds_declaracao_escopo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Declaração de Escopo',   '/declaracoesescopos/edit/' . $declaracoesescopo['Declaracoesescopo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Declaração de Escopo', '/declaracoesescopos/delete/' . $declaracoesescopo['Declaracoesescopo']['id'], null, 'Deseja realmente excluir : id ' . $declaracoesescopo['Declaracoesescopo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de Escopos',   '/declaracoesescopos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Declaração de Escopo',	'/declaracoesescopos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Critérios de aceitações relacionados</h3>
+<?php if(!empty($declaracoesescopo['Criteriosaceitacao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Criteriosaceitacao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Criteriosaceitacao'] as $criteriosaceitacao):?>
+<tr>
+	<?php foreach($criteriosaceitacao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/criteriosaceitacoes/view/' . $criteriosaceitacao['id']);?>
+		<?php echo $html->link('Editar', '/criteriosaceitacoes/edit/' . $criteriosaceitacao['id']);?>
+		<?php echo $html->link('Excluir', '/criteriosaceitacoes/delete/' . $criteriosaceitacao['id'], null, 'Deseja realmente excluir : id ' . $criteriosaceitacao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Critério de aceitação', '/criteriosaceitacoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Escopos não incluidos relacionados</h3>
+<?php if(!empty($declaracoesescopo['Escoposnaoincluido'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Escoposnaoincluido']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Escoposnaoincluido'] as $escoposnaoincluido):?>
+<tr>
+	<?php foreach($escoposnaoincluido as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/escoposnaoincluidos/view/' . $escoposnaoincluido['id']);?>
+		<?php echo $html->link('Editar', '/escoposnaoincluidos/edit/' . $escoposnaoincluido['id']);?>
+		<?php echo $html->link('Excluir', '/escoposnaoincluidos/delete/' . $escoposnaoincluido['id'], null, 'Deseja realmente excluir : id ' . $escoposnaoincluido['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Escopo não incluido', '/escoposnaoincluidos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Estratégias de conduções relacionadas</h3>
+<?php if(!empty($declaracoesescopo['Estrategiasconducao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Estrategiasconducao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Estrategiasconducao'] as $estrategiasconducao):?>
+<tr>
+	<?php foreach($estrategiasconducao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/estrategiasconducoes/view/' . $estrategiasconducao['id']);?>
+		<?php echo $html->link('Editar', '/estrategiasconducoes/edit/' . $estrategiasconducao['id']);?>
+		<?php echo $html->link('Excluir', '/estrategiasconducoes/delete/' . $estrategiasconducao['id'], null, 'Deseja realmente excluir : id ' . $estrategiasconducao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Estratégia de condução', '/estrategiasconducoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Objetivos de escopos relacionados</h3>
+<?php if(!empty($declaracoesescopo['Objetivosescopo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Objetivosescopo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Objetivosescopo'] as $objetivosescopo):?>
+<tr>
+	<?php foreach($objetivosescopo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/objetivosescopos/view/' . $objetivosescopo['id']);?>
+		<?php echo $html->link('Editar', '/objetivosescopos/edit/' . $objetivosescopo['id']);?>
+		<?php echo $html->link('Excluir', '/objetivosescopos/delete/' . $objetivosescopo['id'], null, 'Deseja realmente excluir : id ' . $objetivosescopo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Objetivo de escopo', '/objetivosescopos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Premissas relacionadas</h3>
+<?php if(!empty($declaracoesescopo['Premissa'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Premissa']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Premissa'] as $premissa):?>
+<tr>
+	<?php foreach($premissa as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/premissas/view/' . $premissa['id']);?>
+		<?php echo $html->link('Editar', '/premissas/edit/' . $premissa['id']);?>
+		<?php echo $html->link('Excluir', '/premissas/delete/' . $premissa['id'], null, 'Deseja realmente excluir : id ' . $premissa['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Premissa', '/premissas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Produtos de escopos relacionados</h3>
+<?php if(!empty($declaracoesescopo['Produtosescopo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Produtosescopo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Produtosescopo'] as $produtosescopo):?>
+<tr>
+	<?php foreach($produtosescopo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/produtosescopos/view/' . $produtosescopo['id']);?>
+		<?php echo $html->link('Editar', '/produtosescopos/edit/' . $produtosescopo['id']);?>
+		<?php echo $html->link('Excluir', '/produtosescopos/delete/' . $produtosescopo['id'], null, 'Deseja realmente excluir : id ' . $produtosescopo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Produto de escopo', '/produtosescopos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Restrições de escopos relacionadas</h3>
+<?php if(!empty($declaracoesescopo['Restricoesescopo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Restricoesescopo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Restricoesescopo'] as $restricoesescopo):?>
+<tr>
+	<?php foreach($restricoesescopo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/restricoesescopos/view/' . $restricoesescopo['id']);?>
+		<?php echo $html->link('Editar', '/restricoesescopos/edit/' . $restricoesescopo['id']);?>
+		<?php echo $html->link('Excluir', '/restricoesescopos/delete/' . $restricoesescopo['id'], null, 'Deseja realmente excluir : id ' . $restricoesescopo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Restrição de escopo', '/restricoesescopos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Serviços de escopos relacionados</h3>
+<?php if(!empty($declaracoesescopo['Servicosescopo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Servicosescopo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Servicosescopo'] as $servicosescopo):?>
+<tr>
+	<?php foreach($servicosescopo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/servicosescopos/view/' . $servicosescopo['id']);?>
+		<?php echo $html->link('Editar', '/servicosescopos/edit/' . $servicosescopo['id']);?>
+		<?php echo $html->link('Excluir', '/servicosescopos/delete/' . $servicosescopo['id'], null, 'Deseja realmente excluir : id ' . $servicosescopo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Serviço de escopo', '/servicosescopos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Departamentos relacionados</h3>
+<?php if(!empty($declaracoesescopo['Departamento'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Departamento']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Departamento'] as $departamento):?>
+<tr>
+	<?php foreach($departamento as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/departamentos/view/' . $departamento['id']);?>
+		<?php echo $html->link('Editar', '/departamentos/edit/' . $departamento['id']);?>
+		<?php echo $html->link('Excluir', '/departamentos/delete/' . $departamento['id'], null, 'Deseja realmente excluir : id ' . $departamento['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Departamento', '/departamentos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($declaracoesescopo['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($declaracoesescopo['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($declaracoesescopo['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>

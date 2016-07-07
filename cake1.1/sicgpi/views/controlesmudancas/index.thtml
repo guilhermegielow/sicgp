@@ -1,0 +1,42 @@
+<div class="controlesmudancas">
+<h2>Controles de mudanças</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Tipo de mudança</th>
+	<th>Prioridade</th>
+	<th>Descrição</th>
+	<th>Justificativa</th>
+	<th>Data de prazo</th>
+	<th>Impacto</th>
+	<th>Data de comunicação</th>
+	<th>Data de envio de recursos</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($controlesmudancas as $controlesmudanca): ?>
+<tr>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Projeto']['ds_titulo'], '/projetos/view/' .$controlesmudanca['Projeto']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Tiposmudanca']['ds_tipo_mudanca'], '/tiposmudancas/view/' .$controlesmudanca['Tiposmudanca']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Prioridade']['ds_prioridade'], '/prioridades/view/' .$controlesmudanca['Prioridade']['id'])?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_controle_mudanca']; ?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_justificativa']; ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_prazo']); ?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_impacto']; ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_comunicacao']); ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_envio_recursos']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/controlesmudancas/view/' . $controlesmudanca['Controlesmudanca']['id'])?>
+		<?php echo $html->link('Editar','/controlesmudancas/edit/' . $controlesmudanca['Controlesmudanca']['id'])?>
+		<?php echo $html->link('Excluir','/controlesmudancas/delete/' . $controlesmudanca['Controlesmudanca']['id'], null, 'Deseja realmente excluir : id ' . $controlesmudanca['Controlesmudanca']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Controle de mudança', '/controlesmudancas/add'); ?></li>
+</ul>
+</div>

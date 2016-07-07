@@ -1,0 +1,34 @@
+<div class="fornecedores">
+<h2>Fornecedores</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Nome do fornecedor</th>
+	<th>E-mail</th>
+	<th>Cnpj</th>
+	<th>Telefone</th>
+	<th>Nome do contato</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($fornecedores as $fornecedor): ?>
+<tr>
+	<td><?php echo $fornecedor['Fornecedor']['id']; ?></td>
+	<td><?php echo $fornecedor['Fornecedor']['nm_fornecedor']; ?></td>
+	<td><?php echo $fornecedor['Fornecedor']['ds_email']; ?></td>
+	<td><?php echo $fornecedor['Fornecedor']['nr_cnpj']; ?></td>
+	<td><?php echo $fornecedor['Fornecedor']['nr_telefone']; ?></td>
+	<td><?php echo $fornecedor['Fornecedor']['nm_contato']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/fornecedores/view/' . $fornecedor['Fornecedor']['id'])?>
+		<?php echo $html->link('Editar','/fornecedores/edit/' . $fornecedor['Fornecedor']['id'])?>
+		<?php echo $html->link('Excluir','/fornecedores/delete/' . $fornecedor['Fornecedor']['id'], null, 'Deseja realmente excluir : id ' . $fornecedor['Fornecedor']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Fornecedor', '/fornecedores/add'); ?></li>
+</ul>
+</div>

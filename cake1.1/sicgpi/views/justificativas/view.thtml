@@ -1,0 +1,21 @@
+<div class="justificativa">
+<h2>Justificativa</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $justificativa['Justificativa']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($justificativa['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$justificativa['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $justificativa['Justificativa']['ds_justificativa']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Justificativa',   '/justificativas/edit/' . $justificativa['Justificativa']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Justificativa', '/justificativas/delete/' . $justificativa['Justificativa']['id'], null, 'Deseja realmente excluir : id ' . $justificativa['Justificativa']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Justificativas',   '/justificativas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Justificativa',	'/justificativas/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>

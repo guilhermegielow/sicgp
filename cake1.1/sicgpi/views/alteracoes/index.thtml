@@ -1,0 +1,28 @@
+<div class="alteracoes">
+<h2>Alterações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Plano de projeto</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($alteracoes as $alteracao): ?>
+<tr>
+	<td><?php echo $alteracao['Alteracao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($alteracao['Planosprojeto']['ds_plano_projeto'], '/planosprojetos/view/' .$alteracao['Planosprojeto']['id'])?></td>
+	<td><?php echo $alteracao['Alteracao']['ds_alteracao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/alteracoes/view/' . $alteracao['Alteracao']['id'])?>
+		<?php echo $html->link('Editar','/alteracoes/edit/' . $alteracao['Alteracao']['id'])?>
+		<?php echo $html->link('Excluir','/alteracoes/delete/' . $alteracao['Alteracao']['id'], null, 'Deseja realmente excluir : id ' . $alteracao['Alteracao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Alteração', '/alteracoes/add'); ?></li>
+</ul>
+</div>

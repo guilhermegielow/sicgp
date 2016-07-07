@@ -1,0 +1,46 @@
+<div class="tiposespecificacao">
+<h2>Tipo de especificação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposespecificacao['Tiposespecificacao']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposespecificacao['Tiposespecificacao']['ds_tipo_especificacao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de especificação',   '/tiposespecificacoes/edit/' . $tiposespecificacao['Tiposespecificacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de especificação', '/tiposespecificacoes/delete/' . $tiposespecificacao['Tiposespecificacao']['id'], null, 'Deseja realmente excluir : id ' . $tiposespecificacao['Tiposespecificacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de especificações',   '/tiposespecificacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de especificação',	'/tiposespecificacoes/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Dicionários da eaps relacionados</h3>
+<?php if(!empty($tiposespecificacao['Dicionarioseap'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposespecificacao['Dicionarioseap']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposespecificacao['Dicionarioseap'] as $dicionarioseap):?>
+<tr>
+	<?php foreach($dicionarioseap as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/dicionarioseaps/view/' . $dicionarioseap['id']);?>
+		<?php echo $html->link('Editar', '/dicionarioseaps/edit/' . $dicionarioseap['id']);?>
+		<?php echo $html->link('Excluir', '/dicionarioseaps/delete/' . $dicionarioseap['id'], null, 'Deseja realmente excluir : id ' . $dicionarioseap['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Dicionário da eap', '/dicionarioseaps/add/');?> </li>
+</ul>
+</div>

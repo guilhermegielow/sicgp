@@ -1,0 +1,28 @@
+<h2>Editar Plano de comunicação</h2>
+<form action="<?php echo $html->url('/planoscomunicacoes/edit/'.$html->tagValue('Planoscomunicacao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Planoscomunicacao/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Planoscomunicacao/projeto_id', $projetos, $html->tagValue('Planoscomunicacao/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Planoscomunicacao/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planoscomunicacao/ds_plano_comunicacao', 'Descrição');?>
+ 	<?php echo $html->input('Planoscomunicacao/ds_plano_comunicacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planoscomunicacao/ds_plano_comunicacao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planoscomunicacao/ds_politicas', 'Políticas');?>
+ 	<?php echo $html->input('Planoscomunicacao/ds_politicas', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planoscomunicacao/ds_politicas', 'Por favor informe  as Políticas.');?>
+</div>
+<?php echo $html->hidden('Planoscomunicacao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/planoscomunicacoes/delete/' . $html->tagValue('Planoscomunicacao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Planoscomunicacao/id'));?>
+<li><?php echo $html->link('Listar Planos de comunicações', '/planoscomunicacoes/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

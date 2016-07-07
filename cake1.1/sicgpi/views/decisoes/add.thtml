@@ -1,0 +1,21 @@
+<h2>Nova Decisão</h2>
+<form action="<?php echo $html->url('/decisoes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Decisao/atasreuniao_id', 'Ata de reunião');?>
+ 	<?php echo $html->selectTag('Decisao/atasreuniao_id', $atasreunioes, $html->tagValue('Decisao/atasreuniao_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Decisao/atasreuniao_id', 'Por favor selecione a Ata de reunião.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Decisao/ds_decisao', 'Descrição');?>
+ 	<?php echo $html->input('Decisao/ds_decisao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Decisao/ds_decisao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Decisões', '/decisoes/index')?></li>
+<li><?php echo $html->link('Listar Atas de reuniões', '/atasreunioes/index/');?></li>
+<li><?php echo $html->link('Adicionar Ata de reunião', '/atasreunioes/add/');?></li>
+</ul>

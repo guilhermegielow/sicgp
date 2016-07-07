@@ -1,0 +1,23 @@
+<div class="planoscomunicacao">
+<h2>Plano de comunicação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $planoscomunicacao['Planoscomunicacao']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($planoscomunicacao['Projeto']['ds_titulo'], '/projetos/view/' .$planoscomunicacao['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $planoscomunicacao['Planoscomunicacao']['ds_plano_comunicacao']?></dd>
+	<dt>Políticas</dt>
+	<dd>&nbsp;<?php echo $planoscomunicacao['Planoscomunicacao']['ds_politicas']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Plano de comunicação',   '/planoscomunicacoes/edit/' . $planoscomunicacao['Planoscomunicacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Plano de comunicação', '/planoscomunicacoes/delete/' . $planoscomunicacao['Planoscomunicacao']['id'], null, 'Deseja realmente excluir : id ' . $planoscomunicacao['Planoscomunicacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Planos de comunicaçães',   '/planoscomunicacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Plano de comunicação',	'/planoscomunicacoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>

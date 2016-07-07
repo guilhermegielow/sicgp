@@ -1,0 +1,57 @@
+<div class="dicionarioseap">
+<h2>Dicionário da EAP</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $dicionarioseap['Dicionarioseap']['id']?></dd>
+	<dt>Atividade</dt>
+	<dd>&nbsp;<?php echo $html->link($dicionarioseap['Atividade']['ds_atividade'], '/atividades/view/' .$dicionarioseap['Atividade']['id'])?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($dicionarioseap['Projeto']['ds_titulo'], '/projetos/view/' .$dicionarioseap['Projeto']['id'])?></dd>
+	<dt>Tipo de especificação</dt>
+	<dd>&nbsp;<?php echo $html->link($dicionarioseap['Tiposespecificacao']['ds_tipo_especificacao'], '/tiposespecificacoes/view/' .$dicionarioseap['Tiposespecificacao']['id'])?></dd>
+	<dt>Descrição da EAP</dt>
+	<dd>&nbsp;<?php echo $dicionarioseap['Dicionarioseap']['ds_descricao_eap']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Dicionário da EAP',   '/dicionarioseaps/edit/' . $dicionarioseap['Dicionarioseap']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Dicionário da EAP', '/dicionarioseaps/delete/' . $dicionarioseap['Dicionarioseap']['id'], null, 'Deseja realmente excluir : id ' . $dicionarioseap['Dicionarioseap']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Dicionários da EAP',   '/dicionarioseaps/index') ?> </li>
+	<li><?php echo $html->link('Inserir Dicionário da EAP',	'/dicionarioseaps/add') ?> </li>
+	<li><?php echo $html->link('Listar Atividades', '/atividades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/')?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+	<li><?php echo $html->link('Listar Tipos de especificações', '/tiposespecificacoes/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de especificação', '/tiposespecificacoes/add/')?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($dicionarioseap['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($dicionarioseap['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($dicionarioseap['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>

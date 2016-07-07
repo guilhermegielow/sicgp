@@ -1,0 +1,46 @@
+<div class="controlesmudanca">
+<h2>Aprovar Controle de Mudança</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Projeto']['ds_titulo'], '/projetos/view/' .$controlesmudanca['Projeto']['id'])?></dd>
+	<dt>Tipo de mudança</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Tiposmudanca']['ds_tipo_mudanca'], '/tiposmudancas/view/' .$controlesmudanca['Tiposmudanca']['id'])?></dd>
+	<dt>Prioridade</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Prioridade']['ds_prioridade'], '/prioridades/view/' .$controlesmudanca['Prioridade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_controle_mudanca']?></dd>
+	<dt>Justificativa</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_justificativa']?></dd>
+	<dt>Data de prazo</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_prazo'])?></dd>
+	<dt>Impacto</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_impacto']?></dd>
+	<dt>Data de comunicação</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_comunicacao'])?></dd>
+	<dt>Data de envio de recursos</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_envio_recursos'])?></dd>
+</dl>
+</div>
+<?php if (!$controlesmudanca['Controlesmudanca']['user_aprovacao'] && $controlesmudanca['Controlesmudanca']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/controlesmudancas/aprovarmudanca/'.$controlesmudanca['Controlesmudanca']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Aprovar Controle de Mudança');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if (!$controlesmudanca['Controlesmudanca']['user_aprovacao'] && $controlesmudanca['Controlesmudanca']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/controlesmudancas/reprovarmudanca/'.$controlesmudanca['Controlesmudanca']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Reprovar Controle de Mudança');
+        echo '</div>';
+        echo '</form>';
+}
+?>

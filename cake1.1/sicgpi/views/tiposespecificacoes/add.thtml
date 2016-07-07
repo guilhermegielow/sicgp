@@ -1,0 +1,14 @@
+<h2>Novo Tipo de especificação</h2>
+<form action="<?php echo $html->url('/tiposespecificacoes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposespecificacao/ds_tipo_especificacao', 'Descrição');?>
+ 	<?php echo $html->input('Tiposespecificacao/ds_tipo_especificacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposespecificacao/ds_tipo_especificacao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Tipos de especificações', '/tiposespecificacoes/index')?></li>
+</ul>

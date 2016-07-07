@@ -1,0 +1,16 @@
+<h2>Atualizar Elemento da EAP</h2>
+<form action="<?php echo $html->url('/elementoseaps/edit/'.$html->tagValue('Elementoseap/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/atividade_id', 'Atividade');?>
+ 	<?php echo $html->selectTag('Elementoseap/atividade_id', $atividades, $html->tagValue('Elementoseap/atividade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Elementoseap/atividade_id', 'Por favor selecione a Atividade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/vl_perc_concluido', 'Percentual Concluido');?>
+ 	<?php echo $html->input('Elementoseap/vl_perc_concluido', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/vl_perc_concluido', 'Por favor informe o Percentual Concluido.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Atualizar');?>
+</div>
+</form>

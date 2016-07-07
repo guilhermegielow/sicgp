@@ -1,0 +1,26 @@
+<div class="cronogramas">
+<h2>Cronogramas</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($cronogramas as $cronograma): ?>
+<tr>
+	<td><?php echo $cronograma['Cronograma']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($cronograma['Projeto']['ds_titulo'], '/projetos/view/' .$cronograma['Projeto']['id'])?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/cronogramas/view/' . $cronograma['Cronograma']['id'])?>
+		<?php echo $html->link('Editar','/cronogramas/edit/' . $cronograma['Cronograma']['id'])?>
+		<?php echo $html->link('Excluir','/cronogramas/delete/' . $cronograma['Cronograma']['id'], null, 'Deseja realmente excluir : id ' . $cronograma['Cronograma']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Cronograma', '/cronogramas/add'); ?></li>
+</ul>
+</div>

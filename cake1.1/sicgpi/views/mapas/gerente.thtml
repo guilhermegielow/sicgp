@@ -1,0 +1,162 @@
+<h2>Mapa para Gerente de Projetos</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>Integração</th>
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/projetos">
+      1 - Projeto 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/planosprojetos">
+      3 - Plano de projeto 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/estudosviabilidades">
+      2 - Estudo de viabilidade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/controlesmudancas">
+     16 - Controle de mudança 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/licoesaprendidas">
+     15 - Lição aprendida 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/relatoriosdesempenhos">
+    14 - Relatório de desempenho 
+    </a>
+  </td>  
+</tr>
+<tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/termosaceitesprojetos">
+    17 - Termo de aceite do projeto 
+    </a>
+  </td>  
+</tr>
+<tr>
+<th>Escopo</th>
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/atividades">
+      6 - Atividade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/recursos">
+      5 - Recurso 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/declaracoesescopos">
+      4 - Declaração de escopo 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/dicionarioseaps">
+      6.1 - Dicionário da EAP 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/elementoseaps">
+      6.2 - Elemento da EAP 
+    </a>
+  </td>  
+</tr>
+<tr>
+<th>Custo</th>
+</tr>
+<tr>
+  <td>
+    <a href="http://localhost/cake1.1/sicgpi/planoscustos">
+      7 - Plano de gerenciamento de custo
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/orcamentos">
+     9 - Orçamento 
+    </a>
+  </td>  
+</tr>
+<tr>
+<th>Aquisição</th>
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/planosaquisicoes">
+      8 - Plano de gerenciamento de aquisição 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/processosaquisicoes">
+      8.1 - Processo de aquisição 
+    </a>
+  </td>  
+</tr>
+<tr>
+<th>Comunicação</th>
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/planoscomunicacoes">
+     11 - Plano de gerenciamento de comunicação 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/mapascomunicacoes">
+      12 - Mapa de comunicação 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/atasreunioes">
+      13 - Ata de reunião 
+    </a>
+  </td>  
+</tr>
+<tr>
+<th>Tempo</th>
+</tr>
+<tr>
+  <td>
+    <a href="http://localhost/cake1.1/sicgpi/cronogramas">
+      10 - Cronograma 
+    </a>
+  </td>  
+</tr>
+</table>

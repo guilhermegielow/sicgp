@@ -1,0 +1,23 @@
+<h2>Editar Produto</h2>
+<form action="<?php echo $html->url('/produtos/edit/'.$html->tagValue('Produto/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Produto/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Produto/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Produto/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Produto/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Produto/ds_produto', 'Descrição');?>
+ 	<?php echo $html->input('Produto/ds_produto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Produto/ds_produto', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Produto/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/produtos/delete/' . $html->tagValue('Produto/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Produto/id'));?>
+<li><?php echo $html->link('Listar Produtos', '/produtos/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

@@ -1,0 +1,23 @@
+<div class="marco">
+<h2>Marco</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $marco['Marco']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($marco['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$marco['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $marco['Marco']['ds_marco']?></dd>
+	<dt>Data de entrega</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($marco['Marco']['dt_entrega'])?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Marco',   '/marcos/edit/' . $marco['Marco']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Marco', '/marcos/delete/' . $marco['Marco']['id'], null, 'Deseja realmente excluir : id ' . $marco['Marco']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Marcos',   '/marcos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Marco',	'/marcos/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>

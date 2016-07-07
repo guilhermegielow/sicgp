@@ -1,0 +1,23 @@
+<h2>Editar Restrição</h2>
+<form action="<?php echo $html->url('/restricoes/edit/'.$html->tagValue('Restricao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Restricao/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Restricao/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Restricao/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Restricao/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Restricao/ds_restricao', 'Descrição');?>
+ 	<?php echo $html->input('Restricao/ds_restricao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Restricao/ds_restricao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Restricao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/restricoes/delete/' . $html->tagValue('Restricao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Restricao/id'));?>
+<li><?php echo $html->link('Listar Restrições', '/restricoes/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

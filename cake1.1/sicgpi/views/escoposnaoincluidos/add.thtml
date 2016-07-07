@@ -1,0 +1,21 @@
+<h2>Novo Escopo não incluido</h2>
+<form action="<?php echo $html->url('/escoposnaoincluidos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Escoposnaoincluido/declaracoesescopo_id', 'Declaração de escopo');?>
+ 	<?php echo $html->selectTag('Escoposnaoincluido/declaracoesescopo_id', $declaracoesescopos, $html->tagValue('Escoposnaoincluido/declaracoesescopo_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Escoposnaoincluido/declaracoesescopo_id', 'Por favor selecione a Declaração de escopo.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Escoposnaoincluido/ds_escopo_nao_incluido', 'Descrição');?>
+ 	<?php echo $html->input('Escoposnaoincluido/ds_escopo_nao_incluido', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Escoposnaoincluido/ds_escopo_nao_incluido', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Escopos não incluidos', '/escoposnaoincluidos/index')?></li>
+<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/');?></li>
+<li><?php echo $html->link('Adicionar Declaração de escopo', '/declaracoesescopos/add/');?></li>
+</ul>

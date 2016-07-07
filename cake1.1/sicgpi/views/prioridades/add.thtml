@@ -1,0 +1,14 @@
+<h2>Nova Prioridade</h2>
+<form action="<?php echo $html->url('/prioridades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Prioridade/ds_prioridade', 'Descrição');?>
+ 	<?php echo $html->input('Prioridade/ds_prioridade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Prioridade/ds_prioridade', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Prioridades', '/prioridades/index')?></li>
+</ul>

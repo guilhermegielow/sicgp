@@ -1,0 +1,61 @@
+<h2>Novo Elementos da EAP</h2>
+<form action="<?php echo $html->url('/elementoseaps/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/atividade_id', 'Atividade');?>
+ 	<?php echo $html->selectTag('Elementoseap/atividade_id', $atividades, $html->tagValue('Elementoseap/atividade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Elementoseap/atividade_id', 'Por favor selecione a Atividade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/vl_planejado', 'Valor planejado');?>
+ 	<?php echo $html->input('Elementoseap/vl_planejado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/vl_planejado', 'Por favor informe o Valor planejado.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementoseap/vl_agregado', 'Valor agregado');?>
+ 	<?php echo $html->input('Elementoseap/vl_agregado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/vl_agregado', 'Por favor informe o Valor agregado.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementoseap/vl_real', 'Valor real');?>
+ 	<?php echo $html->input('Elementoseap/vl_real', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/vl_real', 'Por favor informe o Valor real.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/vl_perc_concluido', 'Percentual concluido');?>
+ 	<?php echo $html->input('Elementoseap/vl_perc_concluido', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/vl_perc_concluido', 'Por favor informe o Percentual concluido.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/dt_planejada', 'Data planejada');?>
+ 	<?php echo $html->dateTimeOptionTag('Elementoseap/dt_planejada', 'DMY' , 'NONE', $html->tagValue('Elementoseap/dt_planejada'), array());?>
+	<?php echo $html->tagErrorMsg('Elementoseap/dt_planejada', 'Por favor selecione a Data planejada.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementoseap/dt_efetiva', 'Data efetiva');?>
+ 	<?php echo $html->dateTimeOptionTag('Elementoseap/dt_efetiva', 'DMY' , 'NONE', $html->tagValue('Elementoseap/dt_efetiva'), array());?>
+	<?php echo $html->tagErrorMsg('Elementoseap/dt_efetiva', 'Por favor selecione a Data efetiva.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementoseap/dias_atraso', 'Dias de atraso');?>
+ 	<?php echo $html->input('Elementoseap/dias_atraso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/dias_atraso', 'Por favor informe os Dias de atraso.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/user_solicitante', 'Solicitante');?>
+ 	<?php echo $html->input('Elementoseap/user_solicitante', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/user_solicitante', 'Por favor informe o Solicitante.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementoseap/user_responsavel', 'Responsável');?>
+ 	<?php echo $html->input('Elementoseap/user_responsavel', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementoseap/user_responsavel', 'Por favor informe o Responsável.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Elementos da EAP', '/elementoseaps/index')?></li>
+<li><?php echo $html->link('Listar Atividades', '/atividades/index/');?></li>
+<li><?php echo $html->link('Adicionar Atividade', '/atividades/add/');?></li>
+</ul>

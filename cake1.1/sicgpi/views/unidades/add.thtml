@@ -1,0 +1,14 @@
+<h2>Nova Unidade</h2>
+<form action="<?php echo $html->url('/unidades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Unidade/ds_unidade', 'Descrição');?>
+ 	<?php echo $html->input('Unidade/ds_unidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Unidade/ds_unidade', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Unidades', '/unidades/index')?></li>
+</ul>

@@ -1,0 +1,16 @@
+<h2>Editar Tipo de especificação</h2>
+<form action="<?php echo $html->url('/tiposespecificacoes/edit/'.$html->tagValue('Tiposespecificacao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposespecificacao/ds_tipo_especificacao', 'Descrição');?>
+ 	<?php echo $html->input('Tiposespecificacao/ds_tipo_especificacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposespecificacao/ds_tipo_especificacao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposespecificacao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposespecificacoes/delete/' . $html->tagValue('Tiposespecificacao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposespecificacao/id'));?>
+<li><?php echo $html->link('Listar Tipos de especificações', '/tiposespecificacoes/index')?></li>
+</ul>

@@ -1,0 +1,112 @@
+<div class="mapa_patrocinador">
+<h2>Estudos de viabilidade pendentes de aprovação</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Tipo de serviço</th>
+	<th>Projeto</th>
+	<th>Inicio da validade</th>
+	<th>Fim da validade</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($estudosviabilidades as $estudosviabilidade): ?>
+<tr>
+	<td><?php echo $estudosviabilidade['Estudosviabilidade']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($estudosviabilidade['Tiposservico']['ds_tipo_servico'], '/tiposservicos/view/' .$estudosviabilidade['Tiposservico']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($estudosviabilidade['Projeto']['ds_titulo'], '/projetos/view/' .$estudosviabilidade['Projeto']['id'])?></td>
+	<td><?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_inicio_validade']); ?></td>
+	<td><?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_fim_validade']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Aprovar','/estudosviabilidades/aprovacao/' . $estudosviabilidade['Estudosviabilidade']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<h2>Processos de aquisição pendentes de aprovação</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Plano de aquisição</th>
+	<th>Fornecedor</th>
+	<th>Valor do orçamento</th>
+	<th>Dias de prazo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($processosaquisicoes as $processosaquisicao): ?>
+<tr>
+	<td><?php echo $processosaquisicao['Processosaquisicao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($processosaquisicao['Planosaquisicao']['ds_plano_aquisicao'], '/planosaquisicoes/view/' .$processosaquisicao['Planosaquisicao']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($processosaquisicao['Fornecedor']['nm_fornecedor'], '/fornecedores/view/' .$processosaquisicao['Fornecedor']['id'])?></td>
+	<td><?php echo $processosaquisicao['Processosaquisicao']['vl_orcamento']; ?></td>
+	<td><?php echo $processosaquisicao['Processosaquisicao']['dias_prazo']; ?></td>
+	<td><?php echo $processosaquisicao['Processosaquisicao']['ds_processo_aquisicao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Aprovar','/processosaquisicoes/aprovacao/' . $processosaquisicao['Processosaquisicao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<h2>Controles de mudanças pendentes de aprovação</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Tipo de mudança</th>
+	<th>Prioridade</th>
+	<th>Descrição</th>
+	<th>Justificativa</th>
+	<th>Data de prazo</th>
+	<th>Impacto</th>
+	<th>Data de comunicação</th>
+	<th>Data de envio de recursos</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($controlesmudancas as $controlesmudanca): ?>
+<tr>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Projeto']['ds_titulo'], '/projetos/view/' .$controlesmudanca['Projeto']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Tiposmudanca']['ds_tipo_mudanca'], '/tiposmudancas/view/' .$controlesmudanca['Tiposmudanca']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($controlesmudanca['Prioridade']['ds_prioridade'], '/prioridades/view/' .$controlesmudanca['Prioridade']['id'])?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_controle_mudanca']; ?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_justificativa']; ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_prazo']); ?></td>
+	<td><?php echo $controlesmudanca['Controlesmudanca']['ds_impacto']; ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_comunicacao']); ?></td>
+	<td><?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_envio_recursos']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Aprovar','/controlesmudancas/aprovacao/' . $controlesmudanca['Controlesmudanca']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<h2>Termos de aceite de projetos pendentes de aprovação</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Data de aceite</th>
+	<th>Local</th>
+	<th>Resumo do projeto</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($termosaceitesprojetos as $termosaceitesprojeto): ?>
+<tr>
+	<td><?php echo $termosaceitesprojeto['Termosaceitesprojeto']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($termosaceitesprojeto['Projeto']['ds_titulo'], '/projetos/view/' .$termosaceitesprojeto['Projeto']['id'])?></td>
+	<td><?php echo $html->formata_pt($termosaceitesprojeto['Termosaceitesprojeto']['dt_aceite']); ?></td>
+	<td><?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_local']; ?></td>
+	<td><?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_resumo_projeto']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Aprovar','/termosaceitesprojetos/aprovacao/' . $termosaceitesprojeto['Termosaceitesprojeto']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>

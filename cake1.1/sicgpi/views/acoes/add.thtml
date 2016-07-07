@@ -1,0 +1,31 @@
+<h2>Nova Ação</h2>
+<form action="<?php echo $html->url('/acoes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Acao/atasreuniao_id', 'Ata de reunião');?>
+ 	<?php echo $html->selectTag('Acao/atasreuniao_id', $atasreunioes, $html->tagValue('Acao/atasreuniao_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Acao/atasreuniao_id', 'Por favor selecione a Ata de reunião.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Acao/ds_acao', 'Descrição');?>
+ 	<?php echo $html->input('Acao/ds_acao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Acao/ds_acao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Acao/dias_prazo', 'Dias de prazo');?>
+ 	<?php echo $html->input('Acao/dias_prazo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Acao/dias_prazo', 'Por favor informe os Dias de prazo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Ações', '/acoes/index')?></li>
+<li><?php echo $html->link('Listar Atas de reuniões', '/atasreunioes/index/');?></li>
+<li><?php echo $html->link('Adicionar Ata de reunião', '/atasreunioes/add/');?></li>
+</ul>

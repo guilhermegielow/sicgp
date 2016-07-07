@@ -1,0 +1,50 @@
+<h2>Editar Recurso</h2>
+<form action="<?php echo $html->url('/recursos/edit/'.$html->tagValue('Recurso/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Recurso/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Recurso/projeto_id', $projetos, $html->tagValue('Recurso/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Recurso/projeto_id', 'Por favor selecione Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Recurso/gruposrecurso_id', 'Grupo de recurso');?>
+ 	<?php echo $html->selectTag('Recurso/gruposrecurso_id', $gruposrecursos, $html->tagValue('Recurso/gruposrecurso_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Recurso/gruposrecurso_id', 'Por favor selecione o Grupo de recurso.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Recurso/unidade_id', 'Unidade');?>
+ 	<?php echo $html->selectTag('Recurso/unidade_id', $unidades, $html->tagValue('Recurso/unidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Recurso/unidade_id', 'Por favor selecione Unidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Recurso/ds_recurso', 'Descrição');?>
+ 	<?php echo $html->input('Recurso/ds_recurso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Recurso/ds_recurso', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Recurso/vl_custo', 'Valor de custo');?>
+ 	<?php echo $html->input('Recurso/vl_custo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Recurso/vl_custo', 'Por favor informe Valor de custo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Recurso/quantidade', 'Quantidade');?>
+ 	<?php echo $html->input('Recurso/quantidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Recurso/quantidade', 'Por favor informe Quantidade.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Orcamento/Orcamento', 'Orçamentos relacionados');?>
+ 	<?php echo $html->selectTag('Orcamento/Orcamento', $orcamentos, $selectedOrcamentos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Orcamento/Orcamento', 'Por favor selecione os Orçamentos relacionados.');?>
+</div>
+<?php echo $html->hidden('Recurso/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/recursos/delete/' . $html->tagValue('Recurso/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Recurso/id'));?>
+<li><?php echo $html->link('Listar Recursos', '/recursos/index')?></li>
+<li><?php echo $html->link('Listar Grupos de recursos', '/gruposrecursos/index/');?></li>
+<li><?php echo $html->link('Adicionar Grupo de recurso', '/gruposrecursos/add/');?></li>
+<li><?php echo $html->link('Listar Unidades', '/unidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Unidade', '/unidades/add/');?></li>
+</ul>

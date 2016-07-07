@@ -1,0 +1,14 @@
+<h2>Novo Grupo de recurso</h2>
+<form action="<?php echo $html->url('/gruposrecursos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Gruposrecurso/ds_grupo_recurso', 'Descrição');?>
+ 	<?php echo $html->input('Gruposrecurso/ds_grupo_recurso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Gruposrecurso/ds_grupo_recurso', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Grupos de recursos', '/gruposrecursos/index')?></li>
+</ul>

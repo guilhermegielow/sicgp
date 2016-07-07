@@ -1,0 +1,64 @@
+<div class="termosaceitesprojeto">
+<h2>Termo de aceite de projeto</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($termosaceitesprojeto['Projeto']['ds_titulo'], '/projetos/view/' .$termosaceitesprojeto['Projeto']['id'])?></dd>
+	<dt>Data de aceite</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($termosaceitesprojeto['Termosaceitesprojeto']['dt_aceite'])?></dd>
+	<dt>Local</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_local']?></dd>
+	<dt>Resumo do projeto</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_resumo_projeto']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Termo de aceite de projeto',   '/termosaceitesprojetos/edit/' . $termosaceitesprojeto['Termosaceitesprojeto']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Termo de aceite de projeto', '/termosaceitesprojetos/delete/' . $termosaceitesprojeto['Termosaceitesprojeto']['id'], null, 'Deseja realmente excluir : id ' . $termosaceitesprojeto['Termosaceitesprojeto']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Termos de aceite de projetos',   '/termosaceitesprojetos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Termo de aceite de projeto',	'/termosaceitesprojetos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($termosaceitesprojeto['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($termosaceitesprojeto['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($termosaceitesprojeto['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>
+<?php if ($termosaceitesprojeto['Termosaceitesprojeto']['log_envio_patrocinador'] != 1) { 
+        echo '<form action="'; 
+        echo $html->url('/termosaceitesprojetos/enviarpatrocinador/'.$termosaceitesprojeto['Termosaceitesprojeto']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Enviar para Patrocinador');
+        echo '</div>';
+        echo '</form>';
+}
+?>

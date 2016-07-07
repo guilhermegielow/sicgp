@@ -1,0 +1,21 @@
+<div class="escoposnaoincluido">
+<h2>Escopo não incluido</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $escoposnaoincluido['Escoposnaoincluido']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($escoposnaoincluido['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$escoposnaoincluido['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $escoposnaoincluido['Escoposnaoincluido']['ds_escopo_nao_incluido']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Escopo não incluido',   '/escoposnaoincluidos/edit/' . $escoposnaoincluido['Escoposnaoincluido']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Escopo não incluido', '/escoposnaoincluidos/delete/' . $escoposnaoincluido['Escoposnaoincluido']['id'], null, 'Deseja realmente excluir : id ' . $escoposnaoincluido['Escoposnaoincluido']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Escopos não incluidos',   '/escoposnaoincluidos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Escopo não incluido',	'/escoposnaoincluidos/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="marcos">
+<h2>Marcos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Estudo de viabilidade</th>
+	<th>Descrição</th>
+	<th>Data de entrega</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($marcos as $marco): ?>
+<tr>
+	<td><?php echo $marco['Marco']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($marco['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$marco['Estudosviabilidade']['id'])?></td>
+	<td><?php echo $marco['Marco']['ds_marco']; ?></td>
+	<td><?php echo $html->formata_pt($marco['Marco']['dt_entrega']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/marcos/view/' . $marco['Marco']['id'])?>
+		<?php echo $html->link('Editar','/marcos/edit/' . $marco['Marco']['id'])?>
+		<?php echo $html->link('Excluir','/marcos/delete/' . $marco['Marco']['id'], null, 'Deseja realmente excluir : id ' . $marco['Marco']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Marco', '/marcos/add'); ?></li>
+</ul>
+</div>

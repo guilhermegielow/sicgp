@@ -1,0 +1,137 @@
+<h2>Mapa do Site para Administrador</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposservicos">
+      Tipo de Serviço 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposreunioes">
+      Tipo de Reunião 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposespecificacoes">
+      Tipo de Especificação 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposmudancas">
+      Tipo de Mudança 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposrecursosviabilidades">
+      Tipo de Recurso de Estudo de Viabilidade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>
+    <a href="http://localhost/cake1.1/sicgpi/tiposcontas">
+      Tipo de Conta 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>
+    <a href="http://localhost/cake1.1/sicgpi/contascustos">
+      Conta 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposcomunicacoes">
+      Tipo de Comunicação 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposatividades">
+      Tipo de Atividade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/tiposresponsabilidades">
+      Tipo de Responsabilidade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/departamentos">
+      Departamento 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/usuarios">
+      Usuário 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/estados">
+      Estado do Projeto 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/unidades">
+      Unidade de Medida 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/fornecedores">
+      Fornecedor 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/gruposrecursos">
+      Grupo de Recurso 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/prioridades">
+      Prioridade 
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/acos">
+      Controle de acesso ao Objeto
+    </a>
+  </td>  
+</tr>
+<tr>
+  <td>  
+    <a href="http://localhost/cake1.1/sicgpi/aros">
+      Requisição de acesso ao objeto 
+    </a>
+  </td>  
+</tr>
+<tr>
+</table>

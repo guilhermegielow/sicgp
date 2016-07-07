@@ -1,0 +1,23 @@
+<h2>Editar Força</h2>
+<form action="<?php echo $html->url('/forcas/edit/'.$html->tagValue('Forca/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Forca/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Forca/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Forca/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Forca/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Forca/ds_forca', 'Descrição');?>
+ 	<?php echo $html->input('Forca/ds_forca', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Forca/ds_forca', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Forca/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/forcas/delete/' . $html->tagValue('Forca/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Forca/id'));?>
+<li><?php echo $html->link('Listar Forças', '/forcas/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

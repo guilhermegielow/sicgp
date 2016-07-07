@@ -1,0 +1,21 @@
+<div class="restricoesescopo">
+<h2>Restrição de escopo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $restricoesescopo['Restricoesescopo']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($restricoesescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$restricoesescopo['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $restricoesescopo['Restricoesescopo']['ds_restricao_escopo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Restrição de escopo',   '/restricoesescopos/edit/' . $restricoesescopo['Restricoesescopo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Restrição de escopo', '/restricoesescopos/delete/' . $restricoesescopo['Restricoesescopo']['id'], null, 'Deseja realmente excluir : id ' . $restricoesescopo['Restricoesescopo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Restrições de escopos',   '/restricoesescopos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Restrição de escopo',	'/restricoesescopos/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

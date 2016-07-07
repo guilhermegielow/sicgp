@@ -1,0 +1,23 @@
+<h2>Editar Obstáculo crítico</h2>
+<form action="<?php echo $html->url('/obstaculoscriticos/edit/'.$html->tagValue('Obstaculoscritico/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Obstaculoscritico/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Obstaculoscritico/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Obstaculoscritico/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Obstaculoscritico/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Obstaculoscritico/ds_obstaculo_critico', 'Descrição');?>
+ 	<?php echo $html->input('Obstaculoscritico/ds_obstaculo_critico', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Obstaculoscritico/ds_obstaculo_critico', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Obstaculoscritico/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/obstaculoscriticos/delete/' . $html->tagValue('Obstaculoscritico/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Obstaculoscritico/id'));?>
+<li><?php echo $html->link('Listar Obstáculos críticos', '/obstaculoscriticos/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

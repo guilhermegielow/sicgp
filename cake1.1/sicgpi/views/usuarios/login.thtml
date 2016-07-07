@@ -1,0 +1,20 @@
+<div class="login">
+<h2>Login</h2>
+<dl>
+<form action="<?php echo $html->url('/usuarios/login'); ?>" method="post">
+<div class="required">
+    <label for="username">Usuário:</label>
+    <?php echo $html->input('Usuario/ds_usuario', array('size' => 20)); ?>
+    <?php echo $html->tagErrorMsg('Usuario/ds_usuario', 'Por favor digite o Usuário.') ?>
+</div>
+<div class="required">
+    <label for="password">Senha:</label>
+    <?php echo $html->password('Usuario/ds_senha', array('size' => 20)); ?>
+    <?php echo $html->tagErrorMsg('Usuario/ds_senha', 'Por favor digite a Senha.') ?>
+</div>
+<div class="submit">
+    <?php echo $html->submit('Login'); ?>
+</div>
+</form>
+</dl>
+</div>

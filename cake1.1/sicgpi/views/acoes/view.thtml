@@ -1,0 +1,52 @@
+<div class="acao">
+<h2>Ação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $acao['Acao']['id']?></dd>
+	<dt>Ata de reunião</dt>
+	<dd>&nbsp;<?php echo $html->link($acao['Atasreuniao']['ds_ata_reuniao'], '/atasreunioes/view/' .$acao['Atasreuniao']['id'])?></dd>
+	<dt>Ação</dt>
+	<dd>&nbsp;<?php echo $acao['Acao']['ds_acao']?></dd>
+	<dt>Dias de prazo</dt>
+	<dd>&nbsp;<?php echo $acao['Acao']['dias_prazo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Ação',   '/acoes/edit/' . $acao['Acao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Ação', '/acoes/delete/' . $acao['Acao']['id'], null, 'Deseja realmente excluir : id ' . $acao['Acao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Ações',   '/acoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Ação',	'/acoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Atas de reuniões', '/atasreunioes/index/')?> </li>
+	<li><?php echo $html->link('Inserir Ata de reunião', '/atasreunioes/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($acao['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($acao['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($acao['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>

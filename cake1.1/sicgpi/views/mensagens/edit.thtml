@@ -1,0 +1,28 @@
+<h2>Editar Mensagem</h2>
+<form action="<?php echo $html->url('/mensagens/edit/'.$html->tagValue('Mensagem/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Mensagem/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Mensagem/projeto_id', $projetos, $html->tagValue('Mensagem/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Mensagem/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag( 'Mensagem/ds_mensagem', 'Descrição' );?>
+ 	<?php echo $html->textarea('Mensagem/ds_mensagem', array('cols' => '100', 'rows' => '20'));?>
+	<?php echo $html->tagErrorMsg('Mensagem/ds_mensagem', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag( 'Mensagem/nm_envolvidos', 'Envolvidos' );?>
+ 	<?php echo $html->textarea('Mensagem/nm_envolvidos', array('cols' => '100', 'rows' => '20'));?>
+	<?php echo $html->tagErrorMsg('Mensagem/nm_envolvidos', 'Por favor informe os Envolvidos.');?>
+</div>
+<?php echo $html->hidden('Mensagem/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/mensagens/delete/' . $html->tagValue('Mensagem/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Mensagem/id'));?>
+<li><?php echo $html->link('Listar Mensagens', '/mensagens/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

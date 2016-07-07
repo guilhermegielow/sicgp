@@ -1,0 +1,224 @@
+<div class="licoesaprendida">
+<h2>Lição Aprendida</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $licoesaprendida['Licoesaprendida']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($licoesaprendida['Projeto']['ds_titulo'], '/projetos/view/' .$licoesaprendida['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $licoesaprendida['Licoesaprendida']['ds_licao_aprendida']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Lição Aprendida',   '/licoesaprendidas/edit/' . $licoesaprendida['Licoesaprendida']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Lição Aprendida', '/licoesaprendidas/delete/' . $licoesaprendida['Licoesaprendida']['id'], null, 'Deseja realmente excluir : id ' . $licoesaprendida['Licoesaprendida']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas',   '/licoesaprendidas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Lição Aprendida',	'/licoesaprendidas/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Fatores críticos relacionados</h3>
+<?php if(!empty($licoesaprendida['Fatorescritico'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Fatorescritico']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Fatorescritico'] as $fatorescritico):?>
+<tr>
+	<?php foreach($fatorescritico as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/fatorescriticos/view/' . $fatorescritico['id']);?>
+		<?php echo $html->link('Editar', '/fatorescriticos/edit/' . $fatorescritico['id']);?>
+		<?php echo $html->link('Excluir', '/fatorescriticos/delete/' . $fatorescritico['id'], null, 'Deseja realmente excluir : id ' . $fatorescritico['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Fator de crítico', '/fatorescriticos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Forças relacionadas</h3>
+<?php if(!empty($licoesaprendida['Forca'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Forca']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Forca'] as $forca):?>
+<tr>
+	<?php foreach($forca as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/forcas/view/' . $forca['id']);?>
+		<?php echo $html->link('Editar', '/forcas/edit/' . $forca['id']);?>
+		<?php echo $html->link('Excluir', '/forcas/delete/' . $forca['id'], null, 'Deseja realmente excluir : id ' . $forca['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Força', '/forcas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Ítens de melhoras relacionados</h3>
+<?php if(!empty($licoesaprendida['Itensmelhora'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Itensmelhora']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Itensmelhora'] as $itensmelhora):?>
+<tr>
+	<?php foreach($itensmelhora as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/itensmelhoras/view/' . $itensmelhora['id']);?>
+		<?php echo $html->link('Editar', '/itensmelhoras/edit/' . $itensmelhora['id']);?>
+		<?php echo $html->link('Excluir', '/itensmelhoras/delete/' . $itensmelhora['id'], null, 'Deseja realmente excluir : id ' . $itensmelhora['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir ítem de melhora', '/itensmelhoras/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Ítens de sucessos relacionados</h3>
+<?php if(!empty($licoesaprendida['Itenssucesso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Itenssucesso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Itenssucesso'] as $itenssucesso):?>
+<tr>
+	<?php foreach($itenssucesso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/itenssucessos/view/' . $itenssucesso['id']);?>
+		<?php echo $html->link('Editar', '/itenssucessos/edit/' . $itenssucesso['id']);?>
+		<?php echo $html->link('Excluir', '/itenssucessos/delete/' . $itenssucesso['id'], null, 'Deseja realmente excluir : id ' . $itenssucesso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ítem de sucesso', '/itenssucessos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Obstáculos críticos relacionados</h3>
+<?php if(!empty($licoesaprendida['Obstaculoscritico'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Obstaculoscritico']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Obstaculoscritico'] as $obstaculoscritico):?>
+<tr>
+	<?php foreach($obstaculoscritico as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/obstaculoscriticos/view/' . $obstaculoscritico['id']);?>
+		<?php echo $html->link('Editar', '/obstaculoscriticos/edit/' . $obstaculoscritico['id']);?>
+		<?php echo $html->link('Excluir', '/obstaculoscriticos/delete/' . $obstaculoscritico['id'], null, 'Deseja realmente excluir : id ' . $obstaculoscritico['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Obstáculo crítico', '/obstaculoscriticos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Oportunidades relacionados</h3>
+<?php if(!empty($licoesaprendida['Oportunidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Oportunidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Oportunidade'] as $oportunidade):?>
+<tr>
+	<?php foreach($oportunidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/oportunidades/view/' . $oportunidade['id']);?>
+		<?php echo $html->link('Editar', '/oportunidades/edit/' . $oportunidade['id']);?>
+		<?php echo $html->link('Excluir', '/oportunidades/delete/' . $oportunidade['id'], null, 'Deseja realmente excluir : id ' . $oportunidade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Oportunidade', '/oportunidades/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Recomendações relacionadas</h3>
+<?php if(!empty($licoesaprendida['Recomendacao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($licoesaprendida['Recomendacao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($licoesaprendida['Recomendacao'] as $recomendacao):?>
+<tr>
+	<?php foreach($recomendacao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/recomendacoes/view/' . $recomendacao['id']);?>
+		<?php echo $html->link('Editar', '/recomendacoes/edit/' . $recomendacao['id']);?>
+		<?php echo $html->link('Excluir', '/recomendacoes/delete/' . $recomendacao['id'], null, 'Deseja realmente excluir : id ' . $recomendacao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recomendação', '/recomendacoes/add/');?> </li>
+</ul>
+</div>

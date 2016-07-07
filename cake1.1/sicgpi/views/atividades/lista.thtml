@@ -1,0 +1,43 @@
+<div class="atividades">
+<h2>Atividades do Projeto</h2>
+<?php 
+$data = array(
+'1' => array(
+'body'=> $html->link('Apple', 'http://apple.com'),
+'children' => array(
+'c1' => array(
+'body'=>$html->link('Intel', 'http://core.com'),
+),
+'c2' => array(
+'body'=>$html->link('Datasul', 'http://juice.com'),
+'children' => array(
+'c1' => array(
+'body'=>$html->link('Intel', 'http://core.com'),
+),
+'c2' => array(
+'body'=>$html->link('Datasul', 'http://juice.com'),
+'children' => array(
+'c1' => array(
+'body'=>$html->link('Intel', 'http://core.com'),
+),
+'c2' => array(
+'body'=>$html->link('Datasul', 'http://juice.com'),
+),
+),
+),
+),
+),
+),
+),
+'2' =>array(
+'body'=>$html->link('Orange', 'http://orange.com')
+),
+'3' =>array(
+'body'=>'Bananas',
+),
+);
+
+echo $html->guiListTree($data, array('id'=>'List'));
+
+?>
+</div>

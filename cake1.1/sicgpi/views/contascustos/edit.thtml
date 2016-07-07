@@ -1,0 +1,33 @@
+<h2>Editar Conta</h2>
+<form action="<?php echo $html->url('/contascustos/edit/'.$html->tagValue('Contascusto/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Contascusto/tiposconta_id', 'Tipo de conta');?>
+ 	<?php echo $html->selectTag('Contascusto/tiposconta_id', $tiposcontas, $html->tagValue('Contascusto/tiposconta_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Contascusto/tiposconta_id', 'Por favor selecione o Tipo de conta.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Contascusto/vl_conta', 'Valor da conta');?>
+ 	<?php echo $html->input('Contascusto/vl_conta', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Contascusto/vl_conta', 'Por favor informe o Valor da conta.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Contascusto/ds_contacusto', 'Descrição');?>
+ 	<?php echo $html->input('Contascusto/ds_contacusto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Contascusto/ds_contacusto', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Estudosviabilidade/Estudosviabilidade', 'Estudos de viabilidades relacionados');?>
+ 	<?php echo $html->selectTag('Estudosviabilidade/Estudosviabilidade', $estudosviabilidades, $selectedEstudosviabilidades, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/Estudosviabilidade', 'Por favor selecione o Estudos de viabilidades relacionados.');?>
+</div>
+<?php echo $html->hidden('Contascusto/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/contascustos/delete/' . $html->tagValue('Contascusto/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Contascusto/id'));?>
+<li><?php echo $html->link('Listar Contas', '/contascustos/index')?></li>
+<li><?php echo $html->link('Listar Tipos de Contas', '/tiposcontas/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de conta', '/tiposcontas/add/');?></li>
+</ul>

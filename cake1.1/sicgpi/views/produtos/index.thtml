@@ -1,0 +1,28 @@
+<div class="produtos">
+<h2>Produtos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Estudo de viabilidade</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($produtos as $produto): ?>
+<tr>
+	<td><?php echo $produto['Produto']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($produto['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$produto['Estudosviabilidade']['id'])?></td>
+	<td><?php echo $produto['Produto']['ds_produto']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/produtos/view/' . $produto['Produto']['id'])?>
+		<?php echo $html->link('Editar','/produtos/edit/' . $produto['Produto']['id'])?>
+		<?php echo $html->link('Excluir','/produtos/delete/' . $produto['Produto']['id'], null, 'Deseja realmente excluir : id ' . $produto['Produto']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Produto', '/produtos/add'); ?></li>
+</ul>
+</div>

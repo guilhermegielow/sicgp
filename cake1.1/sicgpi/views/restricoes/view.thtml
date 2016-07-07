@@ -1,0 +1,21 @@
+<div class="restricao">
+<h2>Restrição</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $restricao['Restricao']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($restricao['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$restricao['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $restricao['Restricao']['ds_restricao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Restrição',   '/restricoes/edit/' . $restricao['Restricao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Restrição', '/restricoes/delete/' . $restricao['Restricao']['id'], null, 'Deseja realmente excluir : id ' . $restricao['Restricao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Restrições',   '/restricoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Restrição',	'/restricoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>

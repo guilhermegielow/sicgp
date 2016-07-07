@@ -1,0 +1,46 @@
+<div class="tiposresponsabilidade">
+<h2>Tipo de Responsabilidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposresponsabilidade['Tiposresponsabilidade']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposresponsabilidade['Tiposresponsabilidade']['ds_tipo_responsabilidade']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de Responsabilidade',   '/tiposresponsabilidades/edit/' . $tiposresponsabilidade['Tiposresponsabilidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de Responsabilidade', '/tiposresponsabilidades/delete/' . $tiposresponsabilidade['Tiposresponsabilidade']['id'], null, 'Deseja realmente excluir : id ' . $tiposresponsabilidade['Tiposresponsabilidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de Responsabilidades',   '/tiposresponsabilidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de Responsabilidade',	'/tiposresponsabilidades/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Responsabilidades relacionadas</h3>
+<?php if(!empty($tiposresponsabilidade['Responsabilidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposresponsabilidade['Responsabilidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposresponsabilidade['Responsabilidade'] as $responsabilidade):?>
+<tr>
+	<?php foreach($responsabilidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/responsabilidades/view/' . $responsabilidade['id']);?>
+		<?php echo $html->link('Editar', '/responsabilidades/edit/' . $responsabilidade['id']);?>
+		<?php echo $html->link('Excluir', '/responsabilidades/delete/' . $responsabilidade['id'], null, 'Deseja realmente excluir : id ' . $responsabilidade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Responsabilidade', '/responsabilidades/add/');?> </li>
+</ul>
+</div>

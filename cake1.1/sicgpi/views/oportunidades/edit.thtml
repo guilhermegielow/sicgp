@@ -1,0 +1,23 @@
+<h2>Editar Oportunidade</h2>
+<form action="<?php echo $html->url('/oportunidades/edit/'.$html->tagValue('Oportunidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Oportunidade/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Oportunidade/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Oportunidade/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Oportunidade/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Oportunidade/ds_oportunidade', 'Descrição');?>
+ 	<?php echo $html->input('Oportunidade/ds_oportunidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Oportunidade/ds_oportunidade', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Oportunidade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/oportunidades/delete/' . $html->tagValue('Oportunidade/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Oportunidade/id'));?>
+<li><?php echo $html->link('Listar Oportunidades', '/oportunidades/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

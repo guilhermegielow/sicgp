@@ -1,0 +1,40 @@
+<h2>Editar Processo de aquisição</h2>
+<form action="<?php echo $html->url('/processosaquisicoes/edit/'.$html->tagValue('Processosaquisicao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Processosaquisicao/planosaquisicao_id', 'Plano de aquisição');?>
+ 	<?php echo $html->selectTag('Processosaquisicao/planosaquisicao_id', $planosaquisicoes, $html->tagValue('Processosaquisicao/planosaquisicao_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Processosaquisicao/planosaquisicao_id', 'Por favor selecione o Plano de aquisição.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Processosaquisicao/fornecedor_id', 'Fornecedor');?>
+ 	<?php echo $html->selectTag('Processosaquisicao/fornecedor_id', $fornecedores, $html->tagValue('Processosaquisicao/fornecedor_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Processosaquisicao/fornecedor_id', 'Por favor selecione o Fornecedor.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Processosaquisicao/vl_orcamento', 'Valor do orçamento');?>
+ 	<?php echo $html->input('Processosaquisicao/vl_orcamento', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Processosaquisicao/vl_orcamento', 'Por favor informe o Valor do orçamento.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Processosaquisicao/dias_prazo', 'Dias de prazo');?>
+ 	<?php echo $html->input('Processosaquisicao/dias_prazo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Processosaquisicao/dias_prazo', 'Por favor informe Dias Prazo.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Processosaquisicao/ds_processo_aquisicao', 'Descrição');?>
+ 	<?php echo $html->input('Processosaquisicao/ds_processo_aquisicao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Processosaquisicao/ds_processo_aquisicao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Processosaquisicao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/processosaquisicoes/delete/' . $html->tagValue('Processosaquisicao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Processosaquisicao/id'));?>
+<li><?php echo $html->link('Listar Processos de aquisições', '/processosaquisicoes/index')?></li>
+<li><?php echo $html->link('Listar Planos de aquisições', '/planosaquisicoes/index/');?></li>
+<li><?php echo $html->link('Adicionar Plano de aquisição', '/planosaquisicoes/add/');?></li>
+<li><?php echo $html->link('Listar Fornecedores', '/fornecedores/index/');?></li>
+<li><?php echo $html->link('Adicionar Fornecedor', '/fornecedores/add/');?></li>
+</ul>

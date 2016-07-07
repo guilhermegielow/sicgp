@@ -1,0 +1,16 @@
+<h2>Editar Tipo de conta</h2>
+<form action="<?php echo $html->url('/tiposcontas/edit/'.$html->tagValue('Tiposconta/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposconta/ds_tipo_conta', 'Descrição');?>
+ 	<?php echo $html->input('Tiposconta/ds_tipo_conta', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposconta/ds_tipo_conta', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposconta/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposcontas/delete/' . $html->tagValue('Tiposconta/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposconta/id'));?>
+<li><?php echo $html->link('Listar Tipos de contas', '/tiposcontas/index')?></li>
+</ul>

@@ -1,0 +1,14 @@
+<h2>Novo Tipo de mudança</h2>
+<form action="<?php echo $html->url('/tiposmudancas/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposmudanca/ds_tipo_mudanca', 'Descrição');?>
+ 	<?php echo $html->input('Tiposmudanca/ds_tipo_mudanca', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposmudanca/ds_tipo_mudanca', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Tipos de mudanças', '/tiposmudancas/index')?></li>
+</ul>

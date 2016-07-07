@@ -1,0 +1,21 @@
+<h2>Novo Plano de Custo</h2>
+<form action="<?php echo $html->url('/planoscustos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Planoscusto/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Planoscusto/projeto_id', $projetos, $html->tagValue('Planoscusto/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Planoscusto/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planoscusto/ds_plano_custo', 'Descrição');?>
+ 	<?php echo $html->input('Planoscusto/ds_plano_custo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planoscusto/ds_plano_custo', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Planos de custos', '/planoscustos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

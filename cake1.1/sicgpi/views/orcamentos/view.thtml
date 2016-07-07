@@ -1,0 +1,85 @@
+<div class="orcamento">
+<h2>Orçamento</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $orcamento['Orcamento']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($orcamento['Projeto']['ds_titulo'], '/projetos/view/' .$orcamento['Projeto']['id'])?></dd>
+	<dt>Valor do projeto</dt>
+	<dd>&nbsp;<?php echo $orcamento['Orcamento']['vl_projeto']?></dd>
+	<dt>Valor de reserva</dt>
+	<dd>&nbsp;<?php echo $orcamento['Orcamento']['vl_reserva']?></dd>
+	<dt>Valor de administração</dt>
+	<dd>&nbsp;<?php echo $orcamento['Orcamento']['vl_administracao']?></dd>
+	<dt>Valor total</dt>
+	<dd>&nbsp;<?php echo $orcamento['Orcamento']['vl_total']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Orçamento',   '/orcamentos/edit/' . $orcamento['Orcamento']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Orçamento', '/orcamentos/delete/' . $orcamento['Orcamento']['id'], null, 'Deseja realmente excluir : id ' . $orcamento['Orcamento']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Orçamentos',   '/orcamentos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Orçamento',	'/orcamentos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atividades relacionadas</h3>
+<?php if(!empty($orcamento['Atividade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($orcamento['Atividade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($orcamento['Atividade'] as $atividade):?>
+<tr>
+	<?php foreach($atividade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades/view/' . $atividade['id']);?>
+		<?php echo $html->link('Editar', '/atividades/edit/' . $atividade['id']);?>
+		<?php echo $html->link('Excluir', '/atividades/delete/' . $atividade['id'], null, 'Deseja realmente excluir : id ' . $atividade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Recursos relacionados</h3>
+<?php if(!empty($orcamento['Recurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($orcamento['Recurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($orcamento['Recurso'] as $recurso):?>
+<tr>
+	<?php foreach($recurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/recursos/view/' . $recurso['id']);?>
+		<?php echo $html->link('Editar', '/recursos/edit/' . $recurso['id']);?>
+		<?php echo $html->link('Excluir', '/recursos/delete/' . $recurso['id'], null, 'Deseja realmente excluir : id ' . $recurso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recurso', '/recursos/add/');?> </li>
+</ul>
+</div>

@@ -1,0 +1,31 @@
+<div class="atividadesEstudosviabilidadesRecurso">
+<h2>Atividade Estudo de viabilidade Recurso</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id']?></dd>
+  <dt>Recurso</dt>
+	<dd>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Recurso']['ds_recurso'], '/recursos/view/' .$atividadesEstudosviabilidadesRecurso['Recurso']['id'])?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$atividadesEstudosviabilidadesRecurso['Estudosviabilidade']['id'])?></dd>
+	<dt>Atividade</dt>
+	<dd>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Atividade']['ds_atividade'], '/atividades/view/' .$atividadesEstudosviabilidadesRecurso['Atividade']['id'])?></dd>
+	<dt>Tipo de recurso de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Tiposrecursosviabilidade']['ds_tipo_recurso_viabilidade'], '/tiposrecursosviabilidades/view/' .$atividadesEstudosviabilidadesRecurso['Tiposrecursosviabilidade']['id'])?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Atividade Estudo de viabilidade Recurso',   '/atividades_estudosviabilidades_recursos/edit/' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Atividade Estudo de viabilidade Recurso', '/atividades_estudosviabilidades_recursos/delete/' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'], null, 'Deseja realmente excluir : id ' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Atividades Estudos de viabilidades Recursos',   '/atividades_estudosviabilidades_recursos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Atividade Estudo de viabilidade Recurso',	'/atividades_estudosviabilidades_recursos/add') ?> </li>
+	<li><?php echo $html->link('Listar Recursos', '/recursos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Recurso', '/recursos/add/')?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+	<li><?php echo $html->link('Listar Atividades', '/atividades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/')?> </li>
+	<li><?php echo $html->link('Listar Tipos de recursos de viabilidades', '/tiposrecursosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de recurso de viabilidade', '/tiposrecursosviabilidades/add/')?> </li>
+</ul>
+
+</div>

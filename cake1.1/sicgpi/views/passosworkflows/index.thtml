@@ -1,0 +1,44 @@
+<div class="passosworkflows">
+<h2>Passos do workflows</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Número do passo</th>
+	<th>Descrição</th>
+	<th>Responsável</th>
+	<th>Mensagem inicial</th>
+	<th>Mensagem de expiração</th>
+	<th>Passo se aprovado</th>
+	<th>Última expiracao</th>
+	<th>Hora de expiração</th>
+	<th>Data de término</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($passosworkflows as $passosworkflow): ?>
+<tr>
+	<td><?php echo $passosworkflow['Passosworkflow']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($passosworkflow['Projeto']['ds_titulo'], '/projetos/view/' .$passosworkflow['Projeto']['id'])?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['nr_passo']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['ds_passo']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['user_responsavel']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['mensagem_inicial']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['mensagem_expirada']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['nr_passo_aprovado']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['dt_ultima_expiracao']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['hr_expiracao']; ?></td>
+	<td><?php echo $passosworkflow['Passosworkflow']['dt_termino']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/passosworkflows/view/' . $passosworkflow['Passosworkflow']['id'])?>
+		<?php echo $html->link('Editar','/passosworkflows/edit/' . $passosworkflow['Passosworkflow']['id'])?>
+		<?php echo $html->link('Excluir','/passosworkflows/delete/' . $passosworkflow['Passosworkflow']['id'], null, 'Deseja realmente excluir : id ' . $passosworkflow['Passosworkflow']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Passo do workflow', '/passosworkflows/add'); ?></li>
+</ul>
+</div>

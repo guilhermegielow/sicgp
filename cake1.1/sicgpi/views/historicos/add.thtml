@@ -1,0 +1,28 @@
+<h2>Novo Histórico</h2>
+<form action="<?php echo $html->url('/historicos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Historico/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Historico/projeto_id', $projetos, $html->tagValue('Historico/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Historico/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Historico/usuario_id', 'Usuário');?>
+ 	<?php echo $html->selectTag('Historico/usuario_id', $usuarios, $html->tagValue('Historico/usuario_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Historico/usuario_id', 'Por favor selecione o Usuário.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Historico/ds_historico', 'Descrição');?>
+ 	<?php echo $html->input('Historico/ds_historico', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Historico/ds_historico', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Históricos', '/historicos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+<li><?php echo $html->link('Listar Usuários', '/usuarios/index/');?></li>
+<li><?php echo $html->link('Adicionar Usuário', '/usuarios/add/');?></li>
+</ul>

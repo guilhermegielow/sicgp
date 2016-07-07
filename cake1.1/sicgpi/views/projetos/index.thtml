@@ -1,0 +1,37 @@
+<div class="projetos">
+<h2>Projetos</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Estado</th>
+	<th>Titulo</th>
+	<th>Gerente</th>
+	<th>Patrocinador</th>	
+	<th>Prazo</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($projetos as $projeto): ?> 
+<tr>
+	<td><?php echo $projeto['Projeto']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($projeto['Estado']['ds_estado'], 
+  '/estados/view/' .$projeto['Estado']['id'])?></td>
+	<td><?php echo $projeto['Projeto']['ds_titulo']; ?></td>
+	<td><?php echo $projeto['Projeto']['user_created']; ?></td>
+	<td>&nbsp;<?php echo $html->link($projeto['Usuario']['nm_usuario'], 
+  '/usuarios/view/' .$projeto['Usuario']['id'])?></td>
+	<td><?php echo $html->formata_pt($projeto['Projeto']['dt_prazo']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/projetos/view/' . $projeto['Projeto']['id'])?>
+		<?php echo $html->link('Editar','/projetos/edit/' . $projeto['Projeto']['id'])?>
+		<?php echo $html->link('Excluir','/projetos/delete/' . $projeto['Projeto']['id'], 
+    null, 'Deseja realmente excluir : id ' . $projeto['Projeto']['id'])?>
+    <?php echo $html->link('Custo','/projetos/relatoriocusto/' . $projeto['Projeto']['id'])?> 
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,23 @@
+<div class="mensagem">
+<h2>Mensagem</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $mensagem['Mensagem']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($mensagem['Projeto']['ds_titulo'], '/projetos/view/' .$mensagem['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $mensagem['Mensagem']['ds_mensagem']?></dd>
+	<dt>Envolvidos</dt>
+	<dd>&nbsp;<?php echo $mensagem['Mensagem']['nm_envolvidos']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Mensagem',   '/mensagens/edit/' . $mensagem['Mensagem']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Mensagem', '/mensagens/delete/' . $mensagem['Mensagem']['id'], null, 'Deseja realmente excluir : id ' . $mensagem['Mensagem']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Mensagens',   '/mensagens/index') ?> </li>
+	<li><?php echo $html->link('Inserir Mensagem',	'/mensagens/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>

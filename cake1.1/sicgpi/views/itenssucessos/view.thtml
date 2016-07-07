@@ -1,0 +1,21 @@
+<div class="itenssucesso">
+<h2>Ítem de sucesso</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $itenssucesso['Itenssucesso']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($itenssucesso['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$itenssucesso['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $itenssucesso['Itenssucesso']['ds_item_sucesso']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Ítem de sucesso',   '/itenssucessos/edit/' . $itenssucesso['Itenssucesso']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Ítem de sucesso', '/itenssucessos/delete/' . $itenssucesso['Itenssucesso']['id'], null, 'Deseja realmente excluir : id ' . $itenssucesso['Itenssucesso']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Ítens de sucessos',   '/itenssucessos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Ítem de sucesso',	'/itenssucessos/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

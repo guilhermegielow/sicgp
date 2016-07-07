@@ -1,0 +1,28 @@
+<div class="restricoesescopos">
+<h2>Restrições de escopos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($restricoesescopos as $restricoesescopo): ?>
+<tr>
+	<td><?php echo $restricoesescopo['Restricoesescopo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($restricoesescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$restricoesescopo['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $restricoesescopo['Restricoesescopo']['ds_restricao_escopo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/restricoesescopos/view/' . $restricoesescopo['Restricoesescopo']['id'])?>
+		<?php echo $html->link('Editar','/restricoesescopos/edit/' . $restricoesescopo['Restricoesescopo']['id'])?>
+		<?php echo $html->link('Excluir','/restricoesescopos/delete/' . $restricoesescopo['Restricoesescopo']['id'], null, 'Deseja realmente excluir : id ' . $restricoesescopo['Restricoesescopo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Restrição de escopo', '/restricoesescopos/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,21 @@
+<h2>Nova Lição Aprendida</h2>
+<form action="<?php echo $html->url('/licoesaprendidas/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Licoesaprendida/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Licoesaprendida/projeto_id', $projetos, $html->tagValue('Licoesaprendida/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Licoesaprendida/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Licoesaprendida/ds_licao_aprendida', 'Descrição');?>
+ 	<?php echo $html->input('Licoesaprendida/ds_licao_aprendida', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Licoesaprendida/ds_licao_aprendida', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Lições Aprendidas', '/licoesaprendidas/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

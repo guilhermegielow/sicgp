@@ -1,0 +1,26 @@
+<h2>Nova Ação do relatório</h2>
+<form action="<?php echo $html->url('/acoesrelatorios/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Acoesrelatorio/relatoriosdesempenho_id', 'Relatório de desempenho');?>
+ 	<?php echo $html->selectTag('Acoesrelatorio/relatoriosdesempenho_id', $relatoriosdesempenhos, $html->tagValue('Acoesrelatorio/relatoriosdesempenho_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Acoesrelatorio/relatoriosdesempenho_id', 'Por favor selecione o Relatório de desempenho.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Acoesrelatorio/ds_acao_relatorio', 'Descrição');?>
+ 	<?php echo $html->input('Acoesrelatorio/ds_acao_relatorio', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Acoesrelatorio/ds_acao_relatorio', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Ações do relatórios', '/acoesrelatorios/index')?></li>
+<li><?php echo $html->link('Listar Relatórios de desempenhos', '/relatoriosdesempenhos/index/');?></li>
+<li><?php echo $html->link('Adicionar Relatório de desempenho', '/relatoriosdesempenhos/add/');?></li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="recomendacoes">
+<h2>Recomendações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Lição aprendida</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($recomendacoes as $recomendacao): ?>
+<tr>
+	<td><?php echo $recomendacao['Recomendacao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($recomendacao['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$recomendacao['Licoesaprendida']['id'])?></td>
+	<td><?php echo $recomendacao['Recomendacao']['ds_recomendacao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/recomendacoes/view/' . $recomendacao['Recomendacao']['id'])?>
+		<?php echo $html->link('Editar','/recomendacoes/edit/' . $recomendacao['Recomendacao']['id'])?>
+		<?php echo $html->link('Excluir','/recomendacoes/delete/' . $recomendacao['Recomendacao']['id'], null, 'Deseja realmente excluir : id ' . $recomendacao['Recomendacao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recomendação', '/recomendacoes/add'); ?></li>
+</ul>
+</div>

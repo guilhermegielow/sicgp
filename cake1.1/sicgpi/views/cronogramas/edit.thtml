@@ -1,0 +1,23 @@
+<h2>Editar Cronograma</h2>
+<form action="<?php echo $html->url('/cronogramas/edit/'.$html->tagValue('Cronograma/id')); ?>" method="post">
+<div class="optional"> 
+	<?php echo $form->labelTag('Cronograma/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Cronograma/projeto_id', $projetos, $html->tagValue('Cronograma/projeto_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Cronograma/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Atividade/Atividade', 'Atividades relacionadas');?>
+ 	<?php echo $html->selectTag('Atividade/Atividade', $atividades, $selectedAtividades, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Atividade/Atividade', 'Por favor selecione as Atividades relacionadas.');?>
+</div>
+<?php echo $html->hidden('Cronograma/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/cronogramas/delete/' . $html->tagValue('Cronograma/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Cronograma/id'));?>
+<li><?php echo $html->link('Listar Cronogramas', '/cronogramas/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

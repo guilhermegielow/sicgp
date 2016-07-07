@@ -1,0 +1,50 @@
+<div class="produto">
+<h2>Produto</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $produto['Produto']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($produto['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$produto['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $produto['Produto']['ds_produto']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Produto',   '/produtos/edit/' . $produto['Produto']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Produto', '/produtos/delete/' . $produto['Produto']['id'], null, 'Deseja realmente excluir : id ' . $produto['Produto']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Produtos',   '/produtos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Produto',	'/produtos/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Produtos Servicos Termos de aceite de projetos relacionados</h3>
+<?php if(!empty($produto['ProdutosServicosTermosaceitesprojeto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($produto['ProdutosServicosTermosaceitesprojeto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($produto['ProdutosServicosTermosaceitesprojeto'] as $produtosServicosTermosaceitesprojeto):?>
+<tr>
+	<?php foreach($produtosServicosTermosaceitesprojeto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/produtos_servicos_termosaceitesprojetos/view/' . $produtosServicosTermosaceitesprojeto['termosaceitesprojeto_id, produto_id, servico_id']);?>
+		<?php echo $html->link('Editar', '/produtos_servicos_termosaceitesprojetos/edit/' . $produtosServicosTermosaceitesprojeto['termosaceitesprojeto_id, produto_id, servico_id']);?>
+		<?php echo $html->link('Excluir', '/produtos_servicos_termosaceitesprojetos/delete/' . $produtosServicosTermosaceitesprojeto['termosaceitesprojeto_id, produto_id, servico_id'], null, 'Deseja realmente excluir : id ' . $produtosServicosTermosaceitesprojeto['termosaceitesprojeto_id, produto_id, servico_id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Produto Serviços Termo de aceite de projeto', '/produtos_servicos_termosaceitesprojetos/add/');?> </li>
+</ul>
+</div>

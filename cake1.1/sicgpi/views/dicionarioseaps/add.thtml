@@ -1,0 +1,40 @@
+<h2>Novo Dicionário da EAP</h2>
+<form action="<?php echo $html->url('/dicionarioseaps/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Dicionarioseap/atividade_id', 'Atividade');?>
+ 	<?php echo $html->selectTag('Dicionarioseap/atividade_id', $atividades, $html->tagValue('Dicionarioseap/atividade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Dicionarioseap/atividade_id', 'Por favor selecione a Atividade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Dicionarioseap/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Dicionarioseap/projeto_id', $projetos, $html->tagValue('Dicionarioseap/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Dicionarioseap/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Dicionarioseap/tiposespecificacao_id', 'Tipo de especificação');?>
+ 	<?php echo $html->selectTag('Dicionarioseap/tiposespecificacao_id', $tiposespecificacoes, $html->tagValue('Dicionarioseap/tiposespecificacao_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Dicionarioseap/tiposespecificacao_id', 'Por favor selecione o Tipo de especificação.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Dicionarioseap/ds_descricao_eap', 'Descrição da EAP');?>
+ 	<?php echo $html->input('Dicionarioseap/ds_descricao_eap', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Dicionarioseap/ds_descricao_eap', 'Por favor informe a Descrição da EAP.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Dicionários da EAP', '/dicionarioseaps/index')?></li>
+<li><?php echo $html->link('Listar Atividades', '/atividades/index/');?></li>
+<li><?php echo $html->link('Adicionar Atividade', '/atividades/add/');?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+<li><?php echo $html->link('Listar Tipos de especificações', '/tiposespecificacoes/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de especificação', '/tiposespecificacoes/add/');?></li>
+</ul>

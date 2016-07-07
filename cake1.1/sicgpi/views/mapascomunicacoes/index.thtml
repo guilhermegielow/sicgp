@@ -1,0 +1,36 @@
+<div class="mapascomunicacoes">
+<h2>Mapas de comunicações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Assunto</th>
+	<th>Tipo de documento</th>
+	<th>Tipo de meio</th>
+	<th>Dias de frequência</th>
+	<th>Ação esperada</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($mapascomunicacoes as $mapascomunicacao): ?>
+<tr>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($mapascomunicacao['Projeto']['ds_titulo'], '/projetos/view/' .$mapascomunicacao['Projeto']['id'])?></td>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['ds_assunto']; ?></td>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['tp_documento']; ?></td>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['tp_meio']; ?></td>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['dias_frequencia']; ?></td>
+	<td><?php echo $mapascomunicacao['Mapascomunicacao']['ds_acao_esperada']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/mapascomunicacoes/view/' . $mapascomunicacao['Mapascomunicacao']['id'])?>
+		<?php echo $html->link('Editar','/mapascomunicacoes/edit/' . $mapascomunicacao['Mapascomunicacao']['id'])?>
+		<?php echo $html->link('Excluir','/mapascomunicacoes/delete/' . $mapascomunicacao['Mapascomunicacao']['id'], null, 'Deseja realmente excluir : id ' . $mapascomunicacao['Mapascomunicacao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Mapa de comunicação', '/mapascomunicacoes/add'); ?></li>
+</ul>
+</div>

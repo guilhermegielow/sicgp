@@ -1,0 +1,21 @@
+<div class="requisito">
+<h2>Requisito</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $requisito['Requisito']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($requisito['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$requisito['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $requisito['Requisito']['ds_requisito']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Requisito',   '/requisitos/edit/' . $requisito['Requisito']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Requisito', '/requisitos/delete/' . $requisito['Requisito']['id'], null, 'Deseja realmente excluir : id ' . $requisito['Requisito']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Requisitos',   '/requisitos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Requisito',	'/requisitos/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>

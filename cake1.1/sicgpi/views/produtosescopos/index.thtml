@@ -1,0 +1,28 @@
+<div class="produtosescopos">
+<h2>Produtos de escopos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($produtosescopos as $produtosescopo): ?>
+<tr>
+	<td><?php echo $produtosescopo['Produtosescopo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($produtosescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$produtosescopo['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $produtosescopo['Produtosescopo']['ds_produto_escopo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/produtosescopos/view/' . $produtosescopo['Produtosescopo']['id'])?>
+		<?php echo $html->link('Editar','/produtosescopos/edit/' . $produtosescopo['Produtosescopo']['id'])?>
+		<?php echo $html->link('Excluir','/produtosescopos/delete/' . $produtosescopo['Produtosescopo']['id'], null, 'Deseja realmente excluir : id ' . $produtosescopo['Produtosescopo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Produto de escopo', '/produtosescopos/add'); ?></li>
+</ul>
+</div>

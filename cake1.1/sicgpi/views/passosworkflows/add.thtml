@@ -1,0 +1,61 @@
+<h2>Novo Passo do workflow</h2>
+<form action="<?php echo $html->url('/passosworkflows/add'); ?>" method="post">
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Passosworkflow/projeto_id', $projetos, $html->tagValue('Passosworkflow/projeto_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/nr_passo', 'Número do passo');?>
+ 	<?php echo $html->input('Passosworkflow/nr_passo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/nr_passo', 'Por favor informe o Número do passo.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/ds_passo', 'Descrição');?>
+ 	<?php echo $html->input('Passosworkflow/ds_passo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/ds_passo', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/user_responsavel', 'Responsável');?>
+ 	<?php echo $html->input('Passosworkflow/user_responsavel', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/user_responsavel', 'Por favor informe o Responsável.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/mensagem_inicial', 'Mensagem inicial');?>
+ 	<?php echo $html->input('Passosworkflow/mensagem_inicial', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/mensagem_inicial', 'Por favor informe a Mensagem inicial.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/mensagem_expirada', 'Mensagem de expiração');?>
+ 	<?php echo $html->input('Passosworkflow/mensagem_expirada', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/mensagem_expirada', 'Por favor informe a Mensagem de expiração.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/nr_passo_aprovado', 'Passo se aprovado');?>
+ 	<?php echo $html->input('Passosworkflow/nr_passo_aprovado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/nr_passo_aprovado', 'Por favor informe Passo se aprovado.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/dt_ultima_expiracao', 'Última expiração');?>
+ 	<?php echo $html->dateTimeOptionTag('Passosworkflow/dt_ultima_expiracao', 'DMY' , '12', $html->tagValue('Passosworkflow/dt_ultima_expiracao'), array());?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/dt_ultima_expiracao', 'Por favor selecione a Última expiração.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/hr_expiracao', 'Hora da expiracao');?>
+ 	<?php echo $html->input('Passosworkflow/hr_expiracao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/hr_expiracao', 'Por favor informe a Hora da expiracao.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Passosworkflow/dt_termino', 'Data de término');?>
+ 	<?php echo $html->dateTimeOptionTag('Passosworkflow/dt_termino', 'DMY' , '12', $html->tagValue('Passosworkflow/dt_termino'), array());?>
+	<?php echo $html->tagErrorMsg('Passosworkflow/dt_termino', 'Por favor selecione Data de término.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Passos do workflows', '/passosworkflows/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

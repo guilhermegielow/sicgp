@@ -1,0 +1,37 @@
+<div class="elementoseap">
+<h2>Elemento da EAP</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['id']?></dd>
+	<dt>Atividade</dt>
+	<dd>&nbsp;<?php echo $html->link($elementoseap['Atividade']['ds_atividade'], '/atividades/view/' .$elementoseap['Atividade']['id'])?></dd>
+	<dt>Valor planejado</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['vl_planejado']?></dd>
+	<dt>Valor agregado</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['vl_agregado']?></dd>
+	<dt>Valor real</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['vl_real']?></dd>
+	<dt>Percentual concluido</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['vl_perc_concluido']?></dd>
+	<dt>Data planejada</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($elementoseap['Elementoseap']['dt_planejada'])?></dd>
+	<dt>Data efetiva</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($elementoseap['Elementoseap']['dt_efetiva'])?></dd>
+	<dt>Dias de atraso</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['dias_atraso']?></dd>
+	<dt>Solicitante</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['user_solicitante']?></dd>
+	<dt>Responsável</dt>
+	<dd>&nbsp;<?php echo $elementoseap['Elementoseap']['user_responsavel']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Elemento da EAP',   '/elementoseaps/edit/' . $elementoseap['Elementoseap']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Elemento da EAP', '/elementoseaps/delete/' . $elementoseap['Elementoseap']['id'], null, 'Deseja realmente excluir : id ' . $elementoseap['Elementoseap']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Elementos da EAP',   '/elementoseaps/index') ?> </li>
+	<li><?php echo $html->link('Inserir Elemento da EAP',	'/elementoseaps/add') ?> </li>
+	<li><?php echo $html->link('Listar Atividades', '/atividades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/')?> </li>
+</ul>
+
+</div>

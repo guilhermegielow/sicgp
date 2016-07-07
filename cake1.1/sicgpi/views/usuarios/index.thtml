@@ -1,0 +1,42 @@
+<div class="usuarios">
+<h2>Usuários</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Departamento</th>
+	<th>Usuário</th>
+	<th>Nome</th>
+	<th>E-mail</th>
+	<th>Data de alteração de senha</th>
+	<th>Prazo da senha</th>
+	<th>Data do fim da validade</th>
+	<th>Ativo</th>
+	<th>Telefone</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($usuarios as $usuario): ?>
+<tr>
+	<td><?php echo $usuario['Usuario']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($usuario['Departamento']['ds_departamento'], '/departamentos/view/' .$usuario['Departamento']['id'])?></td>
+	<td><?php echo $usuario['Usuario']['ds_usuario']; ?></td>
+	<td><?php echo $usuario['Usuario']['nm_usuario']; ?></td>
+	<td><?php echo $usuario['Usuario']['ds_email']; ?></td>
+	<td><?php echo $html->formata_pt($usuario['Usuario']['dt_alt_senha']); ?></td>
+	<td><?php echo $usuario['Usuario']['prazo_senha']; ?></td>
+	<td><?php echo $html->formata_pt($usuario['Usuario']['dt_fim_usuario']); ?></td>
+	<td><?php echo $usuario['Usuario']['ativo']; ?></td>
+	<td><?php echo $usuario['Usuario']['nr_telefone']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/usuarios/view/' . $usuario['Usuario']['id'])?>
+		<?php echo $html->link('Editar','/usuarios/edit/' . $usuario['Usuario']['id'])?>
+		<?php echo $html->link('Excluir','/usuarios/delete/' . $usuario['Usuario']['id'], null, 'Deseja realmente excluir : id ' . $usuario['Usuario']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,26 @@
+<div class="tiposespecificacoes">
+<h2>Tipos de especificações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($tiposespecificacoes as $tiposespecificacao): ?>
+<tr>
+	<td><?php echo $tiposespecificacao['Tiposespecificacao']['id']; ?></td>
+	<td><?php echo $tiposespecificacao['Tiposespecificacao']['ds_tipo_especificacao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/tiposespecificacoes/view/' . $tiposespecificacao['Tiposespecificacao']['id'])?>
+		<?php echo $html->link('Editar','/tiposespecificacoes/edit/' . $tiposespecificacao['Tiposespecificacao']['id'])?>
+		<?php echo $html->link('Excluir','/tiposespecificacoes/delete/' . $tiposespecificacao['Tiposespecificacao']['id'], null, 'Deseja realmente excluir : id ' . $tiposespecificacao['Tiposespecificacao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Tipo de especificação', '/tiposespecificacoes/add'); ?></li>
+</ul>
+</div>

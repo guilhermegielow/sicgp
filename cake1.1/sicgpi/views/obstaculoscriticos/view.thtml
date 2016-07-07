@@ -1,0 +1,21 @@
+<div class="obstaculoscritico">
+<h2>Obstáculo crítico</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $obstaculoscritico['Obstaculoscritico']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($obstaculoscritico['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$obstaculoscritico['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $obstaculoscritico['Obstaculoscritico']['ds_obstaculo_critico']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Obstáculo crítico',   '/obstaculoscriticos/edit/' . $obstaculoscritico['Obstaculoscritico']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Obstáculo crítico', '/obstaculoscriticos/delete/' . $obstaculoscritico['Obstaculoscritico']['id'], null, 'Deseja realmente excluir : id ' . $obstaculoscritico['Obstaculoscritico']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Obstáculos críticos',   '/obstaculoscriticos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Obstáculo crítico',	'/obstaculoscriticos/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

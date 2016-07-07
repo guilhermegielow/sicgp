@@ -1,0 +1,36 @@
+<div class="atividades">
+<h2>Atividades</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Atividade Pai</th>
+	<th>Descriçãp</th>
+	<th>Valor de custo</th>
+	<th>Dias de prazo</th>
+	<th>Valor realizado</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($atividades as $atividade): ?>
+<tr>
+	<td><?php echo $atividade['Atividade']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($atividade['Projeto']['ds_titulo'], '/projetos/view/' .$atividade['Projeto']['id'])?></td>
+	<td><?php echo $atividade['Atividade']['cd_atividade_pai']; ?></td>
+	<td><?php echo $atividade['Atividade']['ds_atividade']; ?></td>
+	<td><?php echo $atividade['Atividade']['vl_custo']; ?></td>
+	<td><?php echo $atividade['Atividade']['dias_prazo']; ?></td>
+	<td><?php echo $atividade['Atividade']['vl_realizado']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/atividades/view/' . $atividade['Atividade']['id'])?>
+		<?php echo $html->link('Editar','/atividades/edit/' . $atividade['Atividade']['id'])?>
+		<?php echo $html->link('Excluir','/atividades/delete/' . $atividade['Atividade']['id'], null, 'Deseja realmente excluir : id ' . $atividade['Atividade']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,17 @@
+<div class="tiposatividade">
+<h2>Tipos de atividades</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposatividade['Tiposatividade']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposatividade['Tiposatividade']['ds_tipo_atividades']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de atividade',   '/tiposatividades/edit/' . $tiposatividade['Tiposatividade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de atividade', '/tiposatividades/delete/' . $tiposatividade['Tiposatividade']['id'], null, 'Deseja realmente excluir : atividade ' . $tiposatividade['Tiposatividade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de atividades',   '/tiposatividades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de atividade',	'/tiposatividades/add') ?> </li>
+</ul>
+
+</div>

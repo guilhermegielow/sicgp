@@ -1,0 +1,16 @@
+<h2>Editar Grupo de recurso</h2>
+<form action="<?php echo $html->url('/gruposrecursos/edit/'.$html->tagValue('Gruposrecurso/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Gruposrecurso/ds_grupo_recurso', 'Descrição');?>
+ 	<?php echo $html->input('Gruposrecurso/ds_grupo_recurso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Gruposrecurso/ds_grupo_recurso', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Gruposrecurso/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/gruposrecursos/delete/' . $html->tagValue('Gruposrecurso/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Gruposrecurso/id'));?>
+<li><?php echo $html->link('Listar Grupos de recursos', '/gruposrecursos/index')?></li>
+</ul>

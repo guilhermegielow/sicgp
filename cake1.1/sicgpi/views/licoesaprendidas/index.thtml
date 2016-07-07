@@ -1,0 +1,28 @@
+<div class="licoesaprendidas">
+<h2>Lições aprendidas</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($licoesaprendidas as $licoesaprendida): ?>
+<tr>
+	<td><?php echo $licoesaprendida['Licoesaprendida']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($licoesaprendida['Projeto']['ds_titulo'], '/projetos/view/' .$licoesaprendida['Projeto']['id'])?></td>
+	<td><?php echo $licoesaprendida['Licoesaprendida']['ds_licao_aprendida']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/licoesaprendidas/view/' . $licoesaprendida['Licoesaprendida']['id'])?>
+		<?php echo $html->link('Editar','/licoesaprendidas/edit/' . $licoesaprendida['Licoesaprendida']['id'])?>
+		<?php echo $html->link('Excluir','/licoesaprendidas/delete/' . $licoesaprendida['Licoesaprendida']['id'], null, 'Deseja realmente excluir : id ' . $licoesaprendida['Licoesaprendida']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Lição Aprendida', '/licoesaprendidas/add'); ?></li>
+</ul>
+</div>

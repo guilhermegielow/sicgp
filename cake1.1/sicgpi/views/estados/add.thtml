@@ -1,0 +1,14 @@
+<h2>Novo Estado</h2>
+<form action="<?php echo $html->url('/estados/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Estado/ds_estado', 'Descrição');?>
+ 	<?php echo $html->input('Estado/ds_estado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Estado/ds_estado', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Estados', '/estados/index')?></li>
+</ul>

@@ -1,0 +1,38 @@
+<div class="processosaquisicao">
+<h2>Processo de aquisição</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['id']?></dd>
+	<dt>Plano de aquisição</dt>
+	<dd>&nbsp;<?php echo $html->link($processosaquisicao['Planosaquisicao']['ds_plano_aquisicao'], '/planosaquisicoes/view/' .$processosaquisicao['Planosaquisicao']['id'])?></dd>
+	<dt>Fornecedor</dt>
+	<dd>&nbsp;<?php echo $html->link($processosaquisicao['Fornecedor']['nm_fornecedor'], '/fornecedores/view/' .$processosaquisicao['Fornecedor']['id'])?></dd>
+	<dt>Valor do orçamento</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['vl_orcamento']?></dd>
+	<dt>Dias de prazo</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['dias_prazo']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['ds_processo_aquisicao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Processo de aquisição',   '/processosaquisicoes/edit/' . $processosaquisicao['Processosaquisicao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Processo de aquisição', '/processosaquisicoes/delete/' . $processosaquisicao['Processosaquisicao']['id'], null, 'Deseja realmente excluir : id ' . $processosaquisicao['Processosaquisicao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Processos de aquisições',   '/processosaquisicoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Processo de aquisição',	'/processosaquisicoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Planos de aquisições', '/planosaquisicoes/index/')?> </li>
+	<li><?php echo $html->link('Inserir Plano de aquisição', '/planosaquisicoes/add/')?> </li>
+	<li><?php echo $html->link('Listar Fornecedores', '/fornecedores/index/')?> </li>
+	<li><?php echo $html->link('Inserir Fornecedor', '/fornecedores/add/')?> </li>
+</ul>
+</div>
+<?php if ($processosaquisicao['Processosaquisicao']['log_envio_patrocinador'] != 1) { 
+        echo '<form action="'; 
+        echo $html->url('/processosaquisicoes/enviarpatrocinador/'.$processosaquisicao['Processosaquisicao']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Enviar para Patrocinador');
+        echo '</div>';
+        echo '</form>';
+}
+?>

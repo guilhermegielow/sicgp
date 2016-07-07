@@ -1,0 +1,58 @@
+<div class="mapascomunicacao">
+<h2>Mapa de comunicação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($mapascomunicacao['Projeto']['ds_titulo'], '/projetos/view/' .$mapascomunicacao['Projeto']['id'])?></dd>
+	<dt>Assunto</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['ds_assunto']?></dd>
+	<dt>Tipo de documento</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['tp_documento']?></dd>
+	<dt>Tipo de meio</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['tp_meio']?></dd>
+	<dt>Dias de frequência</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['dias_frequencia']?></dd>
+	<dt>Ação esperada</dt>
+	<dd>&nbsp;<?php echo $mapascomunicacao['Mapascomunicacao']['ds_acao_esperada']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Mapa de comunicação',   '/mapascomunicacoes/edit/' . $mapascomunicacao['Mapascomunicacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Mapa de comunicação', '/mapascomunicacoes/delete/' . $mapascomunicacao['Mapascomunicacao']['id'], null, 'Deseja realmente excluir : id ' . $mapascomunicacao['Mapascomunicacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Mapas de comunicações',   '/mapascomunicacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Mapa de comunicação',	'/mapascomunicacoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($mapascomunicacao['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($mapascomunicacao['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($mapascomunicacao['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>

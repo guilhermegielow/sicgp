@@ -1,0 +1,63 @@
+<h2>Editar Usuário</h2>
+<form action="<?php echo $html->url('/usuarios/edit/'.$html->tagValue('Usuario/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/departamento_id', 'Departamento');?>
+ 	<?php echo $html->selectTag('Usuario/departamento_id', $departamentos, $html->tagValue('Usuario/departamento_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Usuario/departamento_id', 'Por favor selecione o Departamento.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/ds_usuario', 'Usuário');?>
+ 	<?php echo $html->input('Usuario/ds_usuario', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/ds_usuario', 'Por favor informe o Usuário.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/ds_senha', 'Senha');?>
+ 	<?php echo $html->password('Usuario/ds_senha', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/ds_senha', 'Por favor informe a Senha.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/nm_usuario', 'Nome');?>
+ 	<?php echo $html->input('Usuario/nm_usuario', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/nm_usuario', 'Por favor informe o Nome.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/ds_email', 'E-mail');?>
+ 	<?php echo $html->input('Usuario/ds_email', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/ds_email', 'Por favor informe o E-mail.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/dt_alt_senha', 'Data de alteração de senha');?>
+ 	<?php echo $html->dateTimeOptionTag('Usuario/dt_alt_senha', 'DMY' , 'NONE', $html->tagValue('Usuario/dt_alt_senha'), array());?>
+	<?php echo $html->tagErrorMsg('Usuario/dt_alt_senha', 'Por favor selecione a Data de alteração de senha.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/prazo_senha', 'Prazo da senha');?>
+ 	<?php echo $html->input('Usuario/prazo_senha', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/prazo_senha', 'Por favor informe o Prazo da senha.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/dt_fim_usuario', 'Data do fim da validade');?>
+ 	<?php echo $html->dateTimeOptionTag('Usuario/dt_fim_usuario', 'DMY' , 'NONE', $html->tagValue('Usuario/dt_fim_usuario'), array());?>
+	<?php echo $html->tagErrorMsg('Usuario/dt_fim_usuario', 'Por favor selecione a Data do fim da validade.');?>
+</div>
+<div class="required"> 
+	<?php echo $html->checkbox('Usuario/ativo', array());?>
+	<?php echo $form->labelTag('Usuario/ativo', 'Ativo');?>
+ 	<?php echo $html->tagErrorMsg('Usuario/ativo', 'Por favor marque Ativo.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Usuario/nr_telefone', 'Telefone');?>
+ 	<?php echo $html->input('Usuario/nr_telefone', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Usuario/nr_telefone', 'Por favor informe o Telefone.');?>
+</div>
+<?php echo $html->hidden('Usuario/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/usuarios/delete/' . $html->tagValue('Usuario/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Usuario/id'));?>
+<li><?php echo $html->link('Listar Usuários', '/usuarios/index')?></li>
+<li><?php echo $html->link('Listar Departamentos', '/departamentos/index/');?></li>
+<li><?php echo $html->link('Adicionar Departamento', '/departamentos/add/');?></li>
+</ul>

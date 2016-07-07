@@ -1,0 +1,31 @@
+<h2>Editar Aco</h2>
+<form action="<?php echo $html->url('/acos/edit/'.$html->tagValue('Aco/id')); ?>" method="post">
+<div class="optional"> 
+	<?php echo $form->labelTag('Aco/object_id', 'Object Id');?>
+ 	<?php echo $html->input('Aco/object_id', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aco/object_id', 'Por favor informe Object Id.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Aco/alias', 'Alias');?>
+ 	<?php echo $html->input('Aco/alias', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aco/alias', 'Por favor informe Alias.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Aco/lft', 'Lft');?>
+ 	<?php echo $html->input('Aco/lft', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aco/lft', 'Por favor informe Lft.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Aco/rght', 'Rght');?>
+ 	<?php echo $html->input('Aco/rght', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aco/rght', 'Por favor informe Rght.');?>
+</div>
+<?php echo $html->hidden('Aco/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/acos/delete/' . $html->tagValue('Aco/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Aco/id'));?>
+<li><?php echo $html->link('Listar Acos', '/acos/index')?></li>
+</ul>

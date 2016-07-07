@@ -1,0 +1,16 @@
+<?php
+$output = "<p class=\"notice\">Seu arquivo de configuração da base de dados está <?php echo  file_exists(CONFIGS.'database.php') ?' presente.' . \$filePresent = ' ' : ' ausente.'; ?></p>\n";
+$output .= "<?php if (!empty(\$filePresent)):?>\n";
+$output .= "<?php uses('model' . DS . 'connection_manager'); \$db = ConnectionManager::getInstance(); ?>\n";
+$output .= "<?php \$connected = \$db->getDataSource('default'); ?>\n";
+$output .= "<p class=\"notice\">Cake<?php echo \$connected->isConnected() ? ' está habilitado para ' : ' não está habilitado para ';?> conectar com a base de dados.</p>\n";
+$output .= "<br />\n";
+$output .= "<?php endif; ?>\n";
+$output .= "<h1>\"".Inflector::humanize($app)."\"</h1>\n";
+$output .= "<h2>Editando esta página</h2>\n";
+$output .= "<p>\n";
+$output .= "Para mudar o conteúdo desta página, altere o arquivo: ".$dir.DS."views".DS."pages".DS."home.thtml.<br />\n";
+$output .= "Para mudar este layout, altere o arquivo: ".$dir.DS."views".DS."layouts".DS."default.thtml.<br />\n";
+$output .= "Você pode também adicionar estilos CSS em sua página em: ".$dir.DS."webroot/css/.\n";
+$output .= "</p>\n";
+?>

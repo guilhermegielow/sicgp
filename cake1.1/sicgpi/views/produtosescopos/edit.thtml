@@ -1,0 +1,23 @@
+<h2>Editar Produto de escopo</h2>
+<form action="<?php echo $html->url('/produtosescopos/edit/'.$html->tagValue('Produtosescopo/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Produtosescopo/declaracoesescopo_id', 'Declaração de escopo' );?>
+ 	<?php echo $html->selectTag('Produtosescopo/declaracoesescopo_id', $declaracoesescopos, $html->tagValue('Produtosescopo/declaracoesescopo_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Produtosescopo/declaracoesescopo_id', 'Por favor selecione a Declaração de escopo.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Produtosescopo/ds_produto_escopo', 'Descrição');?>
+ 	<?php echo $html->input('Produtosescopo/ds_produto_escopo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Produtosescopo/ds_produto_escopo', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Produtosescopo/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/produtosescopos/delete/' . $html->tagValue('Produtosescopo/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Produtosescopo/id'));?>
+<li><?php echo $html->link('Listar Produtos de escopos', '/produtosescopos/index')?></li>
+<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/');?></li>
+<li><?php echo $html->link('Adicionar Declaração de escopo', '/declaracoesescopos/add/');?></li>
+</ul>

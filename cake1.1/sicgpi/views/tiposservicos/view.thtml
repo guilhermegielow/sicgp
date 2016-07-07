@@ -1,0 +1,46 @@
+<div class="tiposservico">
+<h2>Tipo de serviço</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposservico['Tiposservico']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposservico['Tiposservico']['ds_tipo_servico']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de serviço',   '/tiposservicos/edit/' . $tiposservico['Tiposservico']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de serviço', '/tiposservicos/delete/' . $tiposservico['Tiposservico']['id'], null, 'Deseja realmente excluir : id ' . $tiposservico['Tiposservico']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de serviços',   '/tiposservicos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de serviço',	'/tiposservicos/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Estudos de viabilidades relacionados</h3>
+<?php if(!empty($tiposservico['Estudosviabilidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposservico['Estudosviabilidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposservico['Estudosviabilidade'] as $estudosviabilidade):?>
+<tr>
+	<?php foreach($estudosviabilidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/estudosviabilidades/view/' . $estudosviabilidade['id']);?>
+		<?php echo $html->link('Editar', '/estudosviabilidades/edit/' . $estudosviabilidade['id']);?>
+		<?php echo $html->link('Excluir', '/estudosviabilidades/delete/' . $estudosviabilidade['id'], null, 'Deseja realmente excluir : id ' . $estudosviabilidade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/');?> </li>
+</ul>
+</div>

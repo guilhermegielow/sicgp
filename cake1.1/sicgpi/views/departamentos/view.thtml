@@ -1,0 +1,48 @@
+<div class="departamento">
+<h2>Departamento</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $departamento['Departamento']['id']?></dd>
+	<dt>Departamento</dt>
+	<dd>&nbsp;<?php echo $departamento['Departamento']['ds_departamento']?></dd>
+	<dt>Centro de custo</dt>
+	<dd>&nbsp;<?php echo $departamento['Departamento']['nr_centro_custo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Departamento',   '/departamentos/edit/' . $departamento['Departamento']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Departamento', '/departamentos/delete/' . $departamento['Departamento']['id'], null, 'Deseja realmente excluir : id ' . $departamento['Departamento']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Departamentos',   '/departamentos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Departamento',	'/departamentos/add') ?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($departamento['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($departamento['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($departamento['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>
+

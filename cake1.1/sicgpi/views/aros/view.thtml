@@ -1,0 +1,52 @@
+<div class="aro">
+<h2>Aro</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $aro['Aro']['id']?></dd>
+	<dt>Foreign Key</dt>
+	<dd>&nbsp;<?php echo $aro['Aro']['foreign_key']?></dd>
+	<dt>Alias</dt>
+	<dd>&nbsp;<?php echo $aro['Aro']['alias']?></dd>
+	<dt>Lft</dt>
+	<dd>&nbsp;<?php echo $aro['Aro']['lft']?></dd>
+	<dt>Rght</dt>
+	<dd>&nbsp;<?php echo $aro['Aro']['rght']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Aro',   '/aros/edit/' . $aro['Aro']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Aro', '/aros/delete/' . $aro['Aro']['id'], null, 'Deseja realmente excluir : id ' . $aro['Aro']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Aros',   '/aros/index') ?> </li>
+	<li><?php echo $html->link('Inserir Aro',	'/aros/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Acos relacionado(a)s</h3>
+<?php if(!empty($aro['Aco'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($aro['Aco']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($aro['Aco'] as $aco):?>
+<tr>
+	<?php foreach($aco as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/acos/view/' . $aco['id']);?>
+		<?php echo $html->link('Editar', '/acos/edit/' . $aco['id']);?>
+		<?php echo $html->link('Excluir', '/acos/delete/' . $aco['id'], null, 'Deseja realmente excluir : id ' . $aco['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Aco', '/acos/add/');?> </li>
+</ul>
+</div>

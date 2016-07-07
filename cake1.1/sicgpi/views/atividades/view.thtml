@@ -1,0 +1,174 @@
+<div class="atividade">
+<h2>Atividade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($atividade['Projeto']['ds_titulo'], '/projetos/view/' .$atividade['Projeto']['id'])?></dd>
+	<dt>Atividade pai</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['cd_atividade_pai']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['ds_atividade']?></dd>
+	<dt>Valor de custo</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['vl_custo']?></dd>
+	<dt>Dias de prazo</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['dias_prazo']?></dd>
+	<dt>Valor realizado</dt>
+	<dd>&nbsp;<?php echo $atividade['Atividade']['vl_realizado']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Atividade',   '/atividades/edit/' . $atividade['Atividade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Atividade', '/atividades/delete/' . $atividade['Atividade']['id'], null, 'Deseja realmente excluir : id ' . $atividade['Atividade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Atividades',   '/atividades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Atividade',	'/atividades/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atividades Estudo de viabilidades Recursos relacionados</h3>
+<?php if(!empty($atividade['AtividadesEstudosviabilidadesRecurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atividade['AtividadesEstudosviabilidadesRecurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atividade['AtividadesEstudosviabilidadesRecurso'] as $atividadesEstudosviabilidadesRecurso):?>
+<tr>
+	<?php foreach($atividadesEstudosviabilidadesRecurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades_estudosviabilidades_recursos/view/' . $atividadesEstudosviabilidadesRecurso['id']);?>
+		<?php echo $html->link('Editar', '/atividades_estudosviabilidades_recursos/edit/' . $atividadesEstudosviabilidadesRecurso['id']);?>
+		<?php echo $html->link('Excluir', '/atividades_estudosviabilidades_recursos/delete/' . $atividadesEstudosviabilidadesRecurso['id'], null, 'Deseja realmente excluir : id ' . $atividadesEstudosviabilidadesRecurso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade Estudo de viabilidade Recurso', '/atividades_estudosviabilidades_recursos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Dicionários da EAP relacionados</h3>
+<?php if(!empty($atividade['Dicionarioseap'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atividade['Dicionarioseap']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atividade['Dicionarioseap'] as $dicionarioseap):?>
+<tr>
+	<?php foreach($dicionarioseap as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/dicionarioseaps/view/' . $dicionarioseap['id']);?>
+		<?php echo $html->link('Editar', '/dicionarioseaps/edit/' . $dicionarioseap['id']);?>
+		<?php echo $html->link('Excluir', '/dicionarioseaps/delete/' . $dicionarioseap['id'], null, 'Deseja realmente excluir : id ' . $dicionarioseap['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Dicionário da EAP', '/dicionarioseaps/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Elementos da EAP relacionados</h3>
+<?php if(!empty($atividade['Elementoseap'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atividade['Elementoseap']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atividade['Elementoseap'] as $elementoseap):?>
+<tr>
+	<?php foreach($elementoseap as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/elementoseaps/view/' . $elementoseap['id']);?>
+		<?php echo $html->link('Editar', '/elementoseaps/edit/' . $elementoseap['id']);?>
+		<?php echo $html->link('Excluir', '/elementoseaps/delete/' . $elementoseap['id'], null, 'Deseja realmente excluir : id ' . $elementoseap['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Elemento da EAP', '/elementoseaps/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Cronogramas relacionados</h3>
+<?php if(!empty($atividade['Cronograma'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atividade['Cronograma']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atividade['Cronograma'] as $cronograma):?>
+<tr>
+	<?php foreach($cronograma as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/cronogramas/view/' . $cronograma['id']);?>
+		<?php echo $html->link('Editar', '/cronogramas/edit/' . $cronograma['id']);?>
+		<?php echo $html->link('Excluir', '/cronogramas/delete/' . $cronograma['id'], null, 'Deseja realmente excluir : id ' . $cronograma['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Cronograma', '/cronogramas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Orçamentos relacionados</h3>
+<?php if(!empty($atividade['Orcamento'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atividade['Orcamento']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atividade['Orcamento'] as $orcamento):?>
+<tr>
+	<?php foreach($orcamento as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/orcamentos/view/' . $orcamento['id']);?>
+		<?php echo $html->link('Editar', '/orcamentos/edit/' . $orcamento['id']);?>
+		<?php echo $html->link('Excluir', '/orcamentos/delete/' . $orcamento['id'], null, 'Deseja realmente excluir : id ' . $orcamento['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Orçamento', '/orcamentos/add/');?> </li>
+</ul>
+</div>

@@ -1,0 +1,16 @@
+<h2>Editar Tipo de recurso de viabilidade</h2>
+<form action="<?php echo $html->url('/tiposrecursosviabilidades/edit/'.$html->tagValue('Tiposrecursosviabilidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', 'Descrição');?>
+ 	<?php echo $html->input('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposrecursosviabilidade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposrecursosviabilidades/delete/' . $html->tagValue('Tiposrecursosviabilidade/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposrecursosviabilidade/id'));?>
+<li><?php echo $html->link('Listar Tipos de recursos de viabilidades', '/tiposrecursosviabilidades/index')?></li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="forcas">
+<h2>Forças</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Lição aprendida</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($forcas as $forca): ?>
+<tr>
+	<td><?php echo $forca['Forca']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($forca['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$forca['Licoesaprendida']['id'])?></td>
+	<td><?php echo $forca['Forca']['ds_forca']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/forcas/view/' . $forca['Forca']['id'])?>
+		<?php echo $html->link('Editar','/forcas/edit/' . $forca['Forca']['id'])?>
+		<?php echo $html->link('Excluir','/forcas/delete/' . $forca['Forca']['id'], null, 'Deseja realmente excluir : id ' . $forca['Forca']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Força', '/forcas/add'); ?></li>
+</ul>
+</div>

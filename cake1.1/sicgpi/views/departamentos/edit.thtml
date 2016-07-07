@@ -1,0 +1,21 @@
+<h2>Editar Departamento</h2>
+<form action="<?php echo $html->url('/departamentos/edit/'.$html->tagValue('Departamento/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Departamento/ds_departamento', 'Descrição');?>
+ 	<?php echo $html->input('Departamento/ds_departamento', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Departamento/ds_departamento', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Departamento/nr_centro_custo', 'Centro de custo');?>
+ 	<?php echo $html->input('Departamento/nr_centro_custo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Departamento/nr_centro_custo', 'Por favor informe o Centro de custo.');?>
+</div>
+<?php echo $html->hidden('Departamento/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/departamentos/delete/' . $html->tagValue('Departamento/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Departamento/id'));?>
+<li><?php echo $html->link('Listar Departamentos', '/departamentos/index')?></li>
+</ul>

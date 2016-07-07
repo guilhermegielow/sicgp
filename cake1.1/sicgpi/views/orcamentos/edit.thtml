@@ -1,0 +1,38 @@
+<h2>Editar Orçamento</h2>
+<form action="<?php echo $html->url('/orcamentos/edit/'.$html->tagValue('Orcamento/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Orcamento/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Orcamento/projeto_id', $projetos, $html->tagValue('Orcamento/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Orcamento/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Orcamento/vl_reserva', 'Valor de reserva');?>
+ 	<?php echo $html->input('Orcamento/vl_reserva', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Orcamento/vl_reserva', 'Por favor informe o Valor de reserva.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Orcamento/vl_administracao', 'Valor de administração');?>
+ 	<?php echo $html->input('Orcamento/vl_administracao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Orcamento/vl_administracao', 'Por favor informe o Valor de administração.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Atividade/Atividade', 'Atividades relacionados');?>
+ 	<?php echo $html->selectTag('Atividade/Atividade', $atividades, $selectedAtividades, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Atividade/Atividade', 'Por favor selecione as Atividades relacionados.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Recurso/Recurso', 'Recursos relacionados');?>
+ 	<?php echo $html->selectTag('Recurso/Recurso', $recursos, $selectedRecursos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Recurso/Recurso', 'Por favor selecione Recursos relacionados.');?>
+</div>
+<?php echo $html->hidden('Orcamento/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/orcamentos/delete/' . $html->tagValue('Orcamento/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Orcamento/id'));?>
+<li><?php echo $html->link('Listar Orçamentos', '/orcamentos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

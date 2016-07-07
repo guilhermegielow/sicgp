@@ -1,0 +1,16 @@
+<h2>Editar Tipo de comunicação</h2>
+<form action="<?php echo $html->url('/tiposcomunicacoes/edit/'.$html->tagValue('Tiposcomunicacao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposcomunicacao/ds_tipo_comunicacao', 'Descrição');?>
+ 	<?php echo $html->input('Tiposcomunicacao/ds_tipo_comunicacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposcomunicacao/ds_tipo_comunicacao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposcomunicacao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposcomunicacoes/delete/' . $html->tagValue('Tiposcomunicacao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposcomunicacao/id'));?>
+<li><?php echo $html->link('Listar Tipos de comunicações', '/tiposcomunicacoes/index')?></li>
+</ul>

@@ -1,0 +1,33 @@
+<h2>Editar Plano de Projeto</h2>
+<form action="<?php echo $html->url('/planosprojetos/edit/'.$html->tagValue('Planosprojeto/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Planosprojeto/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Planosprojeto/projeto_id', $projetos, $html->tagValue('Planosprojeto/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Planosprojeto/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planosprojeto/ds_plano_projeto', 'Descrição');?>
+ 	<?php echo $html->input('Planosprojeto/ds_plano_projeto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planosprojeto/ds_plano_projeto', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planosprojeto/nr_versao', 'Versão');?>
+ 	<?php echo $html->input('Planosprojeto/nr_versao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planosprojeto/nr_versao', 'Por favor informe a Versão.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<?php echo $html->hidden('Planosprojeto/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/planosprojetos/delete/' . $html->tagValue('Planosprojeto/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Planosprojeto/id'));?>
+<li><?php echo $html->link('Listar Planos de projetos', '/planosprojetos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

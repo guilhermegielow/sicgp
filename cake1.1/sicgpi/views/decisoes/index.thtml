@@ -1,0 +1,28 @@
+<div class="decisoes">
+<h2>Decisões</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Ata de reunião</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($decisoes as $decisao): ?>
+<tr>
+	<td><?php echo $decisao['Decisao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($decisao['Atasreuniao']['id'], '/atasreunioes/view/' .$decisao['Atasreuniao']['id'])?></td>
+	<td><?php echo $decisao['Decisao']['ds_decisao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/decisoes/view/' . $decisao['Decisao']['id'])?>
+		<?php echo $html->link('Editar','/decisoes/edit/' . $decisao['Decisao']['id'])?>
+		<?php echo $html->link('Excluir','/decisoes/delete/' . $decisao['Decisao']['id'], null, 'Deseja realmente excluir : id ' . $decisao['Decisao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Decisão', '/decisoes/add'); ?></li>
+</ul>
+</div>

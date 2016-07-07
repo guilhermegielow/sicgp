@@ -1,0 +1,28 @@
+<h2>Editar Serviço</h2>
+<form action="<?php echo $html->url('/servicos/edit/'.$html->tagValue('Servico/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Servico/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Servico/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Servico/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Servico/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Servico/ds_servico', 'Descrição');?>
+ 	<?php echo $html->input('Servico/ds_servico', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Servico/ds_servico', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Produto/Produto', 'Produtos relacionados');?>
+ 	<?php echo $html->selectTag('Produto/Produto', $produtos, $selectedProdutos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Produto/Produto', 'Por favor selecione os Produtos relacionados.');?>
+</div>
+<?php echo $html->hidden('Servico/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/servicos/delete/' . $html->tagValue('Servico/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Servico/id'));?>
+<li><?php echo $html->link('Listar Serviços', '/servicos/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

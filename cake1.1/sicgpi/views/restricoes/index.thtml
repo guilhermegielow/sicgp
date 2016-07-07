@@ -1,0 +1,28 @@
+<div class="restricoes">
+<h2>Restrições</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Estudo de viabilidade</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($restricoes as $restricao): ?>
+<tr>
+	<td><?php echo $restricao['Restricao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($restricao['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$restricao['Estudosviabilidade']['id'])?></td>
+	<td><?php echo $restricao['Restricao']['ds_restricao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/restricoes/view/' . $restricao['Restricao']['id'])?>
+		<?php echo $html->link('Editar','/restricoes/edit/' . $restricao['Restricao']['id'])?>
+		<?php echo $html->link('Excluir','/restricoes/delete/' . $restricao['Restricao']['id'], null, 'Deseja realmente excluir : id ' . $restricao['Restricao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Restrição', '/restricoes/add'); ?></li>
+</ul>
+</div>

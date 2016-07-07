@@ -1,0 +1,32 @@
+<div class="atividadesEstudosviabilidadesRecursos">
+<h2>Atividades Estudos de viabilidades Recursos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+  <th>Id</th>
+	<th>Recurso</th>
+	<th>Estudo de viabilidade</th>
+	<th>Atividade</th>
+	<th>Tipo de recurso de viabilidade</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($atividadesEstudosviabilidadesRecursos as $atividadesEstudosviabilidadesRecurso): ?>
+<tr>
+  <td><?php echo $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Recurso']['ds_recurso'], '/recursos/view/' .$atividadesEstudosviabilidadesRecurso['Recurso']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$atividadesEstudosviabilidadesRecurso['Estudosviabilidade']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Atividade']['ds_atividade'], '/atividades/view/' .$atividadesEstudosviabilidadesRecurso['Atividade']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($atividadesEstudosviabilidadesRecurso['Tiposrecursosviabilidade']['ds_tipo_recurso_viabilidade'], '/tiposrecursosviabilidades/view/' .$atividadesEstudosviabilidadesRecurso['Tiposrecursosviabilidade']['id'])?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/atividades_estudosviabilidades_recursos/view/' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'])?>
+		<?php echo $html->link('Editar','/atividades_estudosviabilidades_recursos/edit/' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'])?>
+		<?php echo $html->link('Excluir','/atividades_estudosviabilidades_recursos/delete/' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'], null, 'Deseja realmente excluir : id ' . $atividadesEstudosviabilidadesRecurso['AtividadesEstudosviabilidadesRecurso']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade Estudo de viabilidade Recurso', '/atividades_estudosviabilidades_recursos/add'); ?></li>
+</ul>
+</div>

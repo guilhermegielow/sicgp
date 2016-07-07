@@ -1,0 +1,37 @@
+<div class="passosworkflow">
+<h2>Passo do workflow</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($passosworkflow['Projeto']['ds_titulo'], '/projetos/view/' .$passosworkflow['Projeto']['id'])?></dd>
+	<dt>Número do passo</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['nr_passo']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['ds_passo']?></dd>
+	<dt>Responsável</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['user_responsavel']?></dd>
+	<dt>Mensagem inicial</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['mensagem_inicial']?></dd>
+	<dt>Mensagem de expiração</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['mensagem_expirada']?></dd>
+	<dt>Passo se aprovado</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['nr_passo_aprovado']?></dd>
+	<dt>Última expiracao</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['dt_ultima_expiracao']?></dd>
+	<dt>Hora da expiracao</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['hr_expiracao']?></dd>
+	<dt>Data de Término</dt>
+	<dd>&nbsp;<?php echo $passosworkflow['Passosworkflow']['dt_termino']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Passo do workflow',   '/passosworkflows/edit/' . $passosworkflow['Passosworkflow']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Passo do workflow', '/passosworkflows/delete/' . $passosworkflow['Passosworkflow']['id'], null, 'Deseja realmente excluir : id ' . $passosworkflow['Passosworkflow']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Passos dos workflows',   '/passosworkflows/index') ?> </li>
+	<li><?php echo $html->link('Inserir Passo do workflow',	'/passosworkflows/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>

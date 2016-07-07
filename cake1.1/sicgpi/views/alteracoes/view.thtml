@@ -1,0 +1,21 @@
+<div class="alteracao">
+<h2>Alteração</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $alteracao['Alteracao']['id']?></dd>
+	<dt>Plano de projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($alteracao['Planosprojeto']['ds_plano_projeto'], '/planosprojetos/view/' .$alteracao['Planosprojeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $alteracao['Alteracao']['ds_alteracao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Alteração',   '/alteracoes/edit/' . $alteracao['Alteracao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Alteração', '/alteracoes/delete/' . $alteracao['Alteracao']['id'], null, 'Deseja realmente excluir : id ' . $alteracao['Alteracao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Alterações',   '/alteracoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Alteração',	'/alteracoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Planos de projetos', '/planosprojetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Plano de projeto', '/planosprojetos/add/')?> </li>
+</ul>
+
+</div>

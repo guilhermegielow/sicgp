@@ -1,0 +1,21 @@
+<h2>Novo Ítem de melhora</h2>
+<form action="<?php echo $html->url('/itensmelhoras/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Itensmelhora/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Itensmelhora/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Itensmelhora/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Itensmelhora/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Itensmelhora/ds_item_melhora', 'Descrição');?>
+ 	<?php echo $html->input('Itensmelhora/ds_item_melhora', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Itensmelhora/ds_item_melhora', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Ítens de melhoras', '/itensmelhoras/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

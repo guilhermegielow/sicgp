@@ -1,0 +1,35 @@
+<div class="termosaceitesprojeto">
+<h2>Aprovar Projeto</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($termosaceitesprojeto['Projeto']['ds_titulo'], '/projetos/view/' .$termosaceitesprojeto['Projeto']['id'])?></dd>
+	<dt>Data de aceite</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($termosaceitesprojeto['Termosaceitesprojeto']['dt_aceite'])?></dd>
+	<dt>Local</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_local']?></dd>
+	<dt>Resumo de projeto</dt>
+	<dd>&nbsp;<?php echo $termosaceitesprojeto['Termosaceitesprojeto']['ds_resumo_projeto']?></dd>
+</dl>
+<?php if (!$termosaceitesprojeto['Termosaceitesprojeto']['user_aceite'] && $termosaceitesprojeto['Termosaceitesprojeto']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/termosaceitesprojetos/aprovarprojeto/'.$termosaceitesprojeto['Termosaceitesprojeto']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Aprovar Projeto');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if (!$termosaceitesprojeto['Termosaceitesprojeto']['user_aceite'] && $termosaceitesprojeto['Termosaceitesprojeto']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/termosaceitesprojetos/reprovarprojeto/'.$termosaceitesprojeto['Termosaceitesprojeto']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Reprovar Projeto');
+        echo '</div>';
+        echo '</form>';
+}
+?>

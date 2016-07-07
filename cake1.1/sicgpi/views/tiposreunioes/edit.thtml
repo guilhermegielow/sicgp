@@ -1,0 +1,16 @@
+<h2>Editar Tipo de reunião</h2>
+<form action="<?php echo $html->url('/tiposreunioes/edit/'.$html->tagValue('Tiposreuniao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposreuniao/ds_tipo_reuniao', 'Descrição');?>
+ 	<?php echo $html->input('Tiposreuniao/ds_tipo_reuniao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposreuniao/ds_tipo_reuniao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposreuniao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposreunioes/delete/' . $html->tagValue('Tiposreuniao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposreuniao/id'));?>
+<li><?php echo $html->link('Listar Tipos de reuniões', '/tiposreunioes/index')?></li>
+</ul>

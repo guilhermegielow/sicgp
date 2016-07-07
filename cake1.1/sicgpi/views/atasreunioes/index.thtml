@@ -1,0 +1,32 @@
+<div class="atasreunioes">
+<h2>Atas de Reuniões</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Tipo de reunião</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Versão</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($atasreunioes as $atasreuniao): ?>
+<tr>
+	<td><?php echo $atasreuniao['Atasreuniao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($atasreuniao['Tiposreuniao']['ds_tipo_reuniao'], '/tiposreunioes/view/' .$atasreuniao['Tiposreuniao']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($atasreuniao['Projeto']['ds_titulo'], '/projetos/view/' .$atasreuniao['Projeto']['id'])?></td>
+	<td><?php echo $atasreuniao['Atasreuniao']['ds_ata_reuniao']; ?></td>
+	<td><?php echo $atasreuniao['Atasreuniao']['nr_versao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/atasreunioes/view/' . $atasreuniao['Atasreuniao']['id'])?>
+		<?php echo $html->link('Editar','/atasreunioes/edit/' . $atasreuniao['Atasreuniao']['id'])?>
+		<?php echo $html->link('Excluir','/atasreunioes/delete/' . $atasreuniao['Atasreuniao']['id'], null, 'Deseja realmente excluir : id ' . $atasreuniao['Atasreuniao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ata de reunião', '/atasreunioes/add'); ?></li>
+</ul>
+</div>

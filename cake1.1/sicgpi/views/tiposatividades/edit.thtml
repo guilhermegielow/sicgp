@@ -1,0 +1,16 @@
+<h2>Editar Tipo de atividade</h2>
+<form action="<?php echo $html->url('/tiposatividades/edit/'.$html->tagValue('Tiposatividade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposatividade/ds_tipo_atividades', 'Descrição');?>
+ 	<?php echo $html->input('Tiposatividade/ds_tipo_atividades', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposatividade/ds_tipo_atividades', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposatividade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposatividades/delete/' . $html->tagValue('Tiposatividade/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposatividade/id'));?>
+<li><?php echo $html->link('Listar Tipos de atividades', '/tiposatividades/index')?></li>
+</ul>

@@ -1,0 +1,25 @@
+<div class="responsabilidade">
+<h2>Responsabilidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $responsabilidade['Responsabilidade']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($responsabilidade['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$responsabilidade['Estudosviabilidade']['id'])?></dd>
+	<dt>Tipo de responsabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($responsabilidade['Tiposresponsabilidade']['id'], '/tiposresponsabilidades/view/' .$responsabilidade['Tiposresponsabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $responsabilidade['Responsabilidade']['ds_responsabilidade']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Responsabilidade',   '/responsabilidades/edit/' . $responsabilidade['Responsabilidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Responsabilidade', '/responsabilidades/delete/' . $responsabilidade['Responsabilidade']['id'], null, 'Deseja realmente excluir : id ' . $responsabilidade['Responsabilidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Responsabilidades',   '/responsabilidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Responsabilidade',	'/responsabilidades/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+	<li><?php echo $html->link('Listar Tipos de responsabilidades', '/tiposresponsabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de responsabilidade', '/tiposresponsabilidades/add/')?> </li>
+</ul>
+
+</div>

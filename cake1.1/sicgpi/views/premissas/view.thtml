@@ -1,0 +1,21 @@
+<div class="premissa">
+<h2>Premissa</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $premissa['Premissa']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($premissa['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$premissa['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $premissa['Premissa']['ds_premissa']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Premissa',   '/premissas/edit/' . $premissa['Premissa']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Premissa', '/premissas/delete/' . $premissa['Premissa']['id'], null, 'Deseja realmente excluir : id ' . $premissa['Premissa']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Premissas',   '/premissas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Premissa',	'/premissas/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

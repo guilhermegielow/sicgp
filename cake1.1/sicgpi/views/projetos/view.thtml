@@ -1,0 +1,582 @@
+<div class="projeto">
+<h2>Projeto</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $projeto['Projeto']['id']?></dd>
+	<dt>Estado</dt>
+	<dd>&nbsp;<?php echo $html->link($projeto['Estado']['ds_estado'], 
+  '/estados/view/' .$projeto['Estado']['id'])?></dd>
+	<dt>Título</dt>
+	<dd>&nbsp;<?php echo $projeto['Projeto']['ds_titulo']?></dd>
+	<dt>Gerente</dt>
+	<dd>&nbsp;<?php echo $projeto['Projeto']['user_created']?></dd>
+	<dt>Patrocinador</dt>
+	<dd>&nbsp;<?php echo $html->link($projeto['Usuario']['nm_usuario'], 
+  '/usuarios/view/' .$projeto['Usuario']['id'])?></dd>
+  <dt>Prazo</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($projeto['Projeto']['dt_prazo'])?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Projeto',   '/projetos/edit/' . 
+  $projeto['Projeto']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Projeto', '/projetos/delete/' . 
+  $projeto['Projeto']['id'], null, 'Deseja realmente excluir : id ' . 
+  $projeto['Projeto']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Projetos',   '/projetos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Projeto',	'/projetos/add') ?> </li>
+	<li><?php echo $html->link('Listar Estados', '/estados/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estado', '/estados/add/')?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Anexos relacionados</h3>
+<?php if(!empty($projeto['Anexo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Anexo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Anexo'] as $anexo):?>
+<tr>
+	<?php foreach($anexo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/anexos/view/' . $anexo['id']);?>
+		<?php echo $html->link('Editar', '/anexos/edit/' . $anexo['id']);?>
+		<?php echo $html->link('Excluir', '/anexos/delete/' . $anexo['id'], null, 'Deseja realmente excluir : id ' . $anexo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Anexo', '/anexos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Atas de reuniões relacionadas</h3>
+<?php if(!empty($projeto['Atasreuniao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Atasreuniao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Atasreuniao'] as $atasreuniao):?>
+<tr>
+	<?php foreach($atasreuniao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atasreunioes/view/' . $atasreuniao['id']);?>
+		<?php echo $html->link('Editar', '/atasreunioes/edit/' . $atasreuniao['id']);?>
+		<?php echo $html->link('Excluir', '/atasreunioes/delete/' . $atasreuniao['id'], null, 'Deseja realmente excluir : id ' . $atasreuniao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ata de reunião', '/atasreunioes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Atividades relacionadas</h3>
+<?php if(!empty($projeto['Atividade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Atividade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Atividade'] as $atividade):?>
+<tr>
+	<?php foreach($atividade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades/view/' . $atividade['id']);?>
+		<?php echo $html->link('Editar', '/atividades/edit/' . $atividade['id']);?>
+		<?php echo $html->link('Excluir', '/atividades/delete/' . $atividade['id'], null, 'Deseja realmente excluir : id ' . $atividade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade', '/atividades/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Controles de mudanças relacionados</h3>
+<?php if(!empty($projeto['Controlesmudanca'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Controlesmudanca']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Controlesmudanca'] as $controlesmudanca):?>
+<tr>
+	<?php foreach($controlesmudanca as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/controlesmudancas/view/' . $controlesmudanca['id']);?>
+		<?php echo $html->link('Editar', '/controlesmudancas/edit/' . $controlesmudanca['id']);?>
+		<?php echo $html->link('Excluir', '/controlesmudancas/delete/' . $controlesmudanca['id'], null, 'Deseja realmente excluir : id ' . $controlesmudanca['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Controle de mudança', '/controlesmudancas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Cronogramas relacionados</h3>
+<?php if(!empty($projeto['Cronograma'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Cronograma']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Cronograma'] as $cronograma):?>
+<tr>
+	<?php foreach($cronograma as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/cronogramas/view/' . $cronograma['id']);?>
+		<?php echo $html->link('Editar', '/cronogramas/edit/' . $cronograma['id']);?>
+		<?php echo $html->link('Excluir', '/cronogramas/delete/' . $cronograma['id'], null, 'Deseja realmente excluir : id ' . $cronograma['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Cronograma', '/cronogramas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Declarações de escopos relacionadas</h3>
+<?php if(!empty($projeto['Declaracoesescopo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Declaracoesescopo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Declaracoesescopo'] as $declaracoesescopo):?>
+<tr>
+	<?php foreach($declaracoesescopo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/declaracoesescopos/view/' . $declaracoesescopo['id']);?>
+		<?php echo $html->link('Editar', '/declaracoesescopos/edit/' . $declaracoesescopo['id']);?>
+		<?php echo $html->link('Excluir', '/declaracoesescopos/delete/' . $declaracoesescopo['id'], null, 'Deseja realmente excluir : id ' . $declaracoesescopo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Estudos de viabilidades relacionados</h3>
+<?php if(!empty($projeto['Estudosviabilidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Estudosviabilidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Estudosviabilidade'] as $estudosviabilidade):?>
+<tr>
+	<?php foreach($estudosviabilidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/estudosviabilidades/view/' . $estudosviabilidade['id']);?>
+		<?php echo $html->link('Editar', '/estudosviabilidades/edit/' . $estudosviabilidade['id']);?>
+		<?php echo $html->link('Excluir', '/estudosviabilidades/delete/' . $estudosviabilidade['id'], null, 'Deseja realmente excluir : id ' . $estudosviabilidade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Históricos relacionados</h3>
+<?php if(!empty($projeto['Historico'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Historico']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Historico'] as $historico):?>
+<tr>
+	<?php foreach($historico as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/historicos/view/' . $historico['id']);?>
+		<?php echo $html->link('Editar', '/historicos/edit/' . $historico['id']);?>
+		<?php echo $html->link('Excluir', '/historicos/delete/' . $historico['id'], null, 'Deseja realmente excluir : id ' . $historico['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Histórico', '/historicos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Licões aprendidas relacionadas</h3>
+<?php if(!empty($projeto['Licoesaprendida'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Licoesaprendida']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Licoesaprendida'] as $licoesaprendida):?>
+<tr>
+	<?php foreach($licoesaprendida as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/licoesaprendidas/view/' . $licoesaprendida['id']);?>
+		<?php echo $html->link('Editar', '/licoesaprendidas/edit/' . $licoesaprendida['id']);?>
+		<?php echo $html->link('Excluir', '/licoesaprendidas/delete/' . $licoesaprendida['id'], null, 'Deseja realmente excluir : id ' . $licoesaprendida['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Mensagens relacionadas</h3>
+<?php if(!empty($projeto['Mensagem'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Mensagem']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Mensagem'] as $mensagem):?>
+<tr>
+	<?php foreach($mensagem as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/mensagens/view/' . $mensagem['id']);?>
+		<?php echo $html->link('Editar', '/mensagens/edit/' . $mensagem['id']);?>
+		<?php echo $html->link('Excluir', '/mensagens/delete/' . $mensagem['id'], null, 'Deseja realmente excluir : id ' . $mensagem['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Mensagem', '/mensagens/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Orçamentos relacionados</h3>
+<?php if(!empty($projeto['Orcamento'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Orcamento']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Orcamento'] as $orcamento):?>
+<tr>
+	<?php foreach($orcamento as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/orcamentos/view/' . $orcamento['id']);?>
+		<?php echo $html->link('Editar', '/orcamentos/edit/' . $orcamento['id']);?>
+		<?php echo $html->link('Excluir', '/orcamentos/delete/' . $orcamento['id'], null, 'Deseja realmente excluir : id ' . $orcamento['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Orçamento', '/orcamentos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Passos do workflow relacionados</h3>
+<?php if(!empty($projeto['Passosworkflow'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Passosworkflow']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Passosworkflow'] as $passosworkflow):?>
+<tr>
+	<?php foreach($passosworkflow as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/passosworkflows/view/' . $passosworkflow['id']);?>
+		<?php echo $html->link('Editar', '/passosworkflows/edit/' . $passosworkflow['id']);?>
+		<?php echo $html->link('Excluir', '/passosworkflows/delete/' . $passosworkflow['id'], null, 'Deseja realmente excluir : id ' . $passosworkflow['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Passo do workflow', '/passosworkflows/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Planos de aquisições relacionados</h3>
+<?php if(!empty($projeto['Planosaquisicao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Planosaquisicao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Planosaquisicao'] as $planosaquisicao):?>
+<tr>
+	<?php foreach($planosaquisicao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/planosaquisicoes/view/' . $planosaquisicao['id']);?>
+		<?php echo $html->link('Editar', '/planosaquisicoes/edit/' . $planosaquisicao['id']);?>
+		<?php echo $html->link('Excluir', '/planosaquisicoes/delete/' . $planosaquisicao['id'], null, 'Deseja realmente excluir : id ' . $planosaquisicao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Plano de aquisição', '/planosaquisicoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Planos de comunicações relacionados</h3>
+<?php if(!empty($projeto['Planoscomunicacao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Planoscomunicacao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Planoscomunicacao'] as $planoscomunicacao):?>
+<tr>
+	<?php foreach($planoscomunicacao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/planoscomunicacoes/view/' . $planoscomunicacao['id']);?>
+		<?php echo $html->link('Editar', '/planoscomunicacoes/edit/' . $planoscomunicacao['id']);?>
+		<?php echo $html->link('Excluir', '/planoscomunicacoes/delete/' . $planoscomunicacao['id'], null, 'Deseja realmente excluir : id ' . $planoscomunicacao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Plano de comunicação', '/planoscomunicacoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Planos de custos relacionados</h3>
+<?php if(!empty($projeto['Planoscusto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Planoscusto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Planoscusto'] as $planoscusto):?>
+<tr>
+	<?php foreach($planoscusto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/planoscustos/view/' . $planoscusto['id']);?>
+		<?php echo $html->link('Editar', '/planoscustos/edit/' . $planoscusto['id']);?>
+		<?php echo $html->link('Excluir', '/planoscustos/delete/' . $planoscusto['id'], null, 'Deseja realmente excluir : id ' . $planoscusto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Plano de custo', '/planoscustos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Planos de projetos relacionados</h3>
+<?php if(!empty($projeto['Planosprojeto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Planosprojeto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Planosprojeto'] as $planosprojeto):?>
+<tr>
+	<?php foreach($planosprojeto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/planosprojetos/view/' . $planosprojeto['id']);?>
+		<?php echo $html->link('Editar', '/planosprojetos/edit/' . $planosprojeto['id']);?>
+		<?php echo $html->link('Excluir', '/planosprojetos/delete/' . $planosprojeto['id'], null, 'Deseja realmente excluir : id ' . $planosprojeto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Plano de projeto', '/planosprojetos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Recursos relacionados</h3>
+<?php if(!empty($projeto['Recurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Recurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Recurso'] as $recurso):?>
+<tr>
+	<?php foreach($recurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/recursos/view/' . $recurso['id']);?>
+		<?php echo $html->link('Editar', '/recursos/edit/' . $recurso['id']);?>
+		<?php echo $html->link('Excluir', '/recursos/delete/' . $recurso['id'], null, 'Deseja realmente excluir : id ' . $recurso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recurso', '/recursos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Relatórios de desempenhos relacionados</h3>
+<?php if(!empty($projeto['Relatoriosdesempenho'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Relatoriosdesempenho']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Relatoriosdesempenho'] as $relatoriosdesempenho):?>
+<tr>
+	<?php foreach($relatoriosdesempenho as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/relatoriosdesempenhos/view/' . $relatoriosdesempenho['id']);?>
+		<?php echo $html->link('Editar', '/relatoriosdesempenhos/edit/' . $relatoriosdesempenho['id']);?>
+		<?php echo $html->link('Excluir', '/relatoriosdesempenhos/delete/' . $relatoriosdesempenho['id'], null, 'Deseja realmente excluir : id ' . $relatoriosdesempenho['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Relatorio de desempenho', '/relatoriosdesempenhos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Termos de aceite de projetos relacionados</h3>
+<?php if(!empty($projeto['Termosaceitesprojeto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($projeto['Termosaceitesprojeto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($projeto['Termosaceitesprojeto'] as $termosaceitesprojeto):?>
+<tr>
+	<?php foreach($termosaceitesprojeto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/termosaceitesprojetos/view/' . $termosaceitesprojeto['id']);?>
+		<?php echo $html->link('Editar', '/termosaceitesprojetos/edit/' . $termosaceitesprojeto['id']);?>
+		<?php echo $html->link('Excluir', '/termosaceitesprojetos/delete/' . $termosaceitesprojeto['id'], null, 'Deseja realmente excluir : id ' . $termosaceitesprojeto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Termo de aceite de projeto', '/termosaceitesprojetos/add/');?> </li>
+</ul>
+</div>

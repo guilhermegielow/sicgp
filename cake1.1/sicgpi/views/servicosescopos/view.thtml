@@ -1,0 +1,21 @@
+<div class="servicosescopo">
+<h2>Serviço de escopo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $servicosescopo['Servicosescopo']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($servicosescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$servicosescopo['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $servicosescopo['Servicosescopo']['ds_servico_escopo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Serviço de escopo',   '/servicosescopos/edit/' . $servicosescopo['Servicosescopo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Serviço de escopo', '/servicosescopos/delete/' . $servicosescopo['Servicosescopo']['id'], null, 'Deseja realmente excluir : id ' . $servicosescopo['Servicosescopo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Serviços de escopos',   '/servicosescopos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Serviço de escopo',	'/servicosescopos/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

@@ -1,0 +1,26 @@
+<div class="tiposservicos">
+<h2>Tipos de serviços</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($tiposservicos as $tiposservico): ?>
+<tr>
+	<td><?php echo $tiposservico['Tiposservico']['id']; ?></td>
+	<td><?php echo $tiposservico['Tiposservico']['ds_tipo_servico']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/tiposservicos/view/' . $tiposservico['Tiposservico']['id'])?>
+		<?php echo $html->link('Editar','/tiposservicos/edit/' . $tiposservico['Tiposservico']['id'])?>
+		<?php echo $html->link('Excluir','/tiposservicos/delete/' . $tiposservico['Tiposservico']['id'], null, 'Deseja realmente excluir : id ' . $tiposservico['Tiposservico']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Tipo de serviço', '/tiposservicos/add'); ?></li>
+</ul>
+</div>

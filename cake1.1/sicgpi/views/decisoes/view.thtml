@@ -1,0 +1,21 @@
+<div class="decisao">
+<h2>Decisão</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $decisao['Decisao']['id']?></dd>
+	<dt>Ata de reunião</dt>
+	<dd>&nbsp;<?php echo $html->link($decisao['Atasreuniao']['id'], '/atasreunioes/view/' .$decisao['Atasreuniao']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $decisao['Decisao']['ds_decisao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Decisão',   '/decisoes/edit/' . $decisao['Decisao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Decisão', '/decisoes/delete/' . $decisao['Decisao']['id'], null, 'Deseja realmente excluir : id ' . $decisao['Decisao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Decisões',   '/decisoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Decisão',	'/decisoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Atas de reuniões', '/atasreunioes/index/')?> </li>
+	<li><?php echo $html->link('Inserir Ata de reunião', '/atasreunioes/add/')?> </li>
+</ul>
+
+</div>

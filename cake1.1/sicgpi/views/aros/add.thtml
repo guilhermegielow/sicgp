@@ -1,0 +1,29 @@
+<h2>Novo Aro</h2>
+<form action="<?php echo $html->url('/aros/add'); ?>" method="post">
+<div class="optional"> 
+	<?php echo $form->labelTag('Aro/foreign_key', 'Foreign Key');?>
+ 	<?php echo $html->input('Aro/foreign_key', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aro/foreign_key', 'Por favor informe Foreign Key.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Aro/alias', 'Alias');?>
+ 	<?php echo $html->input('Aro/alias', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aro/alias', 'Por favor informe Alias.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Aro/lft', 'Lft');?>
+ 	<?php echo $html->input('Aro/lft', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aro/lft', 'Por favor informe Lft.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Aro/rght', 'Rght');?>
+ 	<?php echo $html->input('Aro/rght', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Aro/rght', 'Por favor informe Rght.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Aros', '/aros/index')?></li>
+</ul>

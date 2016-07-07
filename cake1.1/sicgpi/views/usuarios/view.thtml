@@ -1,0 +1,34 @@
+<div class="usuario">
+<h2>Usuário</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['id']?></dd>
+	<dt>Departamento</dt>
+	<dd>&nbsp;<?php echo $html->link($usuario['Departamento']['ds_departamento'], '/departamentos/view/' .$usuario['Departamento']['id'])?></dd>
+	<dt>Usuário</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['ds_usuario']?></dd>
+	<dt>Nome</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['nm_usuario']?></dd>
+	<dt>E-mail</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['ds_email']?></dd>
+	<dt>Data de alteração de senha</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($usuario['Usuario']['dt_alt_senha'])?></dd>
+	<dt>Prazo da senha</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['prazo_senha']?></dd>
+	<dt>Data do fim da validade</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($usuario['Usuario']['dt_fim_usuario'])?></dd>
+	<dt>Ativo</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['ativo']?></dd>
+	<dt>Telefone</dt>
+	<dd>&nbsp;<?php echo $usuario['Usuario']['nr_telefone']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Usuário',   '/usuarios/edit/' . $usuario['Usuario']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Usuário', '/usuarios/delete/' . $usuario['Usuario']['id'], null, 'Deseja realmente excluir : id ' . $usuario['Usuario']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Usuários',   '/usuarios/index') ?> </li>
+	<li><?php echo $html->link('Inserir Usuário',	'/usuarios/add') ?> </li>
+	<li><?php echo $html->link('Listar Departamentos', '/departamentos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Departamento', '/departamentos/add/')?> </li>
+</ul>
+</div>

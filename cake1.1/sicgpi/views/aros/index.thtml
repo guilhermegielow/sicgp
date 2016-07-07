@@ -1,0 +1,32 @@
+<div class="aros">
+<h2>Aros</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Foreign Key</th>
+	<th>Alias</th>
+	<th>Lft</th>
+	<th>Rght</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($aros as $aro): ?>
+<tr>
+	<td><?php echo $aro['Aro']['id']; ?></td>
+	<td><?php echo $aro['Aro']['foreign_key']; ?></td>
+	<td><?php echo $aro['Aro']['alias']; ?></td>
+	<td><?php echo $aro['Aro']['lft']; ?></td>
+	<td><?php echo $aro['Aro']['rght']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/aros/view/' . $aro['Aro']['id'])?>
+		<?php echo $html->link('Editar','/aros/edit/' . $aro['Aro']['id'])?>
+		<?php echo $html->link('Excluir','/aros/delete/' . $aro['Aro']['id'], null, 'Deseja realmente excluir : id ' . $aro['Aro']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Aro', '/aros/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,32 @@
+<div class="planosaquisicoes">
+<h2>Planos de aquisições</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Documento de referência</th>
+	<th>Avaliação de fornecedores</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($planosaquisicoes as $planosaquisicao): ?>
+<tr>
+	<td><?php echo $planosaquisicao['Planosaquisicao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($planosaquisicao['Projeto']['ds_titulo'], '/projetos/view/' .$planosaquisicao['Projeto']['id'])?></td>
+	<td><?php echo $planosaquisicao['Planosaquisicao']['ds_plano_aquisicao']; ?></td>
+	<td><?php echo $planosaquisicao['Planosaquisicao']['ds_documento_referencia']; ?></td>
+	<td><?php echo $planosaquisicao['Planosaquisicao']['ds_avaliacao_fornecedores']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/planosaquisicoes/view/' . $planosaquisicao['Planosaquisicao']['id'])?>
+		<?php echo $html->link('Editar','/planosaquisicoes/edit/' . $planosaquisicao['Planosaquisicao']['id'])?>
+		<?php echo $html->link('Excluir','/planosaquisicoes/delete/' . $planosaquisicao['Planosaquisicao']['id'], null, 'Deseja realmente excluir : id ' . $planosaquisicao['Planosaquisicao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Plano de aquisição', '/planosaquisicoes/add'); ?></li>
+</ul>
+</div>

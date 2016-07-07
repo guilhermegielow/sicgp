@@ -1,0 +1,32 @@
+<div class="estudosviabilidades">
+<h2>Estudo de viabilidade</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Tipo de serviço</th>
+	<th>Projeto</th>
+	<th>Início da validade</th>
+	<th>Fim da validade</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($estudosviabilidades as $estudosviabilidade): ?>
+<tr>
+	<td><?php echo $estudosviabilidade['Estudosviabilidade']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($estudosviabilidade['Tiposservico']['ds_tipo_servico'], '/tiposservicos/view/' .$estudosviabilidade['Tiposservico']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($estudosviabilidade['Projeto']['ds_titulo'], '/projetos/view/' .$estudosviabilidade['Projeto']['id'])?></td>
+	<td><?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_inicio_validade']); ?></td>
+	<td><?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_fim_validade']); ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/estudosviabilidades/view/' . $estudosviabilidade['Estudosviabilidade']['id'])?>
+		<?php echo $html->link('Editar','/estudosviabilidades/edit/' . $estudosviabilidade['Estudosviabilidade']['id'])?>
+		<?php echo $html->link('Excluir','/estudosviabilidades/delete/' . $estudosviabilidade['Estudosviabilidade']['id'], null, 'Deseja realmente excluir : id ' . $estudosviabilidade['Estudosviabilidade']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add'); ?></li>
+</ul>
+</div>

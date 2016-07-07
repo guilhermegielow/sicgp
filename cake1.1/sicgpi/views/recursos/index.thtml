@@ -1,0 +1,36 @@
+<div class="recursos">
+<h2>Recursos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Grupo de recurso</th>
+	<th>Unidade</th>
+	<th>Descrição</th>
+	<th>Valor de custo</th>
+	<th>Quantidade</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($recursos as $recurso): ?>
+<tr>
+	<td><?php echo $recurso['Recurso']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($recurso['Projeto']['ds_titulo'], '/projetos/view/' .$recurso['Projeto']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($recurso['Gruposrecurso']['ds_grupo_recurso'], '/gruposrecursos/view/' .$recurso['Gruposrecurso']['id'])?></td>
+	<td>&nbsp;<?php echo $html->link($recurso['Unidade']['ds_unidade'], '/unidades/view/' .$recurso['Unidade']['id'])?></td>
+	<td><?php echo $recurso['Recurso']['ds_recurso']; ?></td>
+	<td><?php echo $recurso['Recurso']['vl_custo']; ?></td>
+	<td><?php echo $recurso['Recurso']['quantidade']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/recursos/view/' . $recurso['Recurso']['id'])?>
+		<?php echo $html->link('Editar','/recursos/edit/' . $recurso['Recurso']['id'])?>
+		<?php echo $html->link('Excluir','/recursos/delete/' . $recurso['Recurso']['id'], null, 'Deseja realmente excluir : id ' . $recurso['Recurso']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Recurso', '/recursos/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,28 @@
+<h2>Editar Marco</h2>
+<form action="<?php echo $html->url('/marcos/edit/'.$html->tagValue('Marco/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Marco/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Marco/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Marco/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Marco/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Marco/ds_marco', 'Descrição');?>
+ 	<?php echo $html->input('Marco/ds_marco', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Marco/ds_marco', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Marco/dt_entrega', 'Data de entrega');?>
+ 	<?php echo $html->dateTimeOptionTag('Marco/dt_entrega', 'DMY' , 'NONE', $html->tagValue('Marco/dt_entrega'), array());?>
+	<?php echo $html->tagErrorMsg('Marco/dt_entrega', 'Por favor selecione a Data de entrega.');?>
+</div>
+<?php echo $html->hidden('Marco/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/marcos/delete/' . $html->tagValue('Marco/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Marco/id'));?>
+<li><?php echo $html->link('Listar Marcos', '/marcos/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

@@ -1,0 +1,46 @@
+<h2>Novo Mapa de comunicação</h2>
+<form action="<?php echo $html->url('/mapascomunicacoes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Mapascomunicacao/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Mapascomunicacao/projeto_id', $projetos, $html->tagValue('Mapascomunicacao/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Mapascomunicacao/ds_assunto', 'Assunto');?>
+ 	<?php echo $html->input('Mapascomunicacao/ds_assunto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/ds_assunto', 'Por favor informe o Assunto.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Mapascomunicacao/tp_documento', 'Tipo de documento');?>
+ 	<?php echo $html->input('Mapascomunicacao/tp_documento', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/tp_documento', 'Por favor informe o Tipo de documento.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Mapascomunicacao/tp_meio', 'Tipo de meio');?>
+ 	<?php echo $html->input('Mapascomunicacao/tp_meio', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/tp_meio', 'Por favor informe o Tipo de meio.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Mapascomunicacao/dias_frequencia', 'Dias de frequência');?>
+ 	<?php echo $html->input('Mapascomunicacao/dias_frequencia', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/dias_frequencia', 'Por favor informe os Dias de frequência.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Mapascomunicacao/ds_acao_esperada', 'Ação esperada');?>
+ 	<?php echo $html->input('Mapascomunicacao/ds_acao_esperada', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Mapascomunicacao/ds_acao_esperada', 'Por favor informe a Ação esperada.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione Usuários relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Mapas de comunicações', '/mapascomunicacoes/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

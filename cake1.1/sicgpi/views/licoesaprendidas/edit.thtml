@@ -1,0 +1,23 @@
+<h2>Editar Lição Aprendida</h2>
+<form action="<?php echo $html->url('/licoesaprendidas/edit/'.$html->tagValue('Licoesaprendida/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Licoesaprendida/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Licoesaprendida/projeto_id', $projetos, $html->tagValue('Licoesaprendida/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Licoesaprendida/projeto_id', 'Por favor selecione Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Licoesaprendida/ds_licao_aprendida', 'Descrição');?>
+ 	<?php echo $html->input('Licoesaprendida/ds_licao_aprendida', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Licoesaprendida/ds_licao_aprendida', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Licoesaprendida/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/licoesaprendidas/delete/' . $html->tagValue('Licoesaprendida/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Licoesaprendida/id'));?>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

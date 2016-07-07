@@ -1,0 +1,16 @@
+<h2>Editar Tipo de mudança</h2>
+<form action="<?php echo $html->url('/tiposmudancas/edit/'.$html->tagValue('Tiposmudanca/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposmudanca/ds_tipo_mudanca', 'Descrição');?>
+ 	<?php echo $html->input('Tiposmudanca/ds_tipo_mudanca', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposmudanca/ds_tipo_mudanca', 'Por favor informe Descrição.');?>
+</div>
+<?php echo $html->hidden('Tiposmudanca/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/tiposmudancas/delete/' . $html->tagValue('Tiposmudanca/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Tiposmudanca/id'));?>
+<li><?php echo $html->link('Listar Tipos de mudanças', '/tiposmudancas/index')?></li>
+</ul>

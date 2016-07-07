@@ -1,0 +1,16 @@
+<h2>Editar Unidade</h2>
+<form action="<?php echo $html->url('/unidades/edit/'.$html->tagValue('Unidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Unidade/ds_unidade', 'Descrição');?>
+ 	<?php echo $html->input('Unidade/ds_unidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Unidade/ds_unidade', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Unidade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/unidades/delete/' . $html->tagValue('Unidade/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Unidade/id'));?>
+<li><?php echo $html->link('Listar Unidades', '/unidades/index')?></li>
+</ul>

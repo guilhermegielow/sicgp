@@ -1,0 +1,21 @@
+<div class="objetivo">
+<h2>Objetivo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $objetivo['Objetivo']['id']?></dd>
+	<dt>Estudo de viabilidade</dt>
+	<dd>&nbsp;<?php echo $html->link($objetivo['Estudosviabilidade']['id'], '/estudosviabilidades/view/' .$objetivo['Estudosviabilidade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $objetivo['Objetivo']['ds_objetivo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Objetivo',   '/objetivos/edit/' . $objetivo['Objetivo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Objetivo', '/objetivos/delete/' . $objetivo['Objetivo']['id'], null, 'Deseja realmente excluir : id ' . $objetivo['Objetivo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Objetivos',   '/objetivos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Objetivo',	'/objetivos/add') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade', '/estudosviabilidades/add/')?> </li>
+</ul>
+
+</div>

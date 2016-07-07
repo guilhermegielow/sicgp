@@ -1,0 +1,16 @@
+<h2>Editar Estado</h2>
+<form action="<?php echo $html->url('/estados/edit/'.$html->tagValue('Estado/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Estado/ds_estado', 'Descrição');?>
+ 	<?php echo $html->input('Estado/ds_estado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Estado/ds_estado', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Estado/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/estados/delete/' . $html->tagValue('Estado/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Estado/id'));?>
+<li><?php echo $html->link('Listar Estados', '/estados/index')?></li>
+</ul>

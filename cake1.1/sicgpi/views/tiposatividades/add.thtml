@@ -1,0 +1,14 @@
+<h2>Novo Tipo de atividade</h2>
+<form action="<?php echo $html->url('/tiposatividades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposatividade/ds_tipo_atividades', 'Descrição');?>
+ 	<?php echo $html->input('Tiposatividade/ds_tipo_atividades', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposatividade/ds_tipo_atividades', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Tipos de atividades', '/tiposatividades/index')?></li>
+</ul>

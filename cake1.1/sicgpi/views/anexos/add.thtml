@@ -1,0 +1,27 @@
+<h2>Novo Anexo</h2>
+<form action="<?php echo $html->url('/anexos/add'); ?>" method="post" enctype="multipart/form-data">
+<div class="required"> 
+	<?php echo $form->labelTag('Anexo/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Anexo/projeto_id', $projetos, $html->tagValue('Anexo/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Anexo/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Anexo/ds_anexo', 'Descrição');?>
+ 	<?php echo $html->input('Anexo/ds_anexo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Anexo/ds_anexo', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Anexo/arq_anexo', 'Arquivo a anexar');?>
+ 	<?php echo '<input type=file name=arquivo>';?>
+	<?php echo $html->tagErrorMsg('Anexo/arq_anexo', 'Por favor informe o Arquivo a anexar.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Anexos', '/anexos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>
+

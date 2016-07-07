@@ -1,0 +1,21 @@
+<div class="fatorescritico">
+<h2>Fator crítico</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $fatorescritico['Fatorescritico']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($fatorescritico['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$fatorescritico['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $fatorescritico['Fatorescritico']['ds_fator_critico']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Fator crítico',   '/fatorescriticos/edit/' . $fatorescritico['Fatorescritico']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Fator crítico', '/fatorescriticos/delete/' . $fatorescritico['Fatorescritico']['id'], null, 'Deseja realmente excluir : id ' . $fatorescritico['Fatorescritico']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Fatores críticos',   '/fatorescriticos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Fator crítico',	'/fatorescriticos/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

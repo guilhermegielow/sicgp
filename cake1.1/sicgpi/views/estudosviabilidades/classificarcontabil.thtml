@@ -1,0 +1,17 @@
+<h2>Classificar Contabilmente o Estudo de viabilidade</h2>
+<form action="<?php echo $html->url('/estudosviabilidades/classificarcontabil/'.$html->tagValue('Estudosviabilidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Estudosviabilidade/projeto_id', $projetos, $html->tagValue('Estudosviabilidade/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Contascusto/Contascusto', 'Contas relacionadas');?>
+ 	<?php echo $html->selectTag('Contascusto/Contascusto', $contascustos, $selectedContas, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Contascusto/Contascusto', 'Por favor selecione as Contas relacionadas.');?>
+</div>
+<?php echo $html->hidden('Estudosviabilidade/id')?>
+<div align='left' class="submit">
+	<?php echo $html->submit('Classificar');?>
+</div>
+</form>

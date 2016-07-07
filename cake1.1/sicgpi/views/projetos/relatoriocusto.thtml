@@ -1,0 +1,22 @@
+<div class="projeto">
+<h2>Relatório de custo por departamento do projeto <?php echo $projeto['Projeto']['ds_titulo']?></h2>
+
+<?php if(!empty($relatoriocusto)):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Departamento</th>
+	<th>Valor previsto</th>
+	<th>Tempo previsto</th>
+</tr>
+  
+    <?php for ($i = 0; $i < sizeof($relatoriocusto); $i++) :?>
+		  <tr>
+      <td><?php echo $relatoriocusto[$i]['d']['ds_departamento'];?></td>
+		  <td><?php echo $relatoriocusto[$i]['0']['vl_custo'];?></td>
+		  <td><?php echo $relatoriocusto[$i]['0']['dias_prazo'];?></td>
+	   </tr>
+     <?php endfor;?>
+  
+</table>
+<?php endif; ?>
+

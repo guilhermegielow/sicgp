@@ -1,0 +1,31 @@
+<h2>Nova Declaração de Escopo</h2>
+<form action="<?php echo $html->url('/declaracoesescopos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Declaracoesescopo/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Declaracoesescopo/projeto_id', $projetos, $html->tagValue('Declaracoesescopo/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Declaracoesescopo/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Declaracoesescopo/ds_declaracao_escopo', 'Descrição');?>
+ 	<?php echo $html->input('Declaracoesescopo/ds_declaracao_escopo', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Declaracoesescopo/ds_declaracao_escopo', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Departamento/Departamento', 'Departamentos relacionados');?>
+ 	<?php echo $html->selectTag('Departamento/Departamento', $departamentos, $selectedDepartamentos, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Departamento/Departamento', 'Por favor selecione os Departamentos relacionados.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

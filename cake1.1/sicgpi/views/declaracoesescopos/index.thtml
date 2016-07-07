@@ -1,0 +1,28 @@
+<div class="declaracoesescopos">
+<h2>Declarações de escopos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($declaracoesescopos as $declaracoesescopo): ?>
+<tr>
+	<td><?php echo $declaracoesescopo['Declaracoesescopo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($declaracoesescopo['Projeto']['ds_titulo'], '/projetos/view/' .$declaracoesescopo['Projeto']['id'])?></td>
+	<td><?php echo $declaracoesescopo['Declaracoesescopo']['ds_declaracao_escopo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/declaracoesescopos/view/' . $declaracoesescopo['Declaracoesescopo']['id'])?>
+		<?php echo $html->link('Editar','/declaracoesescopos/edit/' . $declaracoesescopo['Declaracoesescopo']['id'])?>
+		<?php echo $html->link('Excluir','/declaracoesescopos/delete/' . $declaracoesescopo['Declaracoesescopo']['id'], null, 'Deseja realmente excluir : id ' . $declaracoesescopo['Declaracoesescopo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add'); ?></li>
+</ul>
+</div>

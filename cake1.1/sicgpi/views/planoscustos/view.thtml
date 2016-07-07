@@ -1,0 +1,21 @@
+<div class="planoscusto">
+<h2>Plano de custo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $planoscusto['Planoscusto']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($planoscusto['Projeto']['ds_titulo'], '/projetos/view/' .$planoscusto['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $planoscusto['Planoscusto']['ds_plano_custo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Plano de custo',   '/planoscustos/edit/' . $planoscusto['Planoscusto']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Plano de custo', '/planoscustos/delete/' . $planoscusto['Planoscusto']['id'], null, 'Deseja realmente excluir : id ' . $planoscusto['Planoscusto']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Planos de custos',   '/planoscustos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Plano de custo',	'/planoscustos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>

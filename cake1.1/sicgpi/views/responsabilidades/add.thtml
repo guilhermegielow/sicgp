@@ -1,0 +1,28 @@
+<h2>Nova Responsabilidade</h2>
+<form action="<?php echo $html->url('/responsabilidades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Responsabilidade/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Responsabilidade/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Responsabilidade/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Responsabilidade/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Responsabilidade/tiposresponsabilidade_id', 'Tipo de responsabilidade');?>
+ 	<?php echo $html->selectTag('Responsabilidade/tiposresponsabilidade_id', $tiposresponsabilidades, $html->tagValue('Responsabilidade/tiposresponsabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Responsabilidade/tiposresponsabilidade_id', 'Por favor selecione Tipo de responsabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Responsabilidade/ds_responsabilidade', 'Descrição');?>
+ 	<?php echo $html->input('Responsabilidade/ds_responsabilidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Responsabilidade/ds_responsabilidade', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Responsabilidades', '/responsabilidades/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+<li><?php echo $html->link('Listar Tipos de responsabilidades', '/tiposresponsabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de responsabilidade', '/tiposresponsabilidades/add/');?></li>
+</ul>

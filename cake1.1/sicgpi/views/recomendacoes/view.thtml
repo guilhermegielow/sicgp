@@ -1,0 +1,21 @@
+<div class="recomendacao">
+<h2>Recomendação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $recomendacao['Recomendacao']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($recomendacao['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$recomendacao['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $recomendacao['Recomendacao']['ds_recomendacao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Recomendação',   '/recomendacoes/edit/' . $recomendacao['Recomendacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Recomendação', '/recomendacoes/delete/' . $recomendacao['Recomendacao']['id'], null, 'Deseja realmente excluir : id ' . $recomendacao['Recomendacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Recomendações',   '/recomendacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Recomendação',	'/recomendacoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

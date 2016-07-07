@@ -1,0 +1,21 @@
+<div class="oportunidade">
+<h2>Oportunidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $oportunidade['Oportunidade']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($oportunidade['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$oportunidade['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $oportunidade['Oportunidade']['ds_oportunidade']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Oportunidade',   '/oportunidades/edit/' . $oportunidade['Oportunidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Oportunidade', '/oportunidades/delete/' . $oportunidade['Oportunidade']['id'], null, 'Deseja realmente excluir : id ' . $oportunidade['Oportunidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Oportunidades',   '/oportunidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Oportunidade',	'/oportunidades/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

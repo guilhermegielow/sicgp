@@ -1,0 +1,31 @@
+<div class="anexos">
+<h2>Anexos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Projeto</th>
+	<th>Descrição</th>
+	<th>Nome do arquivo</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($anexos as $anexo): ?>
+<tr>
+	<td><?php echo $anexo['Anexo']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($anexo['Projeto']['ds_titulo'], '/projetos/view/' .$anexo['Projeto']['id'])?></td>
+	<td><?php echo $anexo['Anexo']['ds_anexo']; ?></td>
+	<td><?php echo $anexo['Anexo']['arq_anexo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Download','/anexos/download/' . $anexo['Anexo']['id'])?>
+    <?php echo $html->link('Detalhar','/anexos/view/' . $anexo['Anexo']['id'])?>
+		<?php echo $html->link('Editar','/anexos/edit/' . $anexo['Anexo']['id'])?>
+		<?php echo $html->link('Excluir','/anexos/delete/' . $anexo['Anexo']['id'], null, 'Deseja realmente excluir : id ' . $anexo['Anexo']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Anexo', '/anexos/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,38 @@
+<div class="processosaquisicao">
+<h2>Aprovar Processo de aquisição</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['id']?></dd>
+	<dt>Plano de aquisição</dt>
+	<dd>&nbsp;<?php echo $html->link($processosaquisicao['Planosaquisicao']['ds_plano_aquisicao'], '/planosaquisicoes/view/' .$processosaquisicao['Planosaquisicao']['id'])?></dd>
+	<dt>Fornecedor</dt>
+	<dd>&nbsp;<?php echo $html->link($processosaquisicao['Fornecedor']['nm_fornecedor'], '/fornecedores/view/' .$processosaquisicao['Fornecedor']['id'])?></dd>
+	<dt>Valor do orçamento</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['vl_orcamento']?></dd>
+	<dt>Dias de prazo</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['dias_prazo']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $processosaquisicao['Processosaquisicao']['ds_processo_aquisicao']?></dd>
+</dl>
+</div>
+<?php if ($processosaquisicao['Processosaquisicao']['user_aprovacao'] == '' && $processosaquisicao['Processosaquisicao']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/processosaquisicoes/aprovarprocesso/'.$processosaquisicao['Processosaquisicao']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Aprovar Processo de Aquisição');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if ($processosaquisicao['Processosaquisicao']['user_aprovacao'] == '' && $processosaquisicao['Processosaquisicao']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/processosaquisicoes/reprovarprocesso/'.$processosaquisicao['Processosaquisicao']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Reprovar Processo de Aquisição');
+        echo '</div>';
+        echo '</form>';
+}
+?>

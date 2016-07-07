@@ -1,0 +1,350 @@
+<div class="estudosviabilidade">
+<h2>Estudo de viabilidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $estudosviabilidade['Estudosviabilidade']['id']?></dd>
+	<dt>Tipo de serviço</dt>
+	<dd>&nbsp;<?php echo $html->link($estudosviabilidade['Tiposservico']['ds_tipo_servico'], '/tiposservicos/view/' .$estudosviabilidade['Tiposservico']['id'])?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($estudosviabilidade['Projeto']['ds_titulo'], '/projetos/view/' .$estudosviabilidade['Projeto']['id'])?></dd>
+	<dt>Início da validade</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_inicio_validade'])?></dd>
+	<dt>Fim da validade</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_fim_validade'])?></dd>
+	<dt>Texto de encerramento</dt>
+	<dd>&nbsp;<?php echo $estudosviabilidade['Estudosviabilidade']['ds_texto_encerramento']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Estudo de viabilidade',   '/estudosviabilidades/edit/' . $estudosviabilidade['Estudosviabilidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Estudo de viabilidade', '/estudosviabilidades/delete/' . $estudosviabilidade['Estudosviabilidade']['id'], null, 'Deseja realmente excluir : id ' . $estudosviabilidade['Estudosviabilidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Estudos de viabilidades',   '/estudosviabilidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Estudo de viabilidade',	'/estudosviabilidades/add') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de serviços', '/tiposservicos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de serviço', '/tiposservicos/add/')?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atividades Estudos de viabilidades Recursos relacionados</h3>
+<?php if(!empty($estudosviabilidade['AtividadesEstudosviabilidadesRecurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['AtividadesEstudosviabilidadesRecurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['AtividadesEstudosviabilidadesRecurso'] as $atividadesEstudosviabilidadesRecurso):?>
+<tr>
+	<?php foreach($atividadesEstudosviabilidadesRecurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades_estudosviabilidades_recursos/view/' . $atividadesEstudosviabilidadesRecurso['id']);?>
+		<?php echo $html->link('Editar', '/atividades_estudosviabilidades_recursos/edit/' . $atividadesEstudosviabilidadesRecurso['id']);?>
+		<?php echo $html->link('Excluir', '/atividades_estudosviabilidades_recursos/delete/' . $atividadesEstudosviabilidadesRecurso['id'], null, 'Deseja realmente excluir : id ' . $atividadesEstudosviabilidadesRecurso['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividades Estudos de viabilidades Recursos', '/atividades_estudosviabilidades_recursos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Justificativas relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Justificativa'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Justificativa']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Justificativa'] as $justificativa):?>
+<tr>
+	<?php foreach($justificativa as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/justificativas/view/' . $justificativa['id']);?>
+		<?php echo $html->link('Editar', '/justificativas/edit/' . $justificativa['id']);?>
+		<?php echo $html->link('Excluir', '/justificativas/delete/' . $justificativa['id'], null, 'Deseja realmente excluir : id ' . $justificativa['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Justificativa', '/justificativas/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Marcos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Marco'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Marco']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Marco'] as $marco):?>
+<tr>
+	<?php foreach($marco as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/marcos/view/' . $marco['id']);?>
+		<?php echo $html->link('Editar', '/marcos/edit/' . $marco['id']);?>
+		<?php echo $html->link('Excluir', '/marcos/delete/' . $marco['id'], null, 'Deseja realmente excluir : id ' . $marco['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Marco', '/marcos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Objetivos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Objetivo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Objetivo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Objetivo'] as $objetivo):?>
+<tr>
+	<?php foreach($objetivo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/objetivos/view/' . $objetivo['id']);?>
+		<?php echo $html->link('Editar', '/objetivos/edit/' . $objetivo['id']);?>
+		<?php echo $html->link('Excluir', '/objetivos/delete/' . $objetivo['id'], null, 'Deseja realmente excluir : id ' . $objetivo['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Objetivo', '/objetivos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Produtos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Produto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Produto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Produto'] as $produto):?>
+<tr>
+	<?php foreach($produto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/produtos/view/' . $produto['id']);?>
+		<?php echo $html->link('Editar', '/produtos/edit/' . $produto['id']);?>
+		<?php echo $html->link('Excluir', '/produtos/delete/' . $produto['id'], null, 'Deseja realmente excluir : id ' . $produto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Produto', '/produtos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Requisitos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Requisito'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Requisito']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Requisito'] as $requisito):?>
+<tr>
+	<?php foreach($requisito as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/requisitos/view/' . $requisito['id']);?>
+		<?php echo $html->link('Editar', '/requisitos/edit/' . $requisito['id']);?>
+		<?php echo $html->link('Excluir', '/requisitos/delete/' . $requisito['id'], null, 'Deseja realmente excluir : id ' . $requisito['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Requisito', '/requisitos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Responsabilidades relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Responsabilidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Responsabilidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Responsabilidade'] as $responsabilidade):?>
+<tr>
+	<?php foreach($responsabilidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/responsabilidades/view/' . $responsabilidade['id']);?>
+		<?php echo $html->link('Editar', '/responsabilidades/edit/' . $responsabilidade['id']);?>
+		<?php echo $html->link('Excluir', '/responsabilidades/delete/' . $responsabilidade['id'], null, 'Deseja realmente excluir : id ' . $responsabilidade['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Responsabilidade', '/responsabilidades/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Restrições relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Restricao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Restricao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Restricao'] as $restricao):?>
+<tr>
+	<?php foreach($restricao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/restricoes/view/' . $restricao['id']);?>
+		<?php echo $html->link('Editar', '/restricoes/edit/' . $restricao['id']);?>
+		<?php echo $html->link('Excluir', '/restricoes/delete/' . $restricao['id'], null, 'Deseja realmente excluir : id ' . $restricao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Restrição', '/restricoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Serviços relacionados</h3>
+<?php if(!empty($estudosviabilidade['Servico'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Servico']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Servico'] as $servico):?>
+<tr>
+	<?php foreach($servico as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/servicos/view/' . $servico['id']);?>
+		<?php echo $html->link('Editar', '/servicos/edit/' . $servico['id']);?>
+		<?php echo $html->link('Excluir', '/servicos/delete/' . $servico['id'], null, 'Deseja realmente excluir : id ' . $servico['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Serviço', '/servicos/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Contas relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Contascusto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Contascusto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['Contascusto'] as $contascusto):?>
+<tr>
+	<?php foreach($contascusto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/contascustos/view/' . $contascusto['id']);?>
+		<?php echo $html->link('Editar', '/contascustos/edit/' . $contascusto['id']);?>
+		<?php echo $html->link('Excluir', '/contascustos/delete/' . $contascusto['id'], null, 'Deseja realmente excluir : id ' . $contascusto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Conta', '/contascustos/add/');?> </li>
+</ul>
+</div>
+
+<?php if ($estudosviabilidade['Estudosviabilidade']['log_envio_contabilidade'] != 1) { 
+        echo '<form action="'; 
+        echo $html->url('/estudosviabilidades/enviarcontabilidade/'.$estudosviabilidade['Estudosviabilidade']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Enviar para Controladoria');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if ($estudosviabilidade['Estudosviabilidade']['log_envio_patrocinador'] != 1 && $estudosviabilidade['Estudosviabilidade']['log_classificado'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/estudosviabilidades/enviarpatrocinador/'.$estudosviabilidade['Estudosviabilidade']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Enviar para Patrocinador');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if ($estudosviabilidade['Estudosviabilidade']['log_envio_patrocinador'] != 1 && $estudosviabilidade['Estudosviabilidade']['log_classificado'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/estudosviabilidades/naceitarclassificacao/'.$estudosviabilidade['Estudosviabilidade']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Não aceitar classificação');
+        echo '</div>';
+        echo '</form>';
+}
+?>

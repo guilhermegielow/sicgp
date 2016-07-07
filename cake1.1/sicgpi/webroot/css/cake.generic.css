@@ -1,0 +1,292 @@
+*{
+margin:0;
+padding:0;
+}
+
+body{
+font-family:"Arial, Helvetica, sans-serif";
+text-align:center;
+color:#333;
+font-size: 65%;
+background-color: #A5DDF8;
+background-image: url(../img/background.png);
+background-repeat: repeat-x;
+padding-top:1em;
+padding-bottom: 1em;
+}
+
+
+/* General Style Info */
+a{
+color:#003d4c;
+text-decoration:underline;
+}
+a:hover{
+color:#003d4c;
+text-decoration:none;
+}
+
+a img{
+border:none;
+}
+
+h1, h2, h3, h4, h5{
+font-weight:negrite;
+}
+
+h1{
+color: #003d4c;
+margin:0.3em 0;
+font-size: 210%;
+text-align: center;
+}
+
+h2{
+color:black;
+text-decoration:underline;
+padding-top: 0.5em;
+margin:0.2em 0;
+font-size: 180%;
+}
+
+h3{
+color:#c6c65b;
+padding-top:0.5em;
+font-size: 140%;
+}
+
+h4{
+color:black;
+padding-top:0.5em;
+font-weight:normal;
+text-align: center;
+}
+h5{
+color:black;
+padding-top:0.5em;
+font-size:120%;
+text-align: right;
+}
+
+em {
+font-size: 12px;
+}
+
+ul, li {
+margin: 0 12px;
+}
+
+/* Layout */
+
+#container{
+text-align:left;
+}
+
+#header{
+margin-top: 1em;
+padding: 4px 20px;
+}
+#menu{
+margin-top: 0.5em;
+background-color: #D9D9F3;
+padding: 1px 5px;
+margin-left: 5em;
+margin-right: 5em;
+}
+
+#content{
+clear:both;
+padding: 0px 4px 2px 4px;
+background-color: white;
+color: #333;
+margin-left: 5em;
+margin-right: 5em;
+}
+#footer{
+padding-top:0.5em;
+clear:both;
+padding: 6px 6px;
+text-align: right;
+background-color: #D9D9F3;
+}
+
+/* tables */
+
+table {
+width: 100%;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-bottom: 1px solid black;
+color:#333;
+background-color: #fff;
+clear:both;
+padding: 0;
+margin: 0 1 2em 0;
+white-space: normal;
+}
+th {
+background-color: #4284B5;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+text-align: center;
+color: white;
+padding:1px 4px;
+font-weight:negrite;
+}
+table tr td {
+background-color: white;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+padding:4px 4px;
+vertical-align:top;
+text-align: center;
+}
+table tr.altRow td {
+background: #f4f4f4;
+}
+table td.actions {
+	white-space: nowrap;
+}
+#cakeSqlLog td {
+text-align: left;
+padding: 4px 8px;
+background: #fff;
+border-bottom: 2px solid #ccc;
+}
+
+/* scaffold show */
+
+div.related {
+clear:both;
+display:block;
+}
+dl {
+line-height:2em;
+margin:1em 1em;
+float:left;
+width: 400px;
+}
+dt {
+background-color: #4284B5;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+color: white;
+padding:1px 4px;
+font-weight:negrite;
+}
+dd {
+background-color: white;
+padding:4px 4px;
+vertical-align:top;
+border-top: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+}
+
+/* notices and errors */
+
+#flashMessage, .error, .error_message {
+color:#900;
+font-size: 16px;
+background-color: #fff;
+margin: 8px 0px;
+font-weight: bold;
+}
+.error_message {
+clear: both;
+}
+.error em {
+font-size: 18px;
+color: #003d4c;
+}
+.notice {
+color: #656565;
+font-size: 14px;
+background-color: #f4f4f4;
+padding: 0.5em;
+margin: 1em 0;
+display:block;
+}
+.tip {
+color: #656565;
+background-color: #ddd;
+}
+
+/* forms */
+
+form {
+margin-top: 2em;
+}
+form div{
+vertical-align: text-top;
+margin-left: 1em;
+margin-bottom:2em;
+}
+form div.date{
+margin-left: 0em;
+}
+label {
+display: block;
+float:left;
+width: 140px;
+font-size: 14px;
+padding-right: 20px;
+}
+input[type=checkbox] {
+float: left;
+clear: left;
+margin: 2px 6px 7px 2px;
+}
+input, textarea {
+clear: both;
+display:block;
+font-size: 14px;
+font-family: inherit;
+}
+select {
+clear: both;
+vertical-align: text-bottom;
+font-size: 14px;
+font-family: inherit;
+}
+option {
+font-size: 14px;
+font-family: inherit;
+padding: 0 0.3em;
+}
+input[type=submit] {
+display: inline;
+vertical-align: bottom;
+}
+div.required {
+clear: both;
+color:#222;
+font-weight:bold;
+}
+div.optional {
+clear: both;
+color:#555;
+}
+div.submit {
+clear: both;
+margin-top: 40px;
+margin-left: 140px;
+}
+/* action links */
+ul.actions {
+float: left;
+margin-left:20px;
+width: 200px;
+}
+ul.actions li {
+margin-top: 4px;
+}
+pre {
+padding: 1em;
+}

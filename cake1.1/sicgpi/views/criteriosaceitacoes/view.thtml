@@ -1,0 +1,21 @@
+<div class="criteriosaceitacao">
+<h2>Critério de aceitação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $criteriosaceitacao['Criteriosaceitacao']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($criteriosaceitacao['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$criteriosaceitacao['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $criteriosaceitacao['Criteriosaceitacao']['ds_criterio_aceitacao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Critério de aceitação',   '/criteriosaceitacoes/edit/' . $criteriosaceitacao['Criteriosaceitacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Critério de aceitação', '/criteriosaceitacoes/delete/' . $criteriosaceitacao['Criteriosaceitacao']['id'], null, 'Deseja realmente excluir : id ' . $criteriosaceitacao['Criteriosaceitacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Critérios de aceitações',   '/criteriosaceitacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Critério de aceitação',	'/criteriosaceitacoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Declaracões de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

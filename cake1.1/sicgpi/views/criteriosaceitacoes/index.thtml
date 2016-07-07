@@ -1,0 +1,28 @@
+<div class="criteriosaceitacoes">
+<h2>Critérios de aceitações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($criteriosaceitacoes as $criteriosaceitacao): ?>
+<tr>
+	<td><?php echo $criteriosaceitacao['Criteriosaceitacao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($criteriosaceitacao['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$criteriosaceitacao['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $criteriosaceitacao['Criteriosaceitacao']['ds_criterio_aceitacao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/criteriosaceitacoes/view/' . $criteriosaceitacao['Criteriosaceitacao']['id'])?>
+		<?php echo $html->link('Editar','/criteriosaceitacoes/edit/' . $criteriosaceitacao['Criteriosaceitacao']['id'])?>
+		<?php echo $html->link('Excluir','/criteriosaceitacoes/delete/' . $criteriosaceitacao['Criteriosaceitacao']['id'], null, 'Deseja realmente excluir : id ' . $criteriosaceitacao['Criteriosaceitacao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Critério de aceitação', '/criteriosaceitacoes/add'); ?></li>
+</ul>
+</div>

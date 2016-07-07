@@ -1,0 +1,33 @@
+<h2>Editar Plano de aquisição</h2>
+<form action="<?php echo $html->url('/planosaquisicoes/edit/'.$html->tagValue('Planosaquisicao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Planosaquisicao/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Planosaquisicao/projeto_id', $projetos, $html->tagValue('Planosaquisicao/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Planosaquisicao/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Planosaquisicao/ds_plano_aquisicao', 'Descrição');?>
+ 	<?php echo $html->input('Planosaquisicao/ds_plano_aquisicao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planosaquisicao/ds_plano_aquisicao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Planosaquisicao/ds_documento_referencia', 'Documento de referência');?>
+ 	<?php echo $html->input('Planosaquisicao/ds_documento_referencia', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planosaquisicao/ds_documento_referencia', 'Por favor informe o Documento de referência.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Planosaquisicao/ds_avaliacao_fornecedores', 'Avaliação de fornecedores');?>
+ 	<?php echo $html->input('Planosaquisicao/ds_avaliacao_fornecedores', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Planosaquisicao/ds_avaliacao_fornecedores', 'Por favor informe a Avaliação de fornecedores.');?>
+</div>
+<?php echo $html->hidden('Planosaquisicao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/planosaquisicoes/delete/' . $html->tagValue('Planosaquisicao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Planosaquisicao/id'));?>
+<li><?php echo $html->link('Listar Planos de aquisições', '/planosaquisicoes/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

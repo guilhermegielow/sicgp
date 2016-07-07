@@ -1,0 +1,34 @@
+<h2>Novo Projeto</h2>
+<form action="<?php echo $html->url('/projetos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Projeto/estado_id', 'Estado');?>
+ 	<?php echo $html->selectTag('Projeto/estado_id', $estados, 
+   $html->tagValue('Projeto/estado_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Projeto/estado_id', 'Por favor selecione o Estado.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Projeto/ds_titulo', 'Título');?>
+ 	<?php echo $html->input('Projeto/ds_titulo', array('size' => '50'));?>
+	<?php echo $html->tagErrorMsg('Projeto/ds_titulo', 'Por favor informe o Título.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Projeto/usuario_id', 'Patrocinador');?>
+ 	<?php echo $html->selectTag('Projeto/usuario_id', $usuarios, 
+   $html->tagValue('Projeto/usuario_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Projeto/usuario_id', 'Por favor selecione o Patrocinador.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Projeto/dt_prazo', 'Prazo');?>
+ 	<?php echo $html->dateTimeOptionTag('Projeto/dt_prazo', 
+   'DMY' , 'NONE', $html->tagValue('Projeto/dt_prazo'), array());?>
+	<?php echo $html->tagErrorMsg('Projeto/dt_prazo', 'Por favor selecione o Prazo.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Projetos', '/projetos/index')?></li>
+<li><?php echo $html->link('Listar Estados', '/estados/index/');?></li>
+<li><?php echo $html->link('Adicionar Estado', '/estados/add/');?></li>
+</ul>

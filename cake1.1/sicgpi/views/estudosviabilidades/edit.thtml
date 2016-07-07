@@ -1,0 +1,45 @@
+<h2>Editar Estudo de viabilidade</h2>
+<form action="<?php echo $html->url('/estudosviabilidades/edit/'.$html->tagValue('Estudosviabilidade/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/tiposservico_id', 'Tipo de serviço');?>
+ 	<?php echo $html->selectTag('Estudosviabilidade/tiposservico_id', $tiposservicos, $html->tagValue('Estudosviabilidade/tiposservico_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/tiposservico_id', 'Por favor selecione o Tipo de serviço.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Estudosviabilidade/projeto_id', $projetos, $html->tagValue('Estudosviabilidade/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/projeto_id', 'Por favor selecione Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/dt_inicio_validade', 'Início da validade');?>
+ 	<?php echo $html->dateTimeOptionTag('Estudosviabilidade/dt_inicio_validade', 'DMY' , 'NONE', $html->tagValue('Estudosviabilidade/dt_inicio_validade'), array());?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/dt_inicio_validade', 'Por favor selecione o Início da validade.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/dt_fim_validade', 'Fim da validade');?>
+ 	<?php echo $html->dateTimeOptionTag('Estudosviabilidade/dt_fim_validade', 'DMY' , 'NONE', $html->tagValue('Estudosviabilidade/dt_fim_validade'), array());?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/dt_fim_validade', 'Por favor selecione o Fim da validade.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Estudosviabilidade/ds_texto_encerramento', 'Texto de encerramento');?>
+ 	<?php echo $html->input('Estudosviabilidade/ds_texto_encerramento', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Estudosviabilidade/ds_texto_encerramento', 'Por favor informe o Texto de encerramento.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione os Usuários relacionados.');?>
+</div>
+<?php echo $html->hidden('Estudosviabilidade/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/estudosviabilidades/delete/' . $html->tagValue('Estudosviabilidade/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Estudosviabilidade/id'));?>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index')?></li>
+<li><?php echo $html->link('Listar Tipos de serviços', '/tiposservicos/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de serviço', '/tiposservicos/add/');?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

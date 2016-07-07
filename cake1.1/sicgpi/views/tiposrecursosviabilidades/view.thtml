@@ -1,0 +1,46 @@
+<div class="tiposrecursosviabilidade">
+<h2>Tipo de recurso de viabilidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposrecursosviabilidade['Tiposrecursosviabilidade']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposrecursosviabilidade['Tiposrecursosviabilidade']['ds_tipo_recurso_viabilidade']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tiposrecursosviabilidade',   '/tiposrecursosviabilidades/edit/' . $tiposrecursosviabilidade['Tiposrecursosviabilidade']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tiposrecursosviabilidade', '/tiposrecursosviabilidades/delete/' . $tiposrecursosviabilidade['Tiposrecursosviabilidade']['id'], null, 'Deseja realmente excluir : id ' . $tiposrecursosviabilidade['Tiposrecursosviabilidade']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tiposrecursosviabilidades',   '/tiposrecursosviabilidades/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tiposrecursosviabilidade',	'/tiposrecursosviabilidades/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Atividades Estudos de viabilidades Recursos relacionados</h3>
+<?php if(!empty($tiposrecursosviabilidade['AtividadesEstudosviabilidadesRecurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposrecursosviabilidade['AtividadesEstudosviabilidadesRecurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposrecursosviabilidade['AtividadesEstudosviabilidadesRecurso'] as $atividadesEstudosviabilidadesRecurso):?>
+<tr>
+	<?php foreach($atividadesEstudosviabilidadesRecurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades_estudosviabilidades_recursos/view/' . $atividadesEstudosviabilidadesRecurso['recurso_id, estudosviabilidade_id, atividade_id']);?>
+		<?php echo $html->link('Editar', '/atividades_estudosviabilidades_recursos/edit/' . $atividadesEstudosviabilidadesRecurso['recurso_id, estudosviabilidade_id, atividade_id']);?>
+		<?php echo $html->link('Excluir', '/atividades_estudosviabilidades_recursos/delete/' . $atividadesEstudosviabilidadesRecurso['recurso_id, estudosviabilidade_id, atividade_id'], null, 'Deseja realmente excluir : id ' . $atividadesEstudosviabilidadesRecurso['recurso_id, estudosviabilidade_id, atividade_id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Atividade Estudo de viabilidade Recurso', '/atividades_estudosviabilidades_recursos/add/');?> </li>
+</ul>
+</div>

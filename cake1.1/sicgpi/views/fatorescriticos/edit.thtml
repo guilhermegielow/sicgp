@@ -1,0 +1,23 @@
+<h2>Editar Fator crítico</h2>
+<form action="<?php echo $html->url('/fatorescriticos/edit/'.$html->tagValue('Fatorescritico/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Fatorescritico/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Fatorescritico/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Fatorescritico/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Fatorescritico/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Fatorescritico/ds_fator_critico', 'Descrição');?>
+ 	<?php echo $html->input('Fatorescritico/ds_fator_critico', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fatorescritico/ds_fator_critico', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Fatorescritico/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/fatorescriticos/delete/' . $html->tagValue('Fatorescritico/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Fatorescritico/id'));?>
+<li><?php echo $html->link('Listar Fatores críticos', '/fatorescriticos/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

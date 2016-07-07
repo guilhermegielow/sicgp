@@ -1,0 +1,116 @@
+<div class="atasreuniao">
+<h2>Ata de reunião</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $atasreuniao['Atasreuniao']['id']?></dd>
+	<dt>Tipo de reunião</dt>
+	<dd>&nbsp;<?php echo $html->link($atasreuniao['Tiposreuniao']['ds_tipo_reuniao'], '/tiposreunioes/view/' .$atasreuniao['Tiposreuniao']['id'])?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($atasreuniao['Projeto']['ds_titulo'], '/projetos/view/' .$atasreuniao['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $atasreuniao['Atasreuniao']['ds_ata_reuniao']?></dd>
+	<dt>Versão</dt>
+	<dd>&nbsp;<?php echo $atasreuniao['Atasreuniao']['nr_versao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Ata de reunião',   '/atasreunioes/edit/' . $atasreuniao['Atasreuniao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Ata de reunião', '/atasreunioes/delete/' . $atasreuniao['Atasreuniao']['id'], null, 'Deseja realmente excluir : id ' . $atasreuniao['Atasreuniao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Atas de reuniões',   '/atasreunioes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Ata de reunião',	'/atasreunioes/add') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de reuniões', '/tiposreunioes/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de reunião', '/tiposreunioes/add/')?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+	<li><?php echo $html->link('Listar Usuários', '/usuarios/index/')?> </li>
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Ações relacionadas</h3>
+<?php if(!empty($atasreuniao['Acao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atasreuniao['Acao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atasreuniao['Acao'] as $acao):?>
+<tr>
+	<?php foreach($acao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/acoes/view/' . $acao['id']);?>
+		<?php echo $html->link('Editar', '/acoes/edit/' . $acao['id']);?>
+		<?php echo $html->link('Excluir', '/acoes/delete/' . $acao['id'], null, 'Deseja realmente excluir : id ' . $acao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ação', '/acoes/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Assuntos tratados relacionados</h3>
+<?php if(!empty($atasreuniao['Assuntostratado'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atasreuniao['Assuntostratado']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atasreuniao['Assuntostratado'] as $assuntostratado):?>
+<tr>
+	<?php foreach($assuntostratado as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/assuntostratados/view/' . $assuntostratado['id']);?>
+		<?php echo $html->link('Editar', '/assuntostratados/edit/' . $assuntostratado['id']);?>
+		<?php echo $html->link('Excluir', '/assuntostratados/delete/' . $assuntostratado['id'], null, 'Deseja realmente excluir : id ' . $assuntostratado['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Assunto tratado', '/assuntostratados/add/');?> </li>
+</ul>
+</div>
+<div class="related">
+<h3>Decisões relacionadas</h3>
+<?php if(!empty($atasreuniao['Decisao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($atasreuniao['Decisao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($atasreuniao['Decisao'] as $decisao):?>
+<tr>
+	<?php foreach($decisao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/decisoes/view/' . $decisao['id']);?>
+		<?php echo $html->link('Editar', '/decisoes/edit/' . $decisao['id']);?>
+		<?php echo $html->link('Excluir', '/decisoes/delete/' . $decisao['id'], null, 'Deseja realmente excluir : id ' . $decisao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Decisão', '/decisoes/add/');?> </li>
+</ul>
+</div>

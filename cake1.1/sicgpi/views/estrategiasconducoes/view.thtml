@@ -1,0 +1,21 @@
+<div class="estrategiasconducao">
+<h2>Estratégia de condução</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $estrategiasconducao['Estrategiasconducao']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($estrategiasconducao['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$estrategiasconducao['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $estrategiasconducao['Estrategiasconducao']['ds_estrategia_conducao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Estratégia de condução',   '/estrategiasconducoes/edit/' . $estrategiasconducao['Estrategiasconducao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Estratégia de condução', '/estrategiasconducoes/delete/' . $estrategiasconducao['Estrategiasconducao']['id'], null, 'Deseja realmente excluir : id ' . $estrategiasconducao['Estrategiasconducao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Estratégias de conduções',   '/estrategiasconducoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Estratégia de condução',	'/estrategiasconducoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="controlesmudanca">
+<h2>Controle de mudança</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Projeto']['ds_titulo'], '/projetos/view/' .$controlesmudanca['Projeto']['id'])?></dd>
+	<dt>Tipo de mudança</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Tiposmudanca']['ds_tipo_mudanca'], '/tiposmudancas/view/' .$controlesmudanca['Tiposmudanca']['id'])?></dd>
+	<dt>Prioridade</dt>
+	<dd>&nbsp;<?php echo $html->link($controlesmudanca['Prioridade']['ds_prioridade'], '/prioridades/view/' .$controlesmudanca['Prioridade']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_controle_mudanca']?></dd>
+	<dt>Justificativa</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_justificativa']?></dd>
+	<dt>Data de prazo</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_prazo'])?></dd>
+	<dt>Impacto</dt>
+	<dd>&nbsp;<?php echo $controlesmudanca['Controlesmudanca']['ds_impacto']?></dd>
+	<dt>Data da comunicação</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_comunicacao'])?></dd>
+	<dt>Data de envio de recursos</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($controlesmudanca['Controlesmudanca']['dt_envio_recursos'])?></dd>
+</dl>
+
+<ul class="actions">
+	<li><?php echo $html->link('Editar Controle de mudança',   '/controlesmudancas/edit/' . $controlesmudanca['Controlesmudanca']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Controle de mudança', '/controlesmudancas/delete/' . $controlesmudanca['Controlesmudanca']['id'], null, 'Deseja realmente excluir : id ' . $controlesmudanca['Controlesmudanca']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Controles de mudanças',   '/controlesmudancas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Controle de mudança',	'/controlesmudancas/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+	<li><?php echo $html->link('Listar Tipos de mudanças', '/tiposmudancas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Tipo de mudança', '/tiposmudancas/add/')?> </li>
+	<li><?php echo $html->link('Listar Prioridades', '/prioridades/index/')?> </li>
+	<li><?php echo $html->link('Inserir Prioridade', '/prioridades/add/')?> </li>
+</ul>
+<?php if ($controlesmudanca['Controlesmudanca']['log_envio_patrocinador'] != 1) { 
+        echo '<form action="'; 
+        echo $html->url('/controlesmudancas/enviarpatrocinador/'.$controlesmudanca['Controlesmudanca']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Enviar para Patrocinador');
+        echo '</div>';
+        echo '</form>';
+}
+?>

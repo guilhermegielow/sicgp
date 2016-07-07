@@ -1,0 +1,30 @@
+<div class="acoes">
+<h2>Ações</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Ata de reunião</th>
+	<th>Descrição</th>
+	<th>Dias de prazo</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($acoes as $acao): ?>
+<tr>
+	<td><?php echo $acao['Acao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($acao['Atasreuniao']['ds_ata_reuniao'], '/atasreunioes/view/' .$acao['Atasreuniao']['id'])?></td>
+	<td><?php echo $acao['Acao']['ds_acao']; ?></td>
+	<td><?php echo $acao['Acao']['dias_prazo']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/acoes/view/' . $acao['Acao']['id'])?>
+		<?php echo $html->link('Editar','/acoes/edit/' . $acao['Acao']['id'])?>
+		<?php echo $html->link('Excluir','/acoes/delete/' . $acao['Acao']['id'], null, 'Deseja realmente excluir : id ' . $acao['Acao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Ação', '/acoes/add'); ?></li>
+</ul>
+</div>

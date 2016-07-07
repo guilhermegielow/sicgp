@@ -1,0 +1,46 @@
+<div class="tiposcontas">
+<h2>Tipo de conta</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposcontas['Tiposconta']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposcontas['Tiposconta']['ds_tipo_conta']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de conta',   '/tiposcontas/edit/' . $tiposcontas['Tiposconta']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de conta', '/tiposcontas/delete/' . $tiposcontas['Tiposconta']['id'], null, 'Deseja realmente excluir : id ' . $tiposcontas['Tiposconta']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de contas',   '/tiposcontas/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de conta',	'/tiposcontas/add') ?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Contas relacionadas</h3>
+<?php if(!empty($tiposcontas['Contascusto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($tiposcontas['Contascusto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($tiposcontas['Contascusto'] as $contascusto):?>
+<tr>
+	<?php foreach($contascusto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/contascustos/view/' . $contascusto['id']);?>
+		<?php echo $html->link('Editar', '/contascustos/edit/' . $contascusto['id']);?>
+		<?php echo $html->link('Excluir', '/contascustos/delete/' . $contascusto['id'], null, 'Deseja realmente excluir : id ' . $contascusto['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Conta', '/contascustos/add/');?> </li>
+</ul>
+</div>

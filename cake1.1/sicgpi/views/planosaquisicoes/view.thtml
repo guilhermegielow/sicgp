@@ -1,0 +1,54 @@
+<div class="planosaquisicao">
+<h2>Plano de aquisição</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $planosaquisicao['Planosaquisicao']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($planosaquisicao['Projeto']['ds_titulo'], '/projetos/view/' .$planosaquisicao['Projeto']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $planosaquisicao['Planosaquisicao']['ds_plano_aquisicao']?></dd>
+	<dt>Documento de referência</dt>
+	<dd>&nbsp;<?php echo $planosaquisicao['Planosaquisicao']['ds_documento_referencia']?></dd>
+	<dt>Avaliação de fornecedores</dt>
+	<dd>&nbsp;<?php echo $planosaquisicao['Planosaquisicao']['ds_avaliacao_fornecedores']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Plano de aquisição',   '/planosaquisicoes/edit/' . $planosaquisicao['Planosaquisicao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Plano de aquisição', '/planosaquisicoes/delete/' . $planosaquisicao['Planosaquisicao']['id'], null, 'Deseja realmente excluir : id ' . $planosaquisicao['Planosaquisicao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Planos de aquisições',   '/planosaquisicoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Plano de aquisição',	'/planosaquisicoes/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Processos de aquisições relacionados</h3>
+<?php if(!empty($planosaquisicao['Processosaquisicao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($planosaquisicao['Processosaquisicao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($planosaquisicao['Processosaquisicao'] as $processosaquisicao):?>
+<tr>
+	<?php foreach($processosaquisicao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/processosaquisicoes/view/' . $processosaquisicao['id']);?>
+		<?php echo $html->link('Editar', '/processosaquisicoes/edit/' . $processosaquisicao['id']);?>
+		<?php echo $html->link('Excluir', '/processosaquisicoes/delete/' . $processosaquisicao['id'], null, 'Deseja realmente excluir : id ' . $processosaquisicao['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Processo de aquisição', '/processosaquisicoes/add/');?> </li>
+</ul>
+</div>

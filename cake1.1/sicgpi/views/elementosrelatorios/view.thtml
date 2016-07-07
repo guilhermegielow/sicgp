@@ -1,0 +1,37 @@
+<div class="elementosrelatorio">
+<h2>Elementos de relatórios</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['id']?></dd>
+	<dt>Relatório de desempenho</dt>
+	<dd>&nbsp;<?php echo $html->link($elementosrelatorio['Relatoriosdesempenho']['id'], '/relatoriosdesempenhos/view/' .$elementosrelatorio['Relatoriosdesempenho']['id'])?></dd>
+	<dt>Atividade</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['ds_atividade']?></dd>
+	<dt>Valor planejado</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['vl_planejado']?></dd>
+	<dt>Valor real</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['vl_real']?></dd>
+	<dt>Percentual concluido</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['vl_perc_concluido']?></dd>
+	<dt>Data planejada</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['dt_planejada']?></dd>
+	<dt>Data efetiva</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['dt_efetiva']?></dd>
+	<dt>Dias de atraso</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['dias_atraso']?></dd>
+	<dt>Solicitante</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['user_solicitante']?></dd>
+	<dt>Responsável</dt>
+	<dd>&nbsp;<?php echo $elementosrelatorio['Elementosrelatorio']['user_responsavel']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Elemento de relatório',   '/elementosrelatorios/edit/' . $elementosrelatorio['Elementosrelatorio']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Elemento de relatório', '/elementosrelatorios/delete/' . $elementosrelatorio['Elementosrelatorio']['id'], null, 'Deseja realmente excluir : id ' . $elementosrelatorio['Elementosrelatorio']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Elementos de relatórios',   '/elementosrelatorios/index') ?> </li>
+	<li><?php echo $html->link('Inserir Elemento de relatório',	'/elementosrelatorios/add') ?> </li>
+	<li><?php echo $html->link('Listar Relatórios de desempenhos', '/relatoriosdesempenhos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Relatório de desempenho', '/relatoriosdesempenhos/add/')?> </li>
+</ul>
+
+</div>

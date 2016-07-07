@@ -1,0 +1,23 @@
+<h2>Editar Justificativa</h2>
+<form action="<?php echo $html->url('/justificativas/edit/'.$html->tagValue('Justificativa/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Justificativa/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Justificativa/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Justificativa/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Justificativa/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Justificativa/ds_justificativa', 'Descrição');?>
+ 	<?php echo $html->input('Justificativa/ds_justificativa', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Justificativa/ds_justificativa', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Justificativa/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/justificativas/delete/' . $html->tagValue('Justificativa/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Justificativa/id'));?>
+<li><?php echo $html->link('Listar Justificativas', '/justificativas/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

@@ -1,0 +1,28 @@
+<div class="obstaculoscriticos">
+<h2>Obstáculos críticos</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Lição aprendida</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($obstaculoscriticos as $obstaculoscritico): ?>
+<tr>
+	<td><?php echo $obstaculoscritico['Obstaculoscritico']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($obstaculoscritico['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$obstaculoscritico['Licoesaprendida']['id'])?></td>
+	<td><?php echo $obstaculoscritico['Obstaculoscritico']['ds_obstaculo_critico']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/obstaculoscriticos/view/' . $obstaculoscritico['Obstaculoscritico']['id'])?>
+		<?php echo $html->link('Editar','/obstaculoscriticos/edit/' . $obstaculoscritico['Obstaculoscritico']['id'])?>
+		<?php echo $html->link('Excluir','/obstaculoscriticos/delete/' . $obstaculoscritico['Obstaculoscritico']['id'], null, 'Deseja realmente excluir : id ' . $obstaculoscritico['Obstaculoscritico']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Obstáculo crítico', '/obstaculoscriticos/add'); ?></li>
+</ul>
+</div>

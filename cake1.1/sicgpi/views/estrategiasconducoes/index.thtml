@@ -1,0 +1,28 @@
+<div class="estrategiasconducoes">
+<h2>Estratégias de conduções</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($estrategiasconducoes as $estrategiasconducao): ?>
+<tr>
+	<td><?php echo $estrategiasconducao['Estrategiasconducao']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($estrategiasconducao['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$estrategiasconducao['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $estrategiasconducao['Estrategiasconducao']['ds_estrategia_conducao']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/estrategiasconducoes/view/' . $estrategiasconducao['Estrategiasconducao']['id'])?>
+		<?php echo $html->link('Editar','/estrategiasconducoes/edit/' . $estrategiasconducao['Estrategiasconducao']['id'])?>
+		<?php echo $html->link('Excluir','/estrategiasconducoes/delete/' . $estrategiasconducao['Estrategiasconducao']['id'], null, 'Deseja realmente excluir : id ' . $estrategiasconducao['Estrategiasconducao']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Estratégia de condução', '/estrategiasconducoes/add'); ?></li>
+</ul>
+</div>

@@ -1,0 +1,34 @@
+<h2>Novo Fornecedor</h2>
+<form action="<?php echo $html->url('/fornecedores/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Fornecedor/nm_fornecedor', 'Nome do fornecedor');?>
+ 	<?php echo $html->input('Fornecedor/nm_fornecedor', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fornecedor/nm_fornecedor', 'Por favor informe o Nome do fornecedor.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Fornecedor/ds_email', 'E-mail');?>
+ 	<?php echo $html->input('Fornecedor/ds_email', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fornecedor/ds_email', 'Por favor informe o E-mail.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Fornecedor/nr_cnpj', 'Cnpj');?>
+ 	<?php echo $html->input('Fornecedor/nr_cnpj', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fornecedor/nr_cnpj', 'Por favor informe o Cnpj.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Fornecedor/nr_telefone', 'Telefone');?>
+ 	<?php echo $html->input('Fornecedor/nr_telefone', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fornecedor/nr_telefone', 'Por favor informe o Telefone.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Fornecedor/nm_contato', 'Nome do contato');?>
+ 	<?php echo $html->input('Fornecedor/nm_contato', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Fornecedor/nm_contato', 'Por favor informe o Nome do contato.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Fornecedores', '/fornecedores/index')?></li>
+</ul>

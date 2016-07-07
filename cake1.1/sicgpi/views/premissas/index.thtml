@@ -1,0 +1,28 @@
+<div class="premissas">
+<h2>Premissas</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Declaração de escopo</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($premissas as $premissa): ?>
+<tr>
+	<td><?php echo $premissa['Premissa']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($premissa['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$premissa['Declaracoesescopo']['id'])?></td>
+	<td><?php echo $premissa['Premissa']['ds_premissa']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/premissas/view/' . $premissa['Premissa']['id'])?>
+		<?php echo $html->link('Editar','/premissas/edit/' . $premissa['Premissa']['id'])?>
+		<?php echo $html->link('Excluir','/premissas/delete/' . $premissa['Premissa']['id'], null, 'Deseja realmente excluir : id ' . $premissa['Premissa']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Premissa', '/premissas/add'); ?></li>
+</ul>
+</div>

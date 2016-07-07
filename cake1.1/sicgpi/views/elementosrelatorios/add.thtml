@@ -1,0 +1,61 @@
+<h2>Novo Elemento de relatório</h2>
+<form action="<?php echo $html->url('/elementosrelatorios/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Elementosrelatorio/relatoriosdesempenho_id', 'Relatório de desempenho');?>
+ 	<?php echo $html->selectTag('Elementosrelatorio/relatoriosdesempenho_id', $relatoriosdesempenhos, $html->tagValue('Elementosrelatorio/relatoriosdesempenho_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/relatoriosdesempenho_id', 'Por favor selecione o Relatório de desempenho.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementosrelatorio/ds_atividade', 'Atividade');?>
+ 	<?php echo $html->input('Elementosrelatorio/ds_atividade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/ds_atividade', 'Por favor informe a Atividade.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/vl_planejado', 'Valor planejado');?>
+ 	<?php echo $html->input('Elementosrelatorio/vl_planejado', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/vl_planejado', 'Por favor informe o Valor planejado.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/vl_real', 'Valor real');?>
+ 	<?php echo $html->input('Elementosrelatorio/vl_real', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/vl_real', 'Por favor informe o Valor real.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementosrelatorio/vl_perc_concluido', 'Percentual concluido');?>
+ 	<?php echo $html->input('Elementosrelatorio/vl_perc_concluido', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/vl_perc_concluido', 'Por favor informe o Percentual concluido.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Elementosrelatorio/dt_planejada', 'Data planejada');?>
+ 	<?php echo $html->dateTimeOptionTag('Elementosrelatorio/dt_planejada', 'DMY' , 'NONE', $html->tagValue('Elementosrelatorio/dt_planejada'), array());?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/dt_planejada', 'Por favor selecione a Data planejada.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/dt_efetiva', 'Data efetiva');?>
+ 	<?php echo $html->dateTimeOptionTag('Elementosrelatorio/dt_efetiva', 'DMY' , 'NONE', $html->tagValue('Elementosrelatorio/dt_efetiva'), array());?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/dt_efetiva', 'Por favor selecione a Data efetiva.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/dias_atraso', 'Dias de atraso');?>
+ 	<?php echo $html->input('Elementosrelatorio/dias_atraso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/dias_atraso', 'Por favor informe os Dias de atraso.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/user_solicitante', 'Solicitante');?>
+ 	<?php echo $html->input('Elementosrelatorio/user_solicitante', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/user_solicitante', 'Por favor informe o Solicitante.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Elementosrelatorio/user_responsavel', 'Responsável');?>
+ 	<?php echo $html->input('Elementosrelatorio/user_responsavel', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Elementosrelatorio/user_responsavel', 'Por favor informe o Responsável.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Elementos de relatórios', '/elementosrelatorios/index')?></li>
+<li><?php echo $html->link('Listar Relatórios de desempenhos', '/relatoriosdesempenhos/index/');?></li>
+<li><?php echo $html->link('Adicionar Relatório de desempenho', '/relatoriosdesempenhos/add/');?></li>
+</ul>

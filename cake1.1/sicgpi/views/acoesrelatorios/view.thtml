@@ -1,0 +1,50 @@
+<div class="acoesrelatorio">
+<h2>Ação do relatório</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $acoesrelatorio['Acoesrelatorio']['id']?></dd>
+	<dt>Relatoriosdesempenho</dt>
+	<dd>&nbsp;<?php echo $html->link($acoesrelatorio['Relatoriosdesempenho']['ds_relatorio_desempenho'], '/relatoriosdesempenhos/view/' .$acoesrelatorio['Relatoriosdesempenho']['id'])?></dd>
+	<dt>Ds Ação Relatorio</dt>
+	<dd>&nbsp;<?php echo $acoesrelatorio['Acoesrelatorio']['ds_acao_relatorio']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Ação do relatório',   '/acoesrelatorios/edit/' . $acoesrelatorio['Acoesrelatorio']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Açção do relatório', '/acoesrelatorios/delete/' . $acoesrelatorio['Acoesrelatorio']['id'], null, 'Deseja realmente excluir : id ' . $acoesrelatorio['Acoesrelatorio']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Ações do relatórios',   '/acoesrelatorios/index') ?> </li>
+	<li><?php echo $html->link('Inserir Ação do relatório',	'/acoesrelatorios/add') ?> </li>
+	<li><?php echo $html->link('Listar Relatórios de desempenho', '/relatoriosdesempenhos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Relatório de desempenho', '/relatoriosdesempenhos/add/')?> </li>
+</ul>
+
+</div>
+<div class="related">
+<h3>Usuários relacionados</h3>
+<?php if(!empty($acoesrelatorio['Usuario'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($acoesrelatorio['Usuario']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($acoesrelatorio['Usuario'] as $usuario):?>
+<tr>
+	<?php foreach($usuario as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/usuarios/view/' . $usuario['id']);?>
+		<?php echo $html->link('Editar', '/usuarios/edit/' . $usuario['id']);?>
+		<?php echo $html->link('Excluir', '/usuarios/delete/' . $usuario['id'], null, 'Deseja realmente excluir : id ' . $usuario['id'] . '?');?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/');?> </li>
+</ul>
+</div>

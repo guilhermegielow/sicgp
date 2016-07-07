@@ -1,0 +1,21 @@
+<h2>Novo Relatório de desempenho</h2>
+<form action="<?php echo $html->url('/relatoriosdesempenhos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Relatoriosdesempenho/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Relatoriosdesempenho/projeto_id', $projetos, $html->tagValue('Relatoriosdesempenho/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Relatoriosdesempenho/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Relatoriosdesempenho/ds_relatorio_desempenho', 'Descrição');?>
+ 	<?php echo $html->input('Relatoriosdesempenho/ds_relatorio_desempenho', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Relatoriosdesempenho/ds_relatorio_desempenho', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Relatórios de desempenhos', '/relatoriosdesempenhos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

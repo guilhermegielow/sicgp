@@ -1,0 +1,14 @@
+<h2>Novo Tipo de recurso de viabilidade</h2>
+<form action="<?php echo $html->url('/tiposrecursosviabilidades/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', 'Descrição');?>
+ 	<?php echo $html->input('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Tiposrecursosviabilidade/ds_tipo_recurso_viabilidade', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Tipos de recursos de viabilidades', '/tiposrecursosviabilidades/index')?></li>
+</ul>

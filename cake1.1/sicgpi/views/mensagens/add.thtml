@@ -1,0 +1,26 @@
+<h2>Novo Mensagem</h2>
+<form action="<?php echo $html->url('/mensagens/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Mensagem/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Mensagem/projeto_id', $projetos, $html->tagValue('Mensagem/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Mensagem/projeto_id', 'Por favor selecione Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag( 'Mensagem/ds_mensagem', 'Descrição' );?>
+ 	<?php echo $html->textarea('Mensagem/ds_mensagem', array('cols' => '50', 'rows' => '40'));?>
+	<?php echo $html->tagErrorMsg('Mensagem/ds_mensagem', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag( 'Mensagem/nm_envolvidos', 'Envolvidos' );?>
+ 	<?php echo $html->textarea('Mensagem/nm_envolvidos', array('cols' => '50', 'rows' => '40'));?>
+	<?php echo $html->tagErrorMsg('Mensagem/nm_envolvidos', 'Por favor informe o Envolvidos.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Mensagens', '/mensagens/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

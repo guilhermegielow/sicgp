@@ -1,0 +1,235 @@
+<div class="estudosviabilidade">
+<h2>Aprovar Estudo de viabilidade</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $estudosviabilidade['Estudosviabilidade']['id']?></dd>
+	<dt>Tipo de serviço</dt>
+	<dd>&nbsp;<?php echo $html->link($estudosviabilidade['Tiposservico']['ds_tipo_servico'], '/tiposservicos/view/' .$estudosviabilidade['Tiposservico']['id'])?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($estudosviabilidade['Projeto']['ds_titulo'], '/projetos/view/' .$estudosviabilidade['Projeto']['id'])?></dd>
+	<dt>Início da validade</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_inicio_validade'])?></dd>
+	<dt>Fim da validade</dt>
+	<dd>&nbsp;<?php echo $html->formata_pt($estudosviabilidade['Estudosviabilidade']['dt_fim_validade'])?></dd>
+	<dt>Texto de encerramento</dt>
+	<dd>&nbsp;<?php echo $estudosviabilidade['Estudosviabilidade']['ds_texto_encerramento']?></dd>
+</dl>
+
+</div>
+<div class="related">
+<h3>Atividades Estudos de viabilidades Recursos relacionados</h3>
+<?php if(!empty($estudosviabilidade['AtividadesEstudosviabilidadesRecurso'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['AtividadesEstudosviabilidadesRecurso']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+<th>Ações</th>
+</tr>
+<?php foreach($estudosviabilidade['AtividadesEstudosviabilidadesRecurso'] as $atividadesEstudosviabilidadesRecurso):?>
+<tr>
+	<?php foreach($atividadesEstudosviabilidadesRecurso as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+	<td class="actions">
+		<?php echo $html->link('Detalhar', '/atividades_estudosviabilidades_recursos/view/' . $atividadesEstudosviabilidadesRecurso['id']);?>	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+</div>
+<div class="related">
+<h3>Justificativas relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Justificativa'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Justificativa']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Justificativa'] as $justificativa):?>
+<tr>
+	<?php foreach($justificativa as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Marcos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Marco'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Marco']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Marco'] as $marco):?>
+<tr>
+	<?php foreach($marco as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Objetivos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Objetivo'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Objetivo']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Objetivo'] as $objetivo):?>
+<tr>
+	<?php foreach($objetivo as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Produtos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Produto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Produto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Produto'] as $produto):?>
+<tr>
+	<?php foreach($produto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Requisitos relacionados</h3>
+<?php if(!empty($estudosviabilidade['Requisito'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Requisito']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Requisito'] as $requisito):?>
+<tr>
+	<?php foreach($requisito as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Responsabilidades relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Responsabilidade'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Responsabilidade']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Responsabilidade'] as $responsabilidade):?>
+<tr>
+	<?php foreach($responsabilidade as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Restrições relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Restricao'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Restricao']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+</tr>
+<?php foreach($estudosviabilidade['Restricao'] as $restricao):?>
+<tr>
+	<?php foreach($restricao as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Serviços relacionados</h3>
+<?php if(!empty($estudosviabilidade['Servico'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Servico']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+
+</tr>
+<?php foreach($estudosviabilidade['Servico'] as $servico):?>
+<tr>
+	<?php foreach($servico as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<div class="related">
+<h3>Contas relacionadas</h3>
+<?php if(!empty($estudosviabilidade['Contascusto'])):?>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<?php foreach($estudosviabilidade['Contascusto']['0'] as $column => $value): ?>
+<th><?php echo $column?></th>
+<?php endforeach; ?>
+
+</tr>
+<?php foreach($estudosviabilidade['Contascusto'] as $contascusto):?>
+<tr>
+	<?php foreach($contascusto as $column => $value):?>
+		<td><?php echo $value;?></td>
+	<?php endforeach;?>
+</tr>
+<?php endforeach; ?>
+</table>
+<?php endif; ?>
+</div>
+<?php if (!$estudosviabilidade['Estudosviabilidade']['user_aprovacao'] && $estudosviabilidade['Estudosviabilidade']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/estudosviabilidades/aprovarestudo/'.$estudosviabilidade['Estudosviabilidade']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Aprovar Estudo de Viabilidade');
+        echo '</div>';
+        echo '</form>';
+}
+?>
+<?php if (!$estudosviabilidade['Estudosviabilidade']['user_aprovacao'] && $estudosviabilidade['Estudosviabilidade']['log_envio_patrocinador'] == 1) { 
+        echo '<form action="'; 
+        echo $html->url('/estudosviabilidades/reprovarestudo/'.$estudosviabilidade['Estudosviabilidade']['id']);
+        echo '" method="post"';
+        echo '<div align="left" class="submit">';
+        echo $html->submit('Reprovar Estudo de Viabilidade');
+        echo '</div>';
+        echo '</form>';
+}
+?>

@@ -1,0 +1,23 @@
+<h2>Editar Requisito</h2>
+<form action="<?php echo $html->url('/requisitos/edit/'.$html->tagValue('Requisito/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Requisito/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('Requisito/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('Requisito/estudosviabilidade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Requisito/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Requisito/ds_requisito', 'Descrição');?>
+ 	<?php echo $html->input('Requisito/ds_requisito', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Requisito/ds_requisito', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Requisito/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/requisitos/delete/' . $html->tagValue('Requisito/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Requisito/id'));?>
+<li><?php echo $html->link('Listar Requisitos', '/requisitos/index')?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+</ul>

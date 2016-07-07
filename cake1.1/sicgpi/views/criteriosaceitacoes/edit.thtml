@@ -1,0 +1,23 @@
+<h2>Editar Critério de aceitação</h2>
+<form action="<?php echo $html->url('/criteriosaceitacoes/edit/'.$html->tagValue('Criteriosaceitacao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Criteriosaceitacao/declaracoesescopo_id', 'Declaração de escopo');?>
+ 	<?php echo $html->selectTag('Criteriosaceitacao/declaracoesescopo_id', $declaracoesescopos, $html->tagValue('Criteriosaceitacao/declaracoesescopo_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Criteriosaceitacao/declaracoesescopo_id', 'Por favor selecione Declaração de escopo.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Criteriosaceitacao/ds_criterio_aceitacao', 'Descrição');?>
+ 	<?php echo $html->input('Criteriosaceitacao/ds_criterio_aceitacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Criteriosaceitacao/ds_criterio_aceitacao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Criteriosaceitacao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/criteriosaceitacoes/delete/' . $html->tagValue('Criteriosaceitacao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Criteriosaceitacao/id'));?>
+<li><?php echo $html->link('Listar Critérios de aceitações', '/criteriosaceitacoes/index')?></li>
+<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/');?></li>
+<li><?php echo $html->link('Adicionar Declaração de escopo', '/declaracoesescopos/add/');?></li>
+</ul>

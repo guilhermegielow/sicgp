@@ -1,0 +1,28 @@
+<div class="oportunidades">
+<h2>Oportunidades</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Lição aprendida</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($oportunidades as $oportunidade): ?>
+<tr>
+	<td><?php echo $oportunidade['Oportunidade']['id']; ?></td>
+	<td>&nbsp;<?php echo $html->link($oportunidade['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$oportunidade['Licoesaprendida']['id'])?></td>
+	<td><?php echo $oportunidade['Oportunidade']['ds_oportunidade']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/oportunidades/view/' . $oportunidade['Oportunidade']['id'])?>
+		<?php echo $html->link('Editar','/oportunidades/edit/' . $oportunidade['Oportunidade']['id'])?>
+		<?php echo $html->link('Excluir','/oportunidades/delete/' . $oportunidade['Oportunidade']['id'], null, 'Deseja realmente excluir : id ' . $oportunidade['Oportunidade']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Oportunidade', '/oportunidades/add'); ?></li>
+</ul>
+</div>

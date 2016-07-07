@@ -1,0 +1,21 @@
+<h2>Novo Ítem de sucesso</h2>
+<form action="<?php echo $html->url('/itenssucessos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Itenssucesso/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Itenssucesso/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Itenssucesso/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Itenssucesso/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Itenssucesso/ds_item_sucesso', 'Descrição');?>
+ 	<?php echo $html->input('Itenssucesso/ds_item_sucesso', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Itenssucesso/ds_item_sucesso', 'Por favor informe a Descrição.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Ítens de sucessos', '/itenssucessos/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>

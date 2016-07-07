@@ -1,0 +1,37 @@
+<h2>Novo Atividade Estudo de viabilidade Recurso</h2>
+<form action="<?php echo $html->url('/atividades_estudosviabilidades_recursos/add'); ?>" method="post">
+<div class="optional"> 
+	<?php echo $form->labelTag('AtividadesEstudosviabilidadesRecurso/recurso_id', 'Recurso');?>
+ 	<?php echo $html->selectTag('AtividadesEstudosviabilidadesRecurso/recurso_id', $recursos, $html->tagValue('AtividadesEstudosviabilidadesRecurso/recurso_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('AtividadesEstudosviabilidadesRecurso/recurso_id', 'Por favor selecione o Recurso.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('AtividadesEstudosviabilidadesRecurso/estudosviabilidade_id', 'Estudo de viabilidade');?>
+ 	<?php echo $html->selectTag('AtividadesEstudosviabilidadesRecurso/estudosviabilidade_id', $estudosviabilidades, $html->tagValue('AtividadesEstudosviabilidadesRecurso/estudosviabilidade_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('AtividadesEstudosviabilidadesRecurso/estudosviabilidade_id', 'Por favor selecione o Estudo de viabilidade.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('AtividadesEstudosviabilidadesRecurso/atividade_id', 'Atividade');?>
+ 	<?php echo $html->selectTag('AtividadesEstudosviabilidadesRecurso/atividade_id', $atividades, $html->tagValue('AtividadesEstudosviabilidadesRecurso/atividade_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('AtividadesEstudosviabilidadesRecurso/atividade_id', 'Por favor selecione a Atividade.') ?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('AtividadesEstudosviabilidadesRecurso/tiposrecursosviabilidade_id', 'Tipo de recurso de viabilidade');?>
+ 	<?php echo $html->selectTag('AtividadesEstudosviabilidadesRecurso/tiposrecursosviabilidade_id', $tiposrecursosviabilidades, $html->tagValue('AtividadesEstudosviabilidadesRecurso/tiposrecursosviabilidade_id'), array(), array(), true);?>
+	<?php echo $html->tagErrorMsg('AtividadesEstudosviabilidadesRecurso/tiposrecursosviabilidade_id', 'Por favor selecione o Tipo de recurso de viabilidade.') ?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Atividades Estudos de viabilidades Recursos', '/atividades_estudosviabilidades_recursos/index')?></li>
+<li><?php echo $html->link('Listar Recursos', '/recursos/index/');?></li>
+<li><?php echo $html->link('Adicionar Recurso', '/recursos/add/');?></li>
+<li><?php echo $html->link('Listar Estudos de viabilidades', '/estudosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Estudo de viabilidade', '/estudosviabilidades/add/');?></li>
+<li><?php echo $html->link('Listar Atividades', '/atividades/index/');?></li>
+<li><?php echo $html->link('Adicionar Atividade', '/atividades/add/');?></li>
+<li><?php echo $html->link('Listar Tipos de recursos de viabilidades', '/tiposrecursosviabilidades/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de recurso de viabilidade', '/tiposrecursosviabilidades/add/');?></li>
+</ul>

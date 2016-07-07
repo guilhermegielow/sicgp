@@ -1,0 +1,26 @@
+<div class="prioridades">
+<h2>Prioridades</h2>
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<th>Id</th>
+	<th>Descrição</th>
+	<th>Ações</th>
+</tr>
+<?php foreach ($prioridades as $prioridade): ?>
+<tr>
+	<td><?php echo $prioridade['Prioridade']['id']; ?></td>
+	<td><?php echo $prioridade['Prioridade']['ds_prioridade']; ?></td>
+	<td class="actions">
+		<?php echo $html->link('Detalhar','/prioridades/view/' . $prioridade['Prioridade']['id'])?>
+		<?php echo $html->link('Editar','/prioridades/edit/' . $prioridade['Prioridade']['id'])?>
+		<?php echo $html->link('Excluir','/prioridades/delete/' . $prioridade['Prioridade']['id'], null, 'Deseja realmente excluir : id ' . $prioridade['Prioridade']['id'])?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<ul class="actions">
+	<li><?php echo $html->link('Inserir Prioridade', '/prioridades/add'); ?></li>
+</ul>
+</div>

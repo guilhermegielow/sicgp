@@ -1,0 +1,35 @@
+<h2>Nova Ata de reunião</h2>
+<form action="<?php echo $html->url('/atasreunioes/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Atasreuniao/tiposreuniao_id', 'Tipo de reunião');?>
+ 	<?php echo $html->selectTag('Atasreuniao/tiposreuniao_id', $tiposreunioes, $html->tagValue('Atasreuniao/tiposreuniao_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Atasreuniao/tiposreuniao_id', 'Por favor selecione o Tipo de reunião.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Atasreuniao/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Atasreuniao/projeto_id', $projetos, $html->tagValue('Atasreuniao/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Atasreuniao/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Atasreuniao/ds_ata_reuniao', 'Descrição');?>
+ 	<?php echo $html->input('Atasreuniao/ds_ata_reuniao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atasreuniao/ds_ata_reuniao', 'Por favor informe a Descrição.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Atasreuniao/nr_versao', 'Versão');?>
+ 	<?php echo $html->input('Atasreuniao/nr_versao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Atasreuniao/nr_versao', 'Por favor informe a Versão.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Atas de reuniões', '/atasreunioes/index')?></li>
+<li><?php echo $html->link('Listar Tipos de reuniões', '/tiposreunioes/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de reunião', '/tiposreunioes/add/');?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+<li><?php echo $html->link('Listar Usuários', '/usuarios/index/');?></li>
+<li><?php echo $html->link('Adicionar Usuário', '/usuarios/add/');?></li>
+</ul>

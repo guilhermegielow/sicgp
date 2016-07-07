@@ -1,0 +1,21 @@
+<div class="itensmelhora">
+<h2>Ítem de melhora</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $itensmelhora['Itensmelhora']['id']?></dd>
+	<dt>Lição aprendida</dt>
+	<dd>&nbsp;<?php echo $html->link($itensmelhora['Licoesaprendida']['ds_licao_aprendida'], '/licoesaprendidas/view/' .$itensmelhora['Licoesaprendida']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $itensmelhora['Itensmelhora']['ds_item_melhora']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Ítem de melhora',   '/itensmelhoras/edit/' . $itensmelhora['Itensmelhora']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Ítem de melhora', '/itensmelhoras/delete/' . $itensmelhora['Itensmelhora']['id'], null, 'Deseja realmente excluir : id ' . $itensmelhora['Itensmelhora']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Ítens de melhoras',   '/itensmelhoras/index') ?> </li>
+	<li><?php echo $html->link('Inserir Ítem de melhora',	'/itensmelhoras/add') ?> </li>
+	<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/')?> </li>
+	<li><?php echo $html->link('Inserir Lição aprendida', '/licoesaprendidas/add/')?> </li>
+</ul>
+
+</div>

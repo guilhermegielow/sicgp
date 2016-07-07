@@ -1,0 +1,25 @@
+<div class="historico">
+<h2>Histórico</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $historico['Historico']['id']?></dd>
+	<dt>Projeto</dt>
+	<dd>&nbsp;<?php echo $html->link($historico['Projeto']['ds_titulo'], '/projetos/view/' .$historico['Projeto']['id'])?></dd>
+	<dt>Usuario</dt>
+	<dd>&nbsp;<?php echo $html->link($historico['Usuario']['ds_usuario'], '/usuarios/view/' .$historico['Usuario']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $historico['Historico']['ds_historico']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Histórico',   '/historicos/edit/' . $historico['Historico']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Histórico', '/historicos/delete/' . $historico['Historico']['id'], null, 'Deseja realmente excluir : id ' . $historico['Historico']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Históricos',   '/historicos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Histórico',	'/historicos/add') ?> </li>
+	<li><?php echo $html->link('Listar Projetos', '/projetos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Projeto', '/projetos/add/')?> </li>
+	<li><?php echo $html->link('Listar Usuários', '/usuarios/index/')?> </li>
+	<li><?php echo $html->link('Inserir Usuário', '/usuarios/add/')?> </li>
+</ul>
+
+</div>

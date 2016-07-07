@@ -1,0 +1,21 @@
+<div class="produtosescopo">
+<h2>Produto de escopo</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $produtosescopo['Produtosescopo']['id']?></dd>
+	<dt>Declaração de escopo</dt>
+	<dd>&nbsp;<?php echo $html->link($produtosescopo['Declaracoesescopo']['ds_declaracao_escopo'], '/declaracoesescopos/view/' .$produtosescopo['Declaracoesescopo']['id'])?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $produtosescopo['Produtosescopo']['ds_produto_escopo']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Produto de escopo',   '/produtosescopos/edit/' . $produtosescopo['Produtosescopo']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Produto de escopo', '/produtosescopos/delete/' . $produtosescopo['Produtosescopo']['id'], null, 'Deseja realmente excluir : id ' . $produtosescopo['Produtosescopo']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Produtos de escopos',   '/produtosescopos/index') ?> </li>
+	<li><?php echo $html->link('Inserir Produto de escopo',	'/produtosescopos/add') ?> </li>
+	<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/')?> </li>
+	<li><?php echo $html->link('Inserir Declaração de escopo', '/declaracoesescopos/add/')?> </li>
+</ul>
+
+</div>

@@ -1,0 +1,60 @@
+<h2>Novo Controle de mudança</h2>
+<form action="<?php echo $html->url('/controlesmudancas/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Controlesmudanca/projeto_id', $projetos, $html->tagValue('Controlesmudanca/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/tiposmudanca_id', 'Tipo de mudança');?>
+ 	<?php echo $html->selectTag('Controlesmudanca/tiposmudanca_id', $tiposmudancas, $html->tagValue('Controlesmudanca/tiposmudanca_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/tiposmudanca_id', 'Por favor selecione o Tipo de mudança.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/prioridade_id', 'Prioridade');?>
+ 	<?php echo $html->selectTag('Controlesmudanca/prioridade_id', $prioridades, $html->tagValue('Controlesmudanca/prioridade_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/prioridade_id', 'Por favor selecione a Prioridade.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/ds_controle_mudanca', 'Descrição');?>
+ 	<?php echo $html->input('Controlesmudanca/ds_controle_mudanca', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/ds_controle_mudanca', 'Por favor informe a Descrição.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/ds_justificativa', 'Justificativa');?>
+ 	<?php echo $html->input('Controlesmudanca/ds_justificativa', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/ds_justificativa', 'Por favor informe a Justificativa.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Controlesmudanca/dt_prazo', 'Data de prazo');?>
+ 	<?php echo $html->dateTimeOptionTag('Controlesmudanca/dt_prazo', 'DMY' , 'NONE', $html->tagValue('Controlesmudanca/dt_prazo'), array());?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/dt_prazo', 'Por favor selecione a Data de prazo.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Controlesmudanca/ds_impacto', 'Impacto');?>
+ 	<?php echo $html->input('Controlesmudanca/ds_impacto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/ds_impacto', 'Por favor informe o Impacto.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Controlesmudanca/dt_comunicacao', 'Data de comunicação');?>
+ 	<?php echo $html->dateTimeOptionTag('Controlesmudanca/dt_comunicacao', 'DMY' , 'NONE', $html->tagValue('Controlesmudanca/dt_comunicacao'), array());?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/dt_comunicacao', 'Por favor selecione a Data de comunicação.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Controlesmudanca/dt_envio_recursos', 'Data de envio de recursos');?>
+ 	<?php echo $html->dateTimeOptionTag('Controlesmudanca/dt_envio_recursos', 'DMY' , 'NONE', $html->tagValue('Controlesmudanca/dt_envio_recursos'), array());?>
+	<?php echo $html->tagErrorMsg('Controlesmudanca/dt_envio_recursos', 'Por favor selecione a Data de envio de recursos.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Controles de mudanças', '/controlesmudancas/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+<li><?php echo $html->link('Listar Tipos de mudanças', '/tiposmudancas/index/');?></li>
+<li><?php echo $html->link('Adicionar Tipo de mudança', '/tiposmudancas/add/');?></li>
+<li><?php echo $html->link('Listar Prioridades', '/prioridades/index/');?></li>
+<li><?php echo $html->link('Adicionar Prioridade', '/prioridades/add/');?></li>
+</ul>

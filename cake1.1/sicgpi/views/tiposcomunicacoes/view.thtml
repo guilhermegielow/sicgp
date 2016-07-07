@@ -1,0 +1,17 @@
+<div class="tiposcomunicacao">
+<h2>Tipo de comunicação</h2>
+
+<dl>
+	<dt>Id</dt>
+	<dd>&nbsp;<?php echo $tiposcomunicacao['Tiposcomunicacao']['id']?></dd>
+	<dt>Descrição</dt>
+	<dd>&nbsp;<?php echo $tiposcomunicacao['Tiposcomunicacao']['ds_tipo_comunicacao']?></dd>
+</dl>
+<ul class="actions">
+	<li><?php echo $html->link('Editar Tipo de comunicação',   '/tiposcomunicacoes/edit/' . $tiposcomunicacao['Tiposcomunicacao']['id']) ?> </li>
+	<li><?php echo $html->link('Excluir Tipo de comunicação', '/tiposcomunicacoes/delete/' . $tiposcomunicacao['Tiposcomunicacao']['id'], null, 'Deseja realmente excluir : id ' . $tiposcomunicacao['Tiposcomunicacao']['id'] . '?') ?> </li>
+	<li><?php echo $html->link('Listar Tipos de comunicações',   '/tiposcomunicacoes/index') ?> </li>
+	<li><?php echo $html->link('Inserir Tipo de comunicação',	'/tiposcomunicacoes/add') ?> </li>
+</ul>
+
+</div>

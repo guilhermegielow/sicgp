@@ -1,0 +1,23 @@
+<h2>Editar Estratégia de condução</h2>
+<form action="<?php echo $html->url('/estrategiasconducoes/edit/'.$html->tagValue('Estrategiasconducao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Estrategiasconducao/declaracoesescopo_id', 'Declaração de escopo');?>
+ 	<?php echo $html->selectTag('Estrategiasconducao/declaracoesescopo_id', $declaracoesescopos, $html->tagValue('Estrategiasconducao/declaracoesescopo_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Estrategiasconducao/declaracoesescopo_id', 'Por favor selecione a Declaração de escopo.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Estrategiasconducao/ds_estrategia_conducao', 'Descrição');?>
+ 	<?php echo $html->input('Estrategiasconducao/ds_estrategia_conducao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Estrategiasconducao/ds_estrategia_conducao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Estrategiasconducao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/estrategiasconducoes/delete/' . $html->tagValue('Estrategiasconducao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Estrategiasconducao/id'));?>
+<li><?php echo $html->link('Listar Estratégias de conduções', '/estrategiasconducoes/index')?></li>
+<li><?php echo $html->link('Listar Declarações de escopos', '/declaracoesescopos/index/');?></li>
+<li><?php echo $html->link('Adicionar Declaração de escopo', '/declaracoesescopos/add/');?></li>
+</ul>

@@ -1,0 +1,34 @@
+<h2>Novo Termo de aceite de projeto</h2>
+<form action="<?php echo $html->url('/termosaceitesprojetos/add'); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Termosaceitesprojeto/projeto_id', 'Projeto');?>
+ 	<?php echo $html->selectTag('Termosaceitesprojeto/projeto_id', $projetos, $html->tagValue('Termosaceitesprojeto/projeto_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Termosaceitesprojeto/projeto_id', 'Por favor selecione o Projeto.') ?>
+</div>
+<div class="optional"> 
+ 	<?php echo $html->hidden('Termosaceitesprojeto/dt_aceite', 'DMY' , 'NONE', $html->tagValue('Termosaceitesprojeto/dt_aceite'), array());?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Termosaceitesprojeto/ds_local', 'Local');?>
+ 	<?php echo $html->input('Termosaceitesprojeto/ds_local', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Termosaceitesprojeto/ds_local', 'Por favor informe o Local.');?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Termosaceitesprojeto/ds_resumo_projeto', 'Resumo do projeto');?>
+ 	<?php echo $html->input('Termosaceitesprojeto/ds_resumo_projeto', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Termosaceitesprojeto/ds_resumo_projeto', 'Por favor informe o Resumo do projeto.');?>
+</div>
+<div class="optional"> 
+	<?php echo $form->labelTag('Usuario/Usuario', 'Usuários Relacionados');?>
+ 	<?php echo $html->selectTag('Usuario/Usuario', $usuarios, $selectedUsuarios, array('multiple' => 'multiple', 'class' => 'selectMultiple'), array(), true);?>
+	<?php echo $html->tagErrorMsg('Usuario/Usuario', 'Por favor selecione Usuários Relacionados.');?>
+</div>
+<div class="submit">
+	<?php echo $html->submit('Adicionar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Listar Termos de aceite de projetos', '/termosaceitesprojetos/index')?></li>
+<li><?php echo $html->link('Listar Projetos', '/projetos/index/');?></li>
+<li><?php echo $html->link('Adicionar Projeto', '/projetos/add/');?></li>
+</ul>

@@ -1,0 +1,23 @@
+<h2>Editar Recomendação</h2>
+<form action="<?php echo $html->url('/recomendacoes/edit/'.$html->tagValue('Recomendacao/id')); ?>" method="post">
+<div class="required"> 
+	<?php echo $form->labelTag('Recomendacao/licoesaprendida_id', 'Lição aprendida');?>
+ 	<?php echo $html->selectTag('Recomendacao/licoesaprendida_id', $licoesaprendidas, $html->tagValue('Recomendacao/licoesaprendida_id'), array(), array(), false);?>
+	<?php echo $html->tagErrorMsg('Recomendacao/licoesaprendida_id', 'Por favor selecione a Lição aprendida.') ?>
+</div>
+<div class="required"> 
+	<?php echo $form->labelTag('Recomendacao/ds_recomendacao', 'Descrição');?>
+ 	<?php echo $html->input('Recomendacao/ds_recomendacao', array('size' => '60'));?>
+	<?php echo $html->tagErrorMsg('Recomendacao/ds_recomendacao', 'Por favor informe a Descrição.');?>
+</div>
+<?php echo $html->hidden('Recomendacao/id')?>
+<div class="submit">
+	<?php echo $html->submit('Salvar');?>
+</div>
+</form>
+<ul class="actions">
+<li><?php echo $html->link('Excluir','/recomendacoes/delete/' . $html->tagValue('Recomendacao/id'), null, 'Deseja realmente excluir : id ' . $html->tagValue('Recomendacao/id'));?>
+<li><?php echo $html->link('Listar Recomendações', '/recomendacoes/index')?></li>
+<li><?php echo $html->link('Listar Lições aprendidas', '/licoesaprendidas/index/');?></li>
+<li><?php echo $html->link('Adicionar Lição aprendida', '/licoesaprendidas/add/');?></li>
+</ul>
